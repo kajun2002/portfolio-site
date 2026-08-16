@@ -116,8 +116,8 @@ img { display:block; max-width:100%; }
 .project-node-main>.node-action { margin-top:auto; padding-top:var(--sp-4); border-top:1px solid var(--border-hairline); color:var(--brand-600); font-weight:500; }
 .work-metrics { display:flex; flex-wrap:wrap; gap:var(--sp-2); margin:var(--sp-5) 0; }
 .work-metrics>div { min-width:112px; flex:1; padding:var(--sp-6); border:1px solid var(--border-hairline); border-radius:var(--r-sm); background:var(--surface-sunken); }
-.work-metrics strong,.work-metrics span { display:block; }.work-metrics span { margin-top:var(--sp-1); }
-.metric-unit { font-size:.62em; }
+.work-metrics>div>strong,.work-metrics>div>span { display:block; }.work-metrics>div>span { margin-top:var(--sp-1); }
+.metric-unit { display:inline; margin:0; font-size:.62em; }
 .metric-up { color:var(--semantic-up); }
 .companion-nodes { display:grid; gap:var(--sp-2); }
 .compact-node { position:relative; min-height:96px; display:grid; align-content:center; gap:var(--sp-1); padding:var(--sp-6) 48px var(--sp-6) var(--sp-6); }
@@ -141,8 +141,10 @@ img { display:block; max-width:100%; }
 .context-switcher button:hover,.context-switcher button.active { color:var(--brand-700); border-color:var(--border-brand); background:var(--brand-50); }
 .context-switcher .collapse-detail { margin-left:var(--sp-1); border-color:var(--border-subtle); color:var(--ink-700); background:var(--surface-raised); }
 .detail-body { padding-block:var(--sp-12) var(--sp-20); }
-.detail-hero { display:grid; grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr); align-items:end; gap:var(--sp-12); padding-bottom:var(--sp-8); border-bottom:1px solid var(--border-subtle); }
-.detail-hero>div { display:grid; gap:var(--sp-3); }.detail-hero .work-metrics { margin:0; }
+.detail-hero { display:grid; grid-template-columns:1fr; align-items:start; gap:var(--sp-6); padding-bottom:var(--sp-8); border-bottom:1px solid var(--border-subtle); }
+.detail-hero>div { display:grid; gap:var(--sp-3); }
+.detail-hero .work-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,280px)); width:100%; margin:0; }
+.detail-hero .work-metrics>div { min-width:0; }
 .detail-framing { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-4); margin-top:var(--sp-6); }
 .detail-framing article { min-height:204px; padding:var(--sp-8); border:1px solid var(--border-hairline); border-radius:var(--r-lg); background:var(--surface-raised); }
 .detail-framing article>span,.detail-section-title>span,.detail-result>span { display:block; }

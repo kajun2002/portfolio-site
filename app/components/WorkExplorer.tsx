@@ -65,7 +65,12 @@ export function WorkExplorer() {
 
   function closeProject() {
     setExpanded(false);
-    closeTimer.current = window.setTimeout(() => setSelectedId(null), 320);
+    closeTimer.current = window.setTimeout(() => {
+      setSelectedId(null);
+      window.requestAnimationFrame(() => {
+        document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }, 320);
   }
 
   function toggleProject(id: string) {
@@ -79,7 +84,7 @@ export function WorkExplorer() {
 
   return (
     <section className="work-deck" id="work">
-      <div className="section-shell work-overview">
+      {!selected && <div className="section-shell work-overview">
         <header className="slide-heading">
           <div><span className="t-overline">Work map · QQ 宠物</span><h2 className="t-title-1">从业务目标到产品答案</h2></div>
           <p className="t-body-sm">围绕 <strong>促活</strong> 与 <strong>拉新</strong> 两条主线，分别经营“人－人”关系、“人－宠物”陪伴，并拓展新增来源。点击项目即可在当前页面展开复盘。</p>
@@ -119,7 +124,7 @@ export function WorkExplorer() {
           </article>
         </div>
         <div className="deck-page-no t-caption tnum">02 / 03</div>
-      </div>
+      </div>}
 
       <div className={`detail-expand ${expanded ? "is-open" : ""}`} id="work-detail-panel">
         <div className="detail-expand-inner">
