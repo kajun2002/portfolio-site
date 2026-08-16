@@ -1,4 +1,3 @@
-import { ContactButton } from "./components/ContactButton";
 import { Header } from "./components/Header";
 import { WorkExplorer } from "./components/WorkExplorer";
 
@@ -10,21 +9,50 @@ export default function Home() {
         <div className="deck-profile">
           <div className="deck-photo"><img src="/resume-profile-source.png" alt="付嘉俊" /></div>
           <div className="deck-identity">
-            <span className="deck-overline">ABOUT ME · 产品经理</span>
+            <span className="deck-overline">ABOUT ME · 个人介绍</span>
             <h1>付嘉俊 <small>Kaiden Fu</small></h1>
             <p>关注关系型产品、AI 陪伴体验与增长策略；习惯从业务目标出发，定位核心矛盾并给出可验证的产品方案。</p>
-            <div className="deck-tags"><span>社交机制</span><span>AI 产品</span><span>增长策略</span><span>体验设计</span></div>
-            <ContactButton className="deck-contact" />
+            <div className="deck-tags"><span>🏃 热爱运动</span><span>⌘ AI Coding 探索者</span><span>✈ 旅行体验派</span></div>
           </div>
         </div>
-        <div className="deck-experience">
-          <div className="deck-section-title"><span>EDUCATION & EXPERIENCE</span><h2>个人经历</h2></div>
-          <div className="career-line">
-            <article><time>2020.09</time><i /><h3>湖南农业大学</h3><p>工程管理 · 学士</p><small>GPA 3.77/4 · 2/86</small></article>
-            <article><time>2024.09</time><i /><h3>深圳大学</h3><p>管理科学与工程 · 硕士（推免）</p><small>GPA 3.68/4 · 3/11</small></article>
-            <article><time>2025.07</time><i /><h3>OPPO · 应用分发部</h3><p>产品运营</p><small>搜索承接与内容供给优化</small></article>
-            <article className="current"><time>2026.05</time><i /><h3>腾讯 · AI 产品应用中心</h3><p>产品经理（QQ 宠物）</p><small>社交、养成、AI 对讲与增长</small></article>
-          </div>
+        <div className="intro-experience-grid">
+          <section className="experience-panel education-panel">
+            <div className="panel-heading"><span>EDUCATION</span><h2>教育经历</h2></div>
+            <div className="resume-entries education-entries">
+              <article>
+                <div className="entry-top"><h3>深圳大学</h3><time>2024.09—至今</time></div>
+                <p>管理科学与工程 · 硕士（推免）</p>
+                <small>GPA 3.68/4（3/11）</small>
+                <div className="entry-honors"><span>研究生特等奖学金</span><span>研究生一等奖学金</span></div>
+              </article>
+              <article>
+                <div className="entry-top"><h3>湖南农业大学</h3><time>2020.09—2024.09</time></div>
+                <p>工程管理 · 学士</p>
+                <small>GPA 3.77/4（2/86）</small>
+                <div className="entry-honors"><span>湖南省优秀毕业生</span><span>BIM 毕设大赛全国二等奖</span></div>
+              </article>
+            </div>
+          </section>
+          <section className="experience-panel internship-panel">
+            <div className="panel-heading"><span>INTERNSHIP</span><h2>实习经历</h2></div>
+            <div className="resume-entries internship-entries">
+              <article className="featured-entry">
+                <div className="entry-top"><h3>腾讯 · AI 产品应用中心</h3><time>2026.05—2026.08</time></div>
+                <p>产品经理（QQ 宠物业务）</p>
+                <small>负责关系互动、陪伴养成、AI 对讲与裂变增长产品设计</small>
+              </article>
+              <article>
+                <div className="entry-top"><h3>虎牙科技</h3><time>2025.12—2026.03</time></div>
+                <p>海外 KOL 运营实习生</p>
+                <small>负责海外游戏赛道达人增长、分阶合作与投放体系优化</small>
+              </article>
+              <article>
+                <div className="entry-top"><h3>OPPO · 应用分发部</h3><time>2025.07—2025.09</time></div>
+                <p>产品运营实习生</p>
+                <small>负责搜索承接、内容供给与 AI 智能打标流程优化</small>
+              </article>
+            </div>
+          </section>
         </div>
         <div className="deck-page-no">01 / 03</div>
       </section>
@@ -41,7 +69,7 @@ export default function Home() {
             <article><span>04</span><h3>AI 产品</h3><p>AI 能力不止是 Prompt，而是模型选择、业务评测、玩法设计与持续迭代的完整链路。</p></article>
           </div>
           <div className="reflection-closing"><strong>发现问题</strong><b>→</b><strong>拆解原因</strong><b>→</b><strong>明确目标</strong><b>→</b><strong>评估方案</strong><b>→</b><strong>验证结果</strong></div>
-          <footer className="deck-footer"><span>付嘉俊 · 产品经理作品集</span><ContactButton className="deck-contact" label="联系我" /></footer>
+          <footer className="deck-footer"><span>付嘉俊 · 产品经理转正答辩</span><span>THANK YOU</span></footer>
         </div>
         <div className="deck-page-no section-shell">03 / 03</div>
       </section>
