@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { getWorkItem, workItems, type WorkItem } from "../data/workItems";
 
 function AnimatedMetric({ value }: { value: string }) {
-  const match = /^([+≈-]?)(\d+(?:\.\d+)?)(%)?$/.exec(value);
+  const match = /^([+≈−-]?)(\d+(?:\.\d+)?)(%|pp)?$/.exec(value);
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLElement>(null);
 
@@ -35,7 +35,7 @@ function AnimatedMetric({ value }: { value: string }) {
 
   if (!match) return <strong className="t-metric">{value}</strong>;
   const decimals = (match[2].split(".")[1] ?? "").length;
-  return <strong ref={ref} className={`t-metric tnum ${match[1] === "+" ? "metric-up" : ""}`}>{match[1]}{display.toFixed(decimals)}{match[3] && <span className="metric-unit">{match[3]}</span>}</strong>;
+  return <strong ref={ref} className="t-metric tnum">{match[1] && <span className="metric-affix">{match[1]}</span>}<span className="metric-value">{display.toFixed(decimals)}</span>{match[3] && <span className="metric-affix">{match[3]}</span>}</strong>;
 }
 
 function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
