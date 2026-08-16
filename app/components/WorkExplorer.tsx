@@ -87,7 +87,7 @@ export function WorkExplorer() {
               <section className="relationship-group primary-group">
                 <div className="group-label"><small className="t-caption">关系对象</small><strong className="t-title-3">人－人</strong></div>
                 <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => toggleProject(fire.id)} aria-controls="work-detail">
-                  <span className="node-priority t-caption">重点项目</span><h4 className="t-title-2">{fire.title}</h4><p className="t-body-sm">{fire.subtitle}</p><MetricStrip metrics={fire.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                  <span className="node-priority t-caption" aria-label="重点项目" title="重点项目">重</span><h4 className="t-title-2">{fire.title}</h4><p className="t-body-sm">{fire.subtitle}</p><MetricStrip metrics={fire.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
                 </button>
               </section>
               <section className="relationship-group companion-group">
@@ -107,7 +107,7 @@ export function WorkExplorer() {
             <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新</h3><p className="t-body-sm">拓展新增领养来源</p></div>
             <div className="branch-content single-branch-content">
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
-                <span className="node-priority t-caption">增长项目</span><h4 className="t-title-2">{invite.title}</h4><p className="t-body-sm">{invite.subtitle}</p><MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                <span className="node-priority t-caption" aria-label="增长项目" title="增长项目">增</span><h4 className="t-title-2">{invite.title}</h4><p className="t-body-sm">{invite.subtitle}</p><MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
               </button>
               <div className="growth-logic" aria-label="增长链路"><span className="t-caption">自然增长放缓</span><b aria-hidden="true">→</b><span className="t-caption">关系链触达</span><b aria-hidden="true">→</b><span className="t-caption">完成领养</span></div>
             </div>
