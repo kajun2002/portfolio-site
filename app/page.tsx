@@ -6,17 +6,32 @@ export default function Home() {
     <main className="deck-site">
       <div className="aurora" aria-hidden="true" />
       <Header />
-      <section className="deck-intro deck-slide section-shell" id="about">
-        <header className="intro-heading">
+      <section className="landing-deck deck-slide section-shell" id="about">
+        <div className="landing-copy">
           <span className="t-overline">About me · 个人介绍</span>
-        </header>
-        <div className="deck-profile">
-          <div className="deck-photo"><img src="/profile-highres.jpg" alt="付嘉俊" /></div>
-          <div className="deck-identity">
-            <h1 className="t-display">付嘉俊 <small className="t-title-2">Kaiden Fu</small></h1>
-            <div className="deck-tags"><span className="chip chip-mint t-caption">规律运动</span><span className="chip chip-violet t-caption">AI Coding 探索</span><span className="chip chip-amber t-caption">旅行与体验</span></div>
+          <h1 className="landing-title">Hi, 我是 <em>Kaiden</em></h1>
+          <div className="landing-tags" aria-label="个性标签">
+            <span className="chip chip-mint t-body-sm">热爱运动</span>
+            <span className="chip chip-violet t-body-sm">勇于探索</span>
+            <span className="chip chip-amber t-body-sm">旅行与体验</span>
+            <span className="chip chip-rose t-body-sm">ENFP</span>
           </div>
+          <p className="landing-signature">从业务目标出发，把复杂问题拆成清晰判断，用可落地、可验证的产品方案创造真实价值。</p>
         </div>
+        <div className="landing-visual" aria-label="Kaiden 的运动生活照">
+          <div className="landing-orbit orbit-one" aria-hidden="true" />
+          <div className="landing-orbit orbit-two" aria-hidden="true" />
+          <div className="landing-dot dot-one" aria-hidden="true" />
+          <div className="landing-dot dot-two" aria-hidden="true" />
+          <img src="/hero-athletic.png" alt="Kaiden 运动生活照" />
+        </div>
+        <div className="deck-page-no t-caption tnum">01 / 04</div>
+      </section>
+
+      <section className="experience-deck deck-slide section-shell" id="experience">
+        <header className="slide-heading experience-heading">
+          <div><span className="t-overline">Experience</span><h2 className="t-title-1">教育与实习经历</h2></div>
+        </header>
         <div className="intro-experience-grid">
           <section className="experience-panel education-panel">
             <div className="panel-heading"><span className="t-overline">Education</span><h2 className="t-title-2">教育经历</h2></div>
@@ -56,7 +71,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <div className="deck-page-no t-caption tnum">01 / 03</div>
+        <div className="deck-page-no t-caption tnum">02 / 04</div>
       </section>
 
       <WorkExplorer />
@@ -73,7 +88,7 @@ export default function Home() {
           <div className="reflection-closing"><strong className="t-body-sm">发现问题</strong><b aria-hidden="true">→</b><strong className="t-body-sm">拆解原因</strong><b aria-hidden="true">→</b><strong className="t-body-sm">明确目标</strong><b aria-hidden="true">→</b><strong className="t-body-sm">评估方案</strong><b aria-hidden="true">→</b><strong className="t-body-sm">验证结果</strong></div>
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
         </div>
-        <div className="deck-page-no section-shell t-caption tnum">03 / 03</div>
+        <div className="deck-page-no section-shell t-caption tnum">04 / 04</div>
       </section>
     </main>
   );
