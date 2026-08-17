@@ -9,7 +9,7 @@ export default function Home() {
       <section className="landing-deck deck-slide section-shell" id="about">
         <div className="landing-copy">
           <span className="t-overline">About me · 个人介绍</span>
-          <h1 className="landing-title">Hi, 我是 <em>Kaiden</em></h1>
+          <h1 className="landing-title"><span>Hi,</span><span>我是 <em>Kaiden</em></span></h1>
           <div className="landing-tags" aria-label="个性标签">
             <span className="chip chip-mint t-body-sm">热爱运动</span>
             <span className="chip chip-violet t-body-sm">勇于探索</span>
@@ -19,7 +19,7 @@ export default function Home() {
           <p className="landing-signature">从业务目标出发，把复杂问题拆成清晰判断，用可落地、可验证的产品方案创造真实价值。</p>
         </div>
         <div className="landing-visual" aria-label="Kaiden 的运动生活照">
-          <img src="/hero-athletic-outline-trimmed.png" alt="Kaiden 运动生活照" />
+          <img src="/hero-athletic-outline-v2.png" alt="Kaiden 运动生活照" />
         </div>
         <div className="deck-page-no t-caption tnum">01 / 04</div>
       </section>
