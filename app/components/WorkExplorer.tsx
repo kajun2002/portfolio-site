@@ -50,6 +50,11 @@ function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
   );
 }
 
+const companionArtwork: Partial<Record<WorkItem["id"], { src: string; alt: string }>> = {
+  sick: { src: "/qqpet-help-treatment.png", alt: "QQ 宠物帮忙治疗图标" },
+  skill: { src: "/qqpet-parachute-penguin.png", alt: "QQ 宠物企鹅形象" },
+};
+
 export function WorkExplorer() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
@@ -87,15 +92,18 @@ export function WorkExplorer() {
               <section className="relationship-group primary-group">
                 <div className="group-label"><small className="t-caption">关系对象</small><strong className="t-title-3">人－人</strong></div>
                 <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => toggleProject(fire.id)} aria-controls="work-detail">
-                  <span className="node-priority t-caption">重点项目</span><h4 className="t-title-2">{fire.title}</h4><p className="t-body-sm">{fire.subtitle}</p><MetricStrip metrics={fire.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                  <span className="node-priority t-caption">重点项目</span><h4 className="t-title-2">{fire.title}</h4><p className="t-body-sm">{fire.subtitle}</p>
+                  <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
+                  <MetricStrip metrics={fire.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
                 </button>
               </section>
               <section className="relationship-group companion-group">
                 <div className="group-label"><small className="t-caption">关系对象</small><strong className="t-title-3">人－宠物</strong></div>
                 <div className="companion-nodes">
                   {companion.map((item) => (
-                    <button className={`project-node compact-node tone-${item.tone}`} type="button" key={item.id} onClick={() => toggleProject(item.id)} aria-controls="work-detail">
+                    <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => toggleProject(item.id)} aria-controls="work-detail">
                       <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small><i className="node-plus" aria-hidden="true">＋</i>
+                      {companionArtwork[item.id] && <img className="compact-node-art" src={companionArtwork[item.id]!.src} alt={companionArtwork[item.id]!.alt} />}
                     </button>
                   ))}
                 </div>

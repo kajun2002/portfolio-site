@@ -7,12 +7,13 @@ export default function Home() {
       <div className="aurora" aria-hidden="true" />
       <Header />
       <section className="deck-intro deck-slide section-shell" id="about">
+        <header className="intro-heading">
+          <span className="t-overline">About me · 个人介绍</span>
+        </header>
         <div className="deck-profile">
-          <div className="deck-photo"><img src="/resume-profile-source.png" alt="付嘉俊" /></div>
+          <div className="deck-photo"><img src="/profile-highres.jpg" alt="付嘉俊" /></div>
           <div className="deck-identity">
-            <span className="t-overline">About me · 个人介绍</span>
             <h1 className="t-display">付嘉俊 <small className="t-title-2">Kaiden Fu</small></h1>
-            <p className="t-body">关注关系型产品、AI 陪伴体验与增长策略；习惯从业务目标出发，定位核心矛盾并给出可验证的产品方案。</p>
             <div className="deck-tags"><span className="chip chip-mint t-caption">规律运动</span><span className="chip chip-violet t-caption">AI Coding 探索</span><span className="chip chip-amber t-caption">旅行与体验</span></div>
           </div>
         </div>
