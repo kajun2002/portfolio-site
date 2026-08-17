@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Header } from "./components/Header";
 import { WorkExplorer } from "./components/WorkExplorer";
 
@@ -13,33 +13,66 @@ function isSectionId(value: string): value is SectionId {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<SectionId>("about");
+  const scrollLockTimer = useRef<number | null>(null);
+  const isProgrammaticScroll = useRef(false);
 
-  const navigateTo = useCallback((id: string, pushHistory = true) => {
+  const updateActiveFromScroll = useCallback(() => {
+    if (isProgrammaticScroll.current) return;
+    const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+    const marker = window.scrollY + headerHeight + 2;
+    let current: SectionId = "about";
+    for (const id of sectionIds) {
+      const section = document.getElementById(id);
+      if (section && section.offsetTop <= marker) current = id;
+    }
+    setActiveSection(current);
+    if (window.location.hash !== `#${current}`) {
+      window.history.replaceState(null, "", `#${current}`);
+    }
+  }, []);
+
+  const navigateTo = useCallback((id: string, pushHistory = true, smooth = true) => {
     if (!isSectionId(id)) return;
+    const section = document.getElementById(id);
+    if (!section) return;
     setActiveSection(id);
     if (pushHistory) window.history.pushState(null, "", `#${id}`);
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
-  }, []);
+    if (scrollLockTimer.current) window.clearTimeout(scrollLockTimer.current);
+    isProgrammaticScroll.current = true;
+    const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({
+      top: Math.max(0, section.offsetTop - headerHeight),
+      behavior: smooth && !reduceMotion ? "smooth" : "instant",
+    });
+    scrollLockTimer.current = window.setTimeout(() => {
+      isProgrammaticScroll.current = false;
+      updateActiveFromScroll();
+    }, smooth && !reduceMotion ? 900 : 50);
+  }, [updateActiveFromScroll]);
 
   useEffect(() => {
     const syncFromLocation = () => {
       const hash = window.location.hash.slice(1);
-      navigateTo(isSectionId(hash) ? hash : "about", false);
+      window.requestAnimationFrame(() => navigateTo(isSectionId(hash) ? hash : "about", false, false));
     };
     syncFromLocation();
+    window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
     window.addEventListener("popstate", syncFromLocation);
     window.addEventListener("hashchange", syncFromLocation);
     return () => {
+      if (scrollLockTimer.current) window.clearTimeout(scrollLockTimer.current);
+      window.removeEventListener("scroll", updateActiveFromScroll);
       window.removeEventListener("popstate", syncFromLocation);
       window.removeEventListener("hashchange", syncFromLocation);
     };
-  }, [navigateTo]);
+  }, [navigateTo, updateActiveFromScroll]);
 
   return (
     <main className="deck-site">
       <div className="aurora" aria-hidden="true" />
       <Header activeId={activeSection} onNavigate={navigateTo} />
-      {activeSection === "about" && <section className="landing-deck deck-slide section-shell" id="about">
+      <section className="landing-deck deck-slide section-shell" id="about">
         <div className="landing-copy">
           <span className="t-overline">About me · 个人介绍</span>
           <h1 className="landing-title"><span>Hi,</span><span>我是 <em>Kaiden</em></span></h1>
@@ -55,9 +88,9 @@ export default function Home() {
           <img src="/hero-athletic-outline-v2.png" alt="Kaiden 运动生活照" />
         </div>
         <div className="deck-page-no t-caption tnum">01 / 04</div>
-      </section>}
+      </section>
 
-      {activeSection === "experience" && <section className="experience-deck deck-slide section-shell" id="experience">
+      <section className="experience-deck deck-slide section-shell" id="experience">
         <header className="slide-heading experience-heading">
           <div><span className="t-overline">Experience</span><h2 className="t-title-1">教育与实习经历</h2></div>
         </header>
@@ -101,11 +134,11 @@ export default function Home() {
           </section>
         </div>
         <div className="deck-page-no t-caption tnum">02 / 04</div>
-      </section>}
+      </section>
 
-      {activeSection === "work" && <WorkExplorer />}
+      <WorkExplorer />
 
-      {activeSection === "reflection" && <section className="reflection-deck deck-slide" id="reflection">
+      <section className="reflection-deck deck-slide" id="reflection">
         <div className="section-shell reflection-deck-inner">
           <header className="slide-heading"><div><span className="t-overline">Reflection</span><h2 className="t-title-1">经验沉淀与思考</h2></div><p className="t-body-sm">把项目经验沉淀成可复用的产品判断，而不是一次性的执行动作。</p></header>
           <div className="reflection-map">
@@ -118,7 +151,7 @@ export default function Home() {
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
         </div>
         <div className="deck-page-no section-shell t-caption tnum">04 / 04</div>
-      </section>}
+      </section>
     </main>
   );
 }
