@@ -203,6 +203,33 @@ img { display:block; max-width:100%; }
 .growth-logic { display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2); margin-top:var(--sp-4); padding:var(--sp-4); border:1px solid var(--glass-line); border-radius:var(--r-sm); background:var(--glass-3); box-shadow:var(--shadow-xs); }
 .growth-logic span { color:var(--ink-600); font-size:var(--fs-caption); line-height:1.6; }.growth-logic b { color:var(--brand-500); font-weight:500; }
 
+@media (min-width:1001px) {
+  .work-overview { height:calc(100svh - var(--nav-h)); min-height:calc(100svh - var(--nav-h)); display:grid; grid-template-rows:auto minmax(0,1fr); padding-block:24px 36px; }
+  .work-overview .slide-heading { gap:8px; padding-bottom:14px; }
+  .work-overview .slide-heading>div { gap:8px; }
+  .work-tree { min-height:0; height:100%; gap:12px; margin-top:12px; }
+  .tree-branch { min-height:0; }
+  .branch-title { column-gap:10px; row-gap:5px; padding:14px 18px; }
+  .branch-content { min-height:0; gap:10px; padding:10px; }
+  .group-label { min-height:22px; margin-bottom:5px; }
+  .project-node-main { min-height:0; padding:14px 16px; }
+  .node-title-row { gap:6px; margin-top:5px; }
+  .project-node-main>p { margin-top:5px; }
+  .fire-level-art { height:34px; margin-top:7px; }
+  .project-node-main .work-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; margin:10px 0; }
+  .work-metrics>div { padding:10px 12px; }
+  .metric-bar { margin-top:7px!important; }
+  .project-node-main>.node-action { padding-top:9px; }
+  .companion-nodes { gap:7px; }
+  .compact-node { gap:2px; padding:10px 42px 10px 14px; }
+  .compact-node.has-art { padding-right:96px; }
+  .compact-node-art { right:42px; width:46px; height:46px; }
+  .compact-node.tone-violet .compact-node-art { width:42px; height:50px; }
+  .compact-node>i { right:16px; }
+  .single-branch-content .project-node-main { min-height:0; }
+  .growth-logic { gap:7px; margin-top:7px; padding:9px 11px; }
+}
+
 .work-detail { position:relative; scroll-margin-top:var(--nav-h); border-top:1px solid var(--border-subtle); background:transparent; animation:detail-in .56s var(--ease-out) both; }
 @keyframes detail-in { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 .context-bar { position:sticky; z-index:90; top:var(--nav-h); border-bottom:1px solid var(--glass-line); background:var(--glass-3); box-shadow:var(--shadow-sm); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
