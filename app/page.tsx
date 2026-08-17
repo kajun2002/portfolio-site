@@ -1,12 +1,45 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { WorkExplorer } from "./components/WorkExplorer";
 
+const sectionIds = ["about", "experience", "work", "reflection"] as const;
+type SectionId = (typeof sectionIds)[number];
+
+function isSectionId(value: string): value is SectionId {
+  return sectionIds.includes(value as SectionId);
+}
+
 export default function Home() {
+  const [activeSection, setActiveSection] = useState<SectionId>("about");
+
+  const navigateTo = useCallback((id: string, pushHistory = true) => {
+    if (!isSectionId(id)) return;
+    setActiveSection(id);
+    if (pushHistory) window.history.pushState(null, "", `#${id}`);
+    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  }, []);
+
+  useEffect(() => {
+    const syncFromLocation = () => {
+      const hash = window.location.hash.slice(1);
+      navigateTo(isSectionId(hash) ? hash : "about", false);
+    };
+    syncFromLocation();
+    window.addEventListener("popstate", syncFromLocation);
+    window.addEventListener("hashchange", syncFromLocation);
+    return () => {
+      window.removeEventListener("popstate", syncFromLocation);
+      window.removeEventListener("hashchange", syncFromLocation);
+    };
+  }, [navigateTo]);
+
   return (
     <main className="deck-site">
       <div className="aurora" aria-hidden="true" />
-      <Header />
-      <section className="landing-deck deck-slide section-shell" id="about">
+      <Header activeId={activeSection} onNavigate={navigateTo} />
+      {activeSection === "about" && <section className="landing-deck deck-slide section-shell" id="about">
         <div className="landing-copy">
           <span className="t-overline">About me · 个人介绍</span>
           <h1 className="landing-title"><span>Hi,</span><span>我是 <em>Kaiden</em></span></h1>
@@ -22,9 +55,9 @@ export default function Home() {
           <img src="/hero-athletic-outline-v2.png" alt="Kaiden 运动生活照" />
         </div>
         <div className="deck-page-no t-caption tnum">01 / 04</div>
-      </section>
+      </section>}
 
-      <section className="experience-deck deck-slide section-shell" id="experience">
+      {activeSection === "experience" && <section className="experience-deck deck-slide section-shell" id="experience">
         <header className="slide-heading experience-heading">
           <div><span className="t-overline">Experience</span><h2 className="t-title-1">教育与实习经历</h2></div>
         </header>
@@ -68,11 +101,11 @@ export default function Home() {
           </section>
         </div>
         <div className="deck-page-no t-caption tnum">02 / 04</div>
-      </section>
+      </section>}
 
-      <WorkExplorer />
+      {activeSection === "work" && <WorkExplorer />}
 
-      <section className="reflection-deck deck-slide" id="reflection">
+      {activeSection === "reflection" && <section className="reflection-deck deck-slide" id="reflection">
         <div className="section-shell reflection-deck-inner">
           <header className="slide-heading"><div><span className="t-overline">Reflection</span><h2 className="t-title-1">经验沉淀与思考</h2></div><p className="t-body-sm">把项目经验沉淀成可复用的产品判断，而不是一次性的执行动作。</p></header>
           <div className="reflection-map">
@@ -85,7 +118,7 @@ export default function Home() {
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
         </div>
         <div className="deck-page-no section-shell t-caption tnum">04 / 04</div>
-      </section>
+      </section>}
     </main>
   );
 }
