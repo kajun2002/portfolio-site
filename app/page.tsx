@@ -19,11 +19,7 @@ export default function Home() {
           <p className="landing-signature">从业务目标出发，把复杂问题拆成清晰判断，用可落地、可验证的产品方案创造真实价值。</p>
         </div>
         <div className="landing-visual" aria-label="Kaiden 的运动生活照">
-          <div className="landing-orbit orbit-one" aria-hidden="true" />
-          <div className="landing-orbit orbit-two" aria-hidden="true" />
-          <div className="landing-dot dot-one" aria-hidden="true" />
-          <div className="landing-dot dot-two" aria-hidden="true" />
-          <img src="/hero-athletic.png" alt="Kaiden 运动生活照" />
+          <img src="/hero-athletic-outline-trimmed.png" alt="Kaiden 运动生活照" />
         </div>
         <div className="deck-page-no t-caption tnum">01 / 04</div>
       </section>
