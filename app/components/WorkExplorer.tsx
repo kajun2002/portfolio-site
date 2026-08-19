@@ -52,7 +52,8 @@ function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
 
 const companionArtwork: Partial<Record<WorkItem["id"], { src: string; alt: string }>> = {
   sick: { src: "/qqpet-help-treatment.png", alt: "QQ 宠物帮忙治疗图标" },
-  skill: { src: "/qqpet-parachute-penguin.png", alt: "QQ 宠物企鹅形象" },
+  bath: { src: "/qqpet-bath-puff.png", alt: "沐浴球图标" },
+  skill: { src: "/qqpet-intercom.png", alt: "AI 对讲图标" },
 };
 
 export function WorkExplorer() {
@@ -87,7 +88,7 @@ export function WorkExplorer() {
 
         <div className="work-tree" aria-label="实习工作目录">
           <article className="tree-branch activate-branch">
-            <div className="branch-title"><span className="t-overline tnum">01 / Activation</span><h3 className="t-title-2">促活</h3><p className="t-body-sm">沉淀关系资产，提升用户回访</p></div>
+            <div className="branch-title"><span className="t-overline tnum">01 / Activation</span><h3 className="t-title-2">促活：</h3><p className="t-body-sm">提高存量活跃</p></div>
             <div className="branch-content">
               <section className="relationship-group primary-group">
                 <div className="group-label"><strong className="t-title-3">人－人</strong><small>沉淀关系资产，强化彼此感知</small></div>
@@ -112,7 +113,7 @@ export function WorkExplorer() {
           </article>
 
           <article className="tree-branch acquire-branch">
-            <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新</h3><p className="t-body-sm">突破触达边界，拓展新增来源</p></div>
+            <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新：</h3><p className="t-body-sm">拓展新增来源</p></div>
             <div className="branch-content single-branch-content">
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
                 <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p><MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
