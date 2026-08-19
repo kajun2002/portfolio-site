@@ -56,6 +56,90 @@ const companionArtwork: Partial<Record<WorkItem["id"], { src: string; alt: strin
   skill: { src: "/qqpet-intercom.png", alt: "AI 对讲图标" },
 };
 
+const fireConstraints = [
+  ["火花不能轻易获得，否则不会珍惜", "连续互踩 3 天才建立火花"],
+  ["建立过程难以感知", "加入火花「点亮中」状态，从第 1 天起给进度引导"],
+  ["不能静态展示，需持续投入", "火花等级给出成长目标（正向牵引）+「待重燃」形成损失厌恶（负向约束）"],
+  ["但也不能轻易失去，否则用户直接弃坑", "7 天容错窗口，保留恢复机会"],
+];
+
+function FireProjectDetail() {
+  return (
+    <div className="section-shell detail-body fire-case">
+      <h2 className="sr-only">踩踩续火花项目复盘</h2>
+
+      <section className="fire-st-flow" aria-label="从背景到核心判断的产品推导">
+        <article className="fire-stage fire-stage-s">
+          <div className="fire-stage-marker"><b>S</b><span>Background</span></div>
+          <h3 className="t-title-2">背景</h3>
+          <p className="t-body-sm">已有「踩踩」功能承接 QQ 资料卡点赞的轻互动习惯：低成本表达关注，也能外显社交活跃度。</p>
+          <p className="t-body-sm">但它只能回答「我有多受欢迎」，无法回答「我和谁关系更特别」——互动完成即结束，双方没有继续投入的理由。</p>
+        </article>
+
+        <div className="fire-flow-arrow" aria-hidden="true">→</div>
+
+        <article className="fire-stage fire-stage-t">
+          <div className="fire-stage-marker"><b>T</b><span>Core thesis</span></div>
+          <h3 className="t-title-2">核心判断</h3>
+          <p className="t-body"><strong>需要把好友间的零散互动沉淀为社交资产。</strong></p>
+          <p className="t-body-sm fire-force-lead">因为资产一旦形成，会同时产生两种力：</p>
+          <div className="fire-force-model">
+            <div><small>对自己是</small><strong>沉没成本</strong><span>不愿放弃已积累的东西</span></div>
+            <b aria-hidden="true">＋</b>
+            <div><small>对对方是</small><strong>社交压力</strong><span>不能单方面抛弃共同经营的关系</span></div>
+          </div>
+          <div className="fire-force-result"><span aria-hidden="true">↓</span><strong>这两种力共同驱动用户互动回访。</strong></div>
+        </article>
+      </section>
+
+      <section className="fire-actions" aria-labelledby="fire-action-title">
+        <header className="fire-section-heading"><div className="fire-stage-marker"><b>A</b><span>Action</span></div><h3 className="t-title-1" id="fire-action-title">行动</h3></header>
+
+        <article className="fire-mechanism">
+          <div className="fire-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">机制设计：从四项约束反推设计</h4></div>
+          <div className="fire-constraint-table" role="table" aria-label="四项约束与对应设计">
+            <div className="fire-constraint-head" role="row"><strong role="columnheader">约束</strong><span aria-hidden="true">→</span><strong role="columnheader">对应设计</strong></div>
+            {fireConstraints.map(([constraint, design]) => (
+              <div className="fire-constraint-row" role="row" key={constraint}>
+                <span role="cell">{constraint}</span><b aria-hidden="true">→</b><span role="cell">{design}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <div className="fire-action-lower">
+          <article className="fire-perception">
+            <div className="fire-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">关系感知：让资产被看见</h4></div>
+            <div className="fire-perception-map">
+              <div><strong>关系可感知</strong><p className="t-body-sm">互动越频繁，火花等级越高，把持续投入转化为可见的成长进度</p></div>
+              <span aria-hidden="true">＋</span>
+              <div><strong>关系专属化</strong><p className="t-body-sm">多场景统一外显补足 QQ 宠物缺少高频关系展示位的短板；踩踩按钮异化为火花形态，配点亮动效，强化「这段关系与众不同」</p></div>
+            </div>
+          </article>
+
+          <article className="fire-equity">
+            <div className="fire-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">权益绑定：把关系资产变成账户资产</h4></div>
+            <p className="t-body-sm">火花与勋章、宠物打工加成联动，形成闭环：</p>
+            <div className="fire-equity-chain" aria-label="权益激励闭环">
+              <span>持续互动</span><b aria-hidden="true">→</b><span>关系成长</span><b aria-hidden="true">→</b><span>权益解锁</span><b aria-hidden="true">→</b><span>反向激励互动</span>
+            </div>
+            <p className="t-body-sm">让用户动机从短期「打卡」升级为长期「经营」。</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="fire-results" aria-labelledby="fire-result-title">
+        <header className="fire-section-heading"><div className="fire-stage-marker"><b>R</b><span>Result</span></div><h3 className="t-title-1" id="fire-result-title">结果</h3></header>
+        <div className="fire-result-grid">
+          <article className="fire-retention-result"><div className="retention-values"><strong>65%</strong><span aria-hidden="true">→</span><strong>72%</strong></div><b className="result-delta">+7pp</b><p>踩踩次日留存 65% → 72%（+7pp）</p></article>
+          <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p>续火花用户占踩踩用户约 70%</p></article>
+          <article className="fire-frequency-result"><strong>+106.5%</strong><div className="comparison-bars" aria-hidden="true"><i /><i /></div><p>火花关系用户日均踩踩次数比非火花用户高 106.5%</p></article>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export function WorkExplorer() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
@@ -135,7 +219,7 @@ export function WorkExplorer() {
                   </div>
                 </div>
               </div>
-              <div className="section-shell detail-body">
+              {selected.id === "fire" ? <FireProjectDetail /> : <div className="section-shell detail-body">
                 <h2 className="sr-only">{selected.title}项目复盘</h2>
                 <div className="detail-framing">
                   <article><span className="t-overline">Background</span><h3 className="t-title-2">问题背景</h3><p className="t-body-sm">{selected.background}</p></article>
@@ -148,7 +232,7 @@ export function WorkExplorer() {
                   </div>
                 </section>
                 <section className="detail-result"><span className="t-overline">Result / Learning</span><p className="t-body">{selected.result}</p></section>
-              </div>
+              </div>}
             </div>
       )}
     </section>
