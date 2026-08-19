@@ -82,15 +82,15 @@ export function WorkExplorer() {
       {!selected ? <div className="section-shell work-overview">
         <header className="slide-heading">
           <div><span className="t-overline">Work map · QQ 宠物</span><h2 className="t-title-1">从业务目标到产品答案</h2></div>
-          <p className="t-body-sm">围绕 <strong>促活</strong> 与 <strong>拉新</strong> 两条主线，分别经营“人－人”关系、“人－宠物”陪伴，并拓展新增来源。点击项目即可在当前页面展开复盘。</p>
+          <p className="t-body-sm">围绕 QQ 关系链构建与维系目标，以 QQ 宠物为载体，从 <strong>促活</strong> 与 <strong>拉新</strong> 两条主线出发：促活围绕「人—人」与「人—宠物」两层关系提升互动与回访，拉新通过社交裂变拓展新增领养。</p>
         </header>
 
         <div className="work-tree" aria-label="实习工作目录">
           <article className="tree-branch activate-branch">
-            <div className="branch-title"><span className="t-overline tnum">01 / Activation</span><h3 className="t-title-2">促活</h3><p className="t-body-sm">提升关系活跃与用户回访</p></div>
+            <div className="branch-title"><span className="t-overline tnum">01 / Activation</span><h3 className="t-title-2">促活</h3><p className="t-body-sm">沉淀关系资产，提升用户回访</p></div>
             <div className="branch-content">
               <section className="relationship-group primary-group">
-                <div className="group-label"><strong className="t-title-3">人－人</strong></div>
+                <div className="group-label"><strong className="t-title-3">人－人</strong><small>沉淀关系资产，强化彼此感知</small></div>
                 <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => toggleProject(fire.id)} aria-controls="work-detail">
                   <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
                   <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
@@ -98,7 +98,7 @@ export function WorkExplorer() {
                 </button>
               </section>
               <section className="relationship-group companion-group">
-                <div className="group-label"><strong className="t-title-3">人－宠物</strong></div>
+                <div className="group-label"><strong className="t-title-3">人－宠物</strong><small>打造被需要感，加深情感投入</small></div>
                 <div className="companion-nodes">
                   {companion.map((item) => (
                     <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => toggleProject(item.id)} aria-controls="work-detail">
@@ -112,12 +112,11 @@ export function WorkExplorer() {
           </article>
 
           <article className="tree-branch acquire-branch">
-            <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新</h3><p className="t-body-sm">拓展新增领养来源</p></div>
+            <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新</h3><p className="t-body-sm">突破触达边界，拓展新增来源</p></div>
             <div className="branch-content single-branch-content">
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
                 <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p><MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
               </button>
-              <div className="growth-logic" aria-label="增长链路"><span className="t-caption">自然增长放缓</span><b aria-hidden="true">→</b><span className="t-caption">关系链触达</span><b aria-hidden="true">→</b><span className="t-caption">完成领养</span></div>
             </div>
           </article>
         </div>
