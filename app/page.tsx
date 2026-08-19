@@ -87,7 +87,6 @@ export default function Home() {
         <div className="landing-visual" aria-label="Kaiden 的运动生活照">
           <img src="/hero-athletic-outline-v2.png" alt="Kaiden 运动生活照" />
         </div>
-        <div className="deck-page-no t-caption tnum">01 / 04</div>
       </section>
 
       <section className="experience-deck deck-slide section-shell" id="experience">
@@ -133,7 +132,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <div className="deck-page-no t-caption tnum">02 / 04</div>
       </section>
 
       <WorkExplorer />
@@ -150,7 +148,6 @@ export default function Home() {
           <div className="reflection-closing"><strong className="t-body-sm">发现问题</strong><b aria-hidden="true">→</b><strong className="t-body-sm">拆解原因</strong><b aria-hidden="true">→</b><strong className="t-body-sm">明确目标</strong><b aria-hidden="true">→</b><strong className="t-body-sm">评估方案</strong><b aria-hidden="true">→</b><strong className="t-body-sm">验证结果</strong></div>
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
         </div>
-        <div className="deck-page-no section-shell t-caption tnum">04 / 04</div>
       </section>
     </main>
   );

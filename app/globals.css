@@ -94,7 +94,6 @@ img { display:block; max-width:100%; }
 
 .deck-site { position:relative; z-index:1; background:transparent; }
 .deck-slide { position:relative; min-height:calc(100svh - var(--nav-h)); }
-.deck-page-no { position:absolute; right:32px; bottom:16px; text-align:right; color:var(--ink-400); }
 .slide-heading { position:relative; display:grid; gap:var(--sp-3); padding-bottom:var(--sp-6); border-bottom:1px solid var(--border-subtle); }
 .slide-heading::after { content:""; position:absolute; left:0; bottom:-1px; width:128px; height:1px; background:var(--grad-brand); }
 .slide-heading>div { display:grid; gap:var(--sp-3); }
@@ -144,6 +143,11 @@ img { display:block; max-width:100%; }
 .resume-entries article>p { margin-top:var(--sp-1); }.resume-entries article>small { display:block; margin-top:2px; }
 .entry-honors { display:flex; flex-wrap:wrap; gap:var(--sp-1); margin-top:var(--sp-2); }
 .entry-honors span { min-height:24px; padding-inline:8px; }
+.experience-panel .entry-top h3 { font-size:clamp(18px,1.45vw,21px); }
+.experience-panel .entry-top time { font-size:15px; }
+.experience-panel .resume-entries article>p { font-size:17px; }
+.experience-panel .resume-entries article>small { font-size:15px; }
+.experience-panel .entry-honors span { font-size:14px; }
 .featured-entry { position:relative; padding-left:var(--sp-3)!important; }
 .featured-entry::before { content:""; position:absolute; left:0; top:var(--sp-3); bottom:var(--sp-3); width:2px; border-radius:2px; background:var(--grad-brand); }
 
@@ -308,7 +312,7 @@ img { display:block; max-width:100%; }
   .context-inner { min-height:64px; }.context-path { max-width:50%; overflow:hidden; text-overflow:ellipsis; }.context-switcher button:not(.active):not(.collapse-detail) { display:none; }
   .detail-body { padding-block:var(--sp-8) var(--sp-16); }.action-grid { grid-template-columns:1fr; }.action-grid article,.action-grid article:nth-child(n) { grid-column:1 / -1; min-height:auto; }
   .detail-result { grid-template-columns:1fr; gap:var(--sp-2); }.reflection-deck-inner { padding-block:var(--sp-8) var(--sp-16); }.reflection-map { grid-template-columns:1fr; }.reflection-map article,.reflection-map article:nth-child(n) { grid-column:1 / -1; min-height:auto; }
-  .reflection-closing { align-items:flex-start; flex-direction:column; }.reflection-closing b { transform:rotate(90deg); }.deck-footer { margin-top:var(--sp-8); }.deck-page-no { right:20px; }
+  .reflection-closing { align-items:flex-start; flex-direction:column; }.reflection-closing b { transform:rotate(90deg); }.deck-footer { margin-top:var(--sp-8); }
 }
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }

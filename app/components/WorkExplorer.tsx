@@ -121,7 +121,6 @@ export function WorkExplorer() {
             </div>
           </article>
         </div>
-        <div className="deck-page-no t-caption tnum">03 / 04</div>
       </div> : (
             <div className={`work-detail tone-${selected.tone}`} id="work-detail" role="region" aria-label={`${selected.title}项目复盘`}>
               <div className="context-bar">
