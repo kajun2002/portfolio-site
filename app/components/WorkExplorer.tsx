@@ -116,7 +116,9 @@ export function WorkExplorer() {
             <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新：</h3><p className="t-body-sm">拓展新增来源</p></div>
             <div className="branch-content single-branch-content">
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
-                <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p><MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p>
+                <img className="invite-bar-art" src="/qqpet-invite-bar.png" alt="邀请奖励活动栏：限时邀请好友领养并获得奖励" />
+                <MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
               </button>
             </div>
           </article>
