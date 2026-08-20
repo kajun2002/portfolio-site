@@ -140,6 +140,80 @@ function FireProjectDetail() {
   );
 }
 
+const bathSolutions = [
+  [<><strong>进度条与清洁值对应</strong></>, "洗澡过程中即可实时感知清洁值变化"],
+  [<><strong>段数即消耗量</strong>——按所选道具清洁力划分节点（香皂片 10 点／段，浴球 30 点／段）</>, "消耗预期前置到操作之前，开始前即知总成本"],
+  [<><strong>拖拽即时推进</strong>——进度条随手势实时反馈</>, "保留搓澡的过程感与操作乐趣"],
+  [<><strong>达节点方结算</strong>——推至节点才扣除道具并计入清洁值，未达则回退且不消耗</>, "消除误扣顾虑，规则严谨且可回退"],
+];
+
+function BathProjectDetail() {
+  return (
+    <div className="section-shell detail-body bath-case">
+      <h2 className="sr-only">洗澡与一键护理项目复盘</h2>
+      <p className="bath-scope-note t-caption">本节不展开该需求的完整内容，仅聚焦当时遇到的一个核心交互难点。</p>
+
+      <section className="bath-background" aria-labelledby="bath-background-title">
+        <div className="bath-stage-marker"><b>S</b><span>Background</span></div>
+        <div><h3 className="t-title-2" id="bath-background-title">背景</h3><p className="t-body">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p></div>
+      </section>
+
+      <section className="bath-challenge" aria-labelledby="bath-challenge-title">
+        <header className="bath-section-heading"><div className="bath-stage-marker"><b>T</b><span>Core challenge</span></div><h3 className="t-title-1" id="bath-challenge-title">核心难点：连续交互下的消耗不可预期</h3></header>
+
+        <div className="bath-compare" aria-label="离散交互与连续交互对比">
+          <article className="bath-compare-discrete">
+            <span className="bath-compare-label">喂食 · 离散交互</span>
+            <div className="bath-discrete-flow"><span>点击一次</span><b aria-hidden="true">→</b><span>扣除一个饼干</span><b aria-hidden="true">→</b><span>增加 10 点体力</span></div>
+            <p className="t-body-sm">一次操作对应一次结算，用户对成本有天然预期。</p>
+          </article>
+          <div className="bath-vs" aria-hidden="true">VS</div>
+          <article className="bath-compare-continuous">
+            <span className="bath-compare-label">拖拽搓澡 · 连续交互</span>
+            <div className="bath-continuous-line"><span>开始拖拽</span><i /><span>何时结算？</span></div>
+            <p className="t-body-sm">拖拽搓澡不具备这种操作边界，由此产生两个问题：</p>
+            <div className="bath-pain-points">
+              <div><b>01</b><strong>消耗不可预期。</strong><span>用户既无法预判&quot;洗至干净需要多少道具&quot;，也无法感知&quot;拖动到何种程度会扣除一块香皂&quot;。</span></div>
+              <div><b>02</b><strong>心智规则断裂。</strong><span>用户已建立&quot;一次操作 = 一次消耗 = 一次收益&quot;的认知，连续交互打破了这一规则，带来误操作顾虑与消费迟疑。</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div className="bath-rejected" aria-label="两种不成立的直觉方案">
+          <h4 className="t-title-3">而两种直觉方案均不成立：</h4>
+          <article><span>方案 A</span><strong>按时长实时扣除</strong><p className="t-body-sm">时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身即不可解释；</p></article>
+          <article><span>方案 B</span><strong>结束后一次性结算</strong><p className="t-body-sm">过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣。</p></article>
+        </div>
+
+        <blockquote className="bath-core-insight"><small>真正要解决的不是&quot;扣多少&quot;，而是</small><strong>让用户在连续操作中，同时获得过程感与消耗预期</strong></blockquote>
+      </section>
+
+      <section className="bath-solution" aria-labelledby="bath-solution-title">
+        <header className="bath-section-heading"><div className="bath-stage-marker"><b>A</b><span>Action</span></div><div><h3 className="t-title-1" id="bath-solution-title">解法：分段进度条 + 节点结算</h3><p className="t-body-sm">将连续动作离散化，把进度条从展示组件重新定义为<strong>连续交互与离散消耗之间的转译中介</strong>。</p></div></header>
+        <div className="bath-solution-layout">
+          <figure className="bath-demo">
+            <video src="/qqpet-bath-demo.mov" autoPlay muted loop playsInline controls preload="metadata" aria-label="拖拽香皂搓澡与分段进度反馈演示" />
+            <figcaption className="t-caption"><strong>核心概念</strong><span>分段进度条 + 节点结算</span></figcaption>
+          </figure>
+          <div className="bath-solution-map" role="table" aria-label="设计与解决问题的对应关系">
+            <div className="bath-solution-head" role="row"><strong role="columnheader">设计</strong><span aria-hidden="true">→</span><strong role="columnheader">解决的问题</strong></div>
+            {bathSolutions.map(([design, outcome], index) => (
+              <div className="bath-solution-row" role="row" key={index}>
+                <span role="cell">{design}</span><b aria-hidden="true">→</b><span role="cell">{outcome}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bath-result" aria-labelledby="bath-result-title">
+        <div className="bath-stage-marker"><b>R</b><span>Result &amp; learning</span></div>
+        <div><h3 className="t-title-2" id="bath-result-title">结果与沉淀</h3><p className="t-body">本次设计在<strong>保留原有拖拽交互趣味性</strong>的基础上，最大限度对齐了用户的操作预期，优化了连续交互下的消耗感知。</p><p className="t-body">同时也提升了我<strong>从用户体验视角出发、针对交互类需求进行体验优化</strong>的设计能力。</p></div>
+      </section>
+    </div>
+  );
+}
+
 export function WorkExplorer() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
@@ -219,7 +293,7 @@ export function WorkExplorer() {
                   </div>
                 </div>
               </div>
-              {selected.id === "fire" ? <FireProjectDetail /> : <div className="section-shell detail-body">
+              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : <div className="section-shell detail-body">
                 <h2 className="sr-only">{selected.title}项目复盘</h2>
                 <div className="detail-framing">
                   <article><span className="t-overline">Background</span><h3 className="t-title-2">问题背景</h3><p className="t-body-sm">{selected.background}</p></article>
