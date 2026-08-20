@@ -214,6 +214,108 @@ function BathProjectDetail() {
   );
 }
 
+const inviteMechanisms = [
+  ["每成功邀请 1 人即得 50 点券", "即时反馈，降低参与门槛，拉一人是一人"],
+  ["每日上限 3 人", "控制成本与质量"],
+  ["活动限时 3 天", "制造紧迫感，抢在流量退潮前完成验证"],
+];
+
+function InviteProjectDetail() {
+  return (
+    <div className="section-shell detail-body invite-case">
+      <h2 className="sr-only">邀请奖励活动项目复盘</h2>
+
+      <section className="invite-background" aria-labelledby="invite-background-title">
+        <div className="invite-stage-marker"><b>S</b><span>Background</span></div>
+        <div>
+          <h3 className="t-title-2" id="invite-background-title">背景</h3>
+          <p className="t-body">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要开辟可持续的新增来源。</p>
+          <div className="invite-background-flow" aria-label="新增增速变化过程"><span>平台流量驱动</span><b aria-hidden="true">→</b><span>核心流量释放完毕</span><b aria-hidden="true">→</b><strong>自然新增增速明显回落</strong></div>
+        </div>
+      </section>
+
+      <section className="invite-strategy" aria-labelledby="invite-strategy-title">
+        <header className="invite-section-heading"><div className="invite-stage-marker"><b>T</b><span>Strategy</span></div><div><h3 className="t-title-1" id="invite-strategy-title">策略选择：为什么是社交裂变</h3><p className="t-body-sm">当时可选路径有三条：继续争取平台放量、通过内容玩法创新吸引用户、开展社交裂变。</p></div></header>
+        <div className="invite-strategy-compare" aria-label="三条增长路径比较">
+          <article><span className="tnum">01</span><h4 className="t-title-3">继续争取平台放量</h4></article>
+          <article><span className="tnum">02</span><h4 className="t-title-3">通过内容玩法创新吸引用户</h4></article>
+          <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">开展社交裂变</h4><p className="t-body-sm">它借助存量用户的关系链，可触达原本不关注宠物、常规宣发也无法覆盖的人群，<strong>是唯一能突破产品触达边界的手段</strong>；同时复用已有邀请入口与领养链路，是窗口期内最快可验证的方案。</p></article>
+          <div className="invite-strategy-ceiling"><span aria-hidden="true">↳</span><p className="t-body-sm">前两条存在共同的天花板——<strong>触达范围均受限于产品内的既有人群</strong>。</p></div>
+        </div>
+      </section>
+
+      <section className="invite-actions" aria-labelledby="invite-actions-title">
+        <header className="invite-section-heading"><div className="invite-stage-marker"><b>A</b><span>Action</span></div><h3 className="t-title-1" id="invite-actions-title">行动</h3></header>
+
+        <article className="invite-target">
+          <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
+          <div className="invite-target-layout">
+            <div className="invite-target-copy">
+              <div className="invite-north-star"><small>北极星指标</small><strong>邀请渠道带来的新增领养用户数</strong></div>
+              <div className="invite-definition-compare" aria-label="常规做法与有效邀请口径对比">
+                <div><small>部分裂变活动</small><strong>“发送邀请”即计为成功</strong><span>分享、点击均未转化为真实新增</span></div>
+                <b aria-hidden="true">VS</b>
+                <div><small>有效邀请口径</small><strong>受邀好友完成宠物领养</strong><span>确保奖励发放与业务目标严格对齐</span></div>
+              </div>
+              <p className="t-body-sm">部分裂变活动将&quot;发送邀请&quot;即计为成功，但分享、点击均未转化为真实新增。以完成领养作为口径，可确保奖励发放与业务目标严格对齐。</p>
+            </div>
+            <figure className="invite-activity-figure">
+              <img src="/invite-activity.png" alt="邀请奖励活动页面" />
+              <figcaption className="t-caption"><strong>活动页面</strong><span>邀请奖励活动整体形态</span></figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article className="invite-mechanism">
+          <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">机制设计：以参与门槛倒推奖励模型</h4></div>
+          <div className="invite-model-options" aria-label="主流裂变玩法选择"><span>满 N 人发奖</span><span className="chosen">每邀一人即发奖</span><span>阶梯大奖</span></div>
+          <div className="invite-mechanism-reason"><span>口径是“完成领养”</span><b aria-hidden="true">→</b><span>受邀方的转化成本本就较高</span><b aria-hidden="true">→</b><strong>每邀 1 人即得奖</strong></div>
+          <p className="t-body-sm">在主流裂变玩法（满 N 人发奖／每邀一人即发奖／阶梯大奖）中，选择<strong>每邀 1 人即得奖</strong>。</p>
+          <p className="t-body-sm">判断依据：既然口径是&quot;完成领养&quot;，<strong>受邀方的转化成本本就较高</strong>；若再要求邀满 3 人才发奖，参与压力过大、易中途放弃。</p>
+          <div className="invite-mechanism-table" role="table" aria-label="机制与设计意图">
+            <div className="invite-mechanism-head" role="row"><strong role="columnheader">机制</strong><b aria-hidden="true">→</b><strong role="columnheader">设计意图</strong></div>
+            {inviteMechanisms.map(([mechanism, intent]) => <div className="invite-mechanism-row" role="row" key={mechanism}><span role="cell">{mechanism}</span><b aria-hidden="true">→</b><span role="cell">{intent}</span></div>)}
+          </div>
+        </article>
+
+        <article className="invite-mvp">
+          <div className="invite-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">卡点取舍：能力受限下的 MVP 判断</h4></div>
+          <div className="invite-mvp-evolution" aria-label="原方案到落地方案的取舍过程">
+            <figure><span className="invite-figure-label">原方案</span><img src="/invite-mvp-before.png" alt="原方案：奖励邮件呈现好友信息与主页入口" /><figcaption className="t-caption">在奖励邮件中呈现受邀好友信息与主页访问入口</figcaption></figure>
+            <div className="invite-mvp-constraint"><small>遇到约束</small><strong>配置平台不支持该能力</strong><strong>上线窗口仅两天</strong><span aria-hidden="true">→</span></div>
+            <figure><span className="invite-figure-label">落地方案</span><img src="/invite-mvp-after.png" alt="落地方案：好友到来通知和奖励到账通知" /><figcaption className="t-caption">好友到来通知 + 奖励到账通知两条消息</figcaption></figure>
+          </div>
+          <div className="invite-mvp-copy">
+            <p className="t-body-sm"><strong>原方案：</strong>在奖励邮件中呈现受邀好友信息与主页访问入口，使新用户到来后<strong>即刻产生一次熟人互动</strong>。</p>
+            <p className="t-body-sm"><strong>约束：</strong>配置平台不支持该能力，且上线窗口仅两天。</p>
+            <p className="t-body-sm"><strong>取舍：</strong>拆分为「好友到来通知 + 奖励到账通知」两条消息。方案并非最优形态，但在能力受限下<strong>守住了&quot;感知到具体是谁&quot;这一核心目标</strong>，以最小成本抢住流量窗口。</p>
+          </div>
+        </article>
+
+        <article className="invite-risk">
+          <div className="invite-subsection-heading"><b className="tnum">04</b><h4 className="t-title-2">风险前置：主动引入安全评估</h4></div>
+          <p className="t-body">活动涉及点券发放，主动拉通安全中心识别黑灰产风险，并配置有效邀请上限与防刷规则。</p>
+        </article>
+      </section>
+
+      <section className="invite-results" aria-labelledby="invite-results-title">
+        <header className="invite-section-heading"><div className="invite-stage-marker"><b>R</b><span>Result &amp; learning</span></div><h3 className="t-title-1" id="invite-results-title">结果与沉淀</h3></header>
+        <div className="invite-result-visuals" aria-label="邀请活动效果验证">
+          <article><small>邀请入口点击 UV</small><strong>+95.31%</strong></article>
+          <article className="invite-before-after"><small>邀请渠道日均新增领养</small><div><span>1.0 万</span><b aria-hidden="true">→</b><strong>9.7 万</strong></div><em>+861.29%</em></article>
+          <article className="invite-before-after"><small>邀请渠道贡献占比</small><div><span>11.52%</span><b aria-hidden="true">→</b><strong>55.02%</strong></div></article>
+          <article><small>大盘日均新增</small><strong>+101.24%</strong></article>
+        </div>
+        <p className="t-body-sm invite-result-summary">邀请入口点击 UV 提升 <strong>95.31%</strong>；邀请渠道日均新增领养由 1.0 万增至 9.7 万（<strong>+861.29%</strong>），贡献占比由 11.52% 提升至 <strong>55.02%</strong>；带动大盘日均新增提升 <strong>101.24%</strong>，成为本期新增增长的核心来源。</p>
+        <div className="invite-learning-grid">
+          <article><span className="t-overline">能力沉淀</span><p className="t-body-sm">本次需求锻炼了我在<strong>策略选择、MVP 判断与跨部门协同</strong>三方面的能力：能在多条路径中论证取舍依据，能在能力与时间受限时识别&quot;什么必须保、什么可以让&quot;，也能主动前置识别风险并推动协同解决。</p></article>
+          <article className="invite-cognition"><span className="t-overline">认知延伸</span><blockquote>拉新的终点不是量，而是互动。</blockquote><p className="t-body-sm">更重要的是意识到：<strong>拉新的终点不是量，而是互动。</strong> 若邀请而来的是沉默用户，对业务并无价值。因此在活动之后，我推动了好友列表推荐新注册用户等需求，把新增承接到互动场景中——这也是我的工作从拉新自然延伸到促活的原因。</p></article>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export function WorkExplorer() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
@@ -293,7 +395,7 @@ export function WorkExplorer() {
                   </div>
                 </div>
               </div>
-              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : <div className="section-shell detail-body">
+              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
                 <h2 className="sr-only">{selected.title}项目复盘</h2>
                 <div className="detail-framing">
                   <article><span className="t-overline">Background</span><h3 className="t-title-2">问题背景</h3><p className="t-body-sm">{selected.background}</p></article>
