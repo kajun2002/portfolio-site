@@ -179,7 +179,7 @@ export function WorkExplorer() {
                 <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => toggleProject(fire.id)} aria-controls="work-detail">
                   <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
                   <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
-                  <MetricStrip metrics={fire.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                  <MetricStrip metrics={fire.metrics} />
                 </button>
               </section>
               <section className="relationship-group companion-group">
@@ -203,7 +203,7 @@ export function WorkExplorer() {
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
                 <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p>
                 <img className="invite-bar-art" src="/qqpet-invite-bar.png" alt="邀请奖励活动栏：限时邀请好友领养并获得奖励" />
-                <MetricStrip metrics={invite.metrics} /><span className="node-action t-body-sm">展开项目复盘 <b aria-hidden="true">→</b></span>
+                <MetricStrip metrics={invite.metrics} />
               </button>
             </div>
           </article>

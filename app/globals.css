@@ -156,7 +156,7 @@ img { display:block; max-width:100%; }
 .work-tree { display:grid; grid-template-columns:minmax(0,1.62fr) minmax(0,.88fr); gap:var(--sp-4); margin-top:var(--sp-6); }
 .tree-branch { position:relative; min-width:0; display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-1); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .tree-branch::after { content:""; position:absolute; left:12%; right:12%; top:0; height:1px; background:var(--grad-hair); }
-.branch-title { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:baseline; column-gap:var(--sp-3); row-gap:var(--sp-2); padding:var(--sp-6); border-bottom:1px solid var(--border-hairline); }
+.branch-title { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:baseline; column-gap:var(--sp-2); row-gap:var(--sp-2); padding:var(--sp-6); border-bottom:1px solid var(--border-hairline); }
 .branch-title>span { color:var(--brand-500); font-size:var(--fs-overline); font-weight:600; letter-spacing:.14em; }
 .branch-title>span { grid-column:1 / -1; }
 .branch-title small { color:var(--brand-500); font-size:var(--fs-overline); font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
@@ -223,7 +223,7 @@ img { display:block; max-width:100%; }
   .work-overview .slide-heading>div { gap:clamp(8px,calc(8px + (100svh - 720px)*.025),12px); }
   .work-tree { min-height:0; height:100%; gap:var(--work-gap); margin-top:var(--work-gap); }
   .tree-branch { min-height:0; }
-  .branch-title { column-gap:clamp(10px,1vw,16px); row-gap:clamp(5px,.7vh,9px); padding:var(--work-card-y) clamp(18px,1.8vw,26px); }
+  .branch-title { column-gap:clamp(6px,.6vw,9px); row-gap:clamp(5px,.7vh,9px); padding:var(--work-card-y) clamp(18px,1.8vw,26px); }
   .branch-content { min-height:0; gap:var(--work-inner); padding:var(--work-inner); }
   .group-label { min-height:clamp(22px,3vh,28px); margin-bottom:clamp(5px,1vh,10px); }
   .project-node-main { min-height:0; padding:var(--work-card-y) clamp(16px,1.5vw,22px); }
