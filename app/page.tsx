@@ -13,8 +13,20 @@ function isSectionId(value: string): value is SectionId {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<SectionId>("about");
+  const [isWaving, setIsWaving] = useState(false);
   const scrollLockTimer = useRef<number | null>(null);
+  const waveTimer = useRef<number | null>(null);
   const isProgrammaticScroll = useRef(false);
+
+  const triggerWave = useCallback(() => {
+    if (isWaving) return;
+    setIsWaving(true);
+    if (waveTimer.current) window.clearTimeout(waveTimer.current);
+    waveTimer.current = window.setTimeout(() => {
+      setIsWaving(false);
+      waveTimer.current = null;
+    }, 1450);
+  }, [isWaving]);
 
   const updateActiveFromScroll = useCallback(() => {
     if (isProgrammaticScroll.current) return;
@@ -62,6 +74,7 @@ export default function Home() {
     window.addEventListener("hashchange", syncFromLocation);
     return () => {
       if (scrollLockTimer.current) window.clearTimeout(scrollLockTimer.current);
+      if (waveTimer.current) window.clearTimeout(waveTimer.current);
       window.removeEventListener("scroll", updateActiveFromScroll);
       window.removeEventListener("popstate", syncFromLocation);
       window.removeEventListener("hashchange", syncFromLocation);
@@ -84,9 +97,16 @@ export default function Home() {
           </div>
           <p className="landing-signature">从业务目标出发，把复杂问题拆成清晰判断，用可落地、可验证的产品方案创造真实价值。</p>
         </div>
-        <div className="landing-visual" aria-label="Kaiden 的运动生活照">
-          <img src="/hero-athletic-outline-v2.png" alt="Kaiden 运动生活照" />
-        </div>
+        <button
+          type="button"
+          className={`landing-visual${isWaving ? " is-waving" : ""}`}
+          onClick={triggerWave}
+          disabled={isWaving}
+          aria-label={isWaving ? "Kaiden 正在挥手打招呼" : "点击 Kaiden，让他挥手打招呼"}
+        >
+          <img className="hero-ai hero-ai-standing" src="/hero-ai-standing.png" alt="Kaiden 与小狗的 3D 卡通形象" />
+          <img className="hero-ai hero-ai-waving" src="/hero-ai-waving.png" alt="" aria-hidden="true" />
+        </button>
       </section>
 
       <section className="experience-deck deck-slide section-shell" id="experience">
