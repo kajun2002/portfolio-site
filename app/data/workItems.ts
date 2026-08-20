@@ -88,7 +88,7 @@ export const workItems: WorkItem[] = [
     id: "invite",
     level1: "拉新",
     title: "邀请奖励活动",
-    subtitle: "利用存量关系链进行社交裂变，承接自然增长放缓后的新增领养",
+    subtitle: "借助存量关系链裂变，拓展新增领养",
     tone: "blue",
     metrics: [
       { value: "47.45%", label: "活动期新增领养贡献" },
