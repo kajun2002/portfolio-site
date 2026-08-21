@@ -50,6 +50,26 @@ function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
   );
 }
 
+type DetailSectionHeadingProps = {
+  letter: string;
+  english: string;
+  title: string;
+  id?: string;
+  className?: string;
+};
+
+function DetailSectionHeading({ letter, english, title, id, className = "" }: DetailSectionHeadingProps) {
+  return (
+    <header className={`detail-heading${className ? ` ${className}` : ""}`}>
+      <span className="detail-heading-mark" aria-hidden="true">{letter}</span>
+      <div className="detail-heading-copy">
+        <span className="detail-heading-english">{english}</span>
+        <h3 className="detail-heading-title" id={id}>{title}</h3>
+      </div>
+    </header>
+  );
+}
+
 const companionArtwork: Partial<Record<WorkItem["id"], { src: string; alt: string }>> = {
   sick: { src: "/qqpet-help-treatment.png", alt: "QQ 宠物帮忙治疗图标" },
   bath: { src: "/qqpet-bath-puff.png", alt: "沐浴球图标" },
@@ -70,8 +90,7 @@ function FireProjectDetail() {
 
       <section className="fire-st-flow" aria-label="从背景到核心判断的产品推导">
         <article className="fire-stage fire-stage-s">
-          <div className="fire-stage-marker"><b>S</b><span>Background</span></div>
-          <h3 className="t-title-2">背景</h3>
+          <DetailSectionHeading letter="S" english="Background" title="背景" />
           <p className="t-body-sm">已有「踩踩」功能承接 QQ 资料卡点赞的轻互动习惯：低成本表达关注，也能外显社交活跃度。</p>
           <p className="t-body-sm">但它只能回答「我有多受欢迎」，无法回答「我和谁关系更特别」——互动完成即结束，双方没有继续投入的理由。</p>
         </article>
@@ -79,8 +98,7 @@ function FireProjectDetail() {
         <div className="fire-flow-arrow" aria-hidden="true">→</div>
 
         <article className="fire-stage fire-stage-t">
-          <div className="fire-stage-marker"><b>T</b><span>Core thesis</span></div>
-          <h3 className="t-title-2">核心判断</h3>
+          <DetailSectionHeading letter="T" english="Core thesis" title="核心判断" />
           <p className="t-body"><strong>需要把好友间的零散互动沉淀为社交资产。</strong></p>
           <p className="t-body-sm fire-force-lead">因为资产一旦形成，会同时产生两种力：</p>
           <div className="fire-force-model">
@@ -93,7 +111,7 @@ function FireProjectDetail() {
       </section>
 
       <section className="fire-actions" aria-labelledby="fire-action-title">
-        <header className="fire-section-heading"><div className="fire-stage-marker"><b>A</b><span>Action</span></div><h3 className="t-title-1" id="fire-action-title">行动</h3></header>
+        <DetailSectionHeading letter="A" english="Action" title="行动" id="fire-action-title" />
 
         <article className="fire-mechanism">
           <div className="fire-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">机制设计：从四项约束反推设计</h4></div>
@@ -129,7 +147,7 @@ function FireProjectDetail() {
       </section>
 
       <section className="fire-results" aria-labelledby="fire-result-title">
-        <header className="fire-section-heading"><div className="fire-stage-marker"><b>R</b><span>Result</span></div><h3 className="t-title-1" id="fire-result-title">结果</h3></header>
+        <DetailSectionHeading letter="R" english="Result" title="结果" id="fire-result-title" />
         <div className="fire-result-grid">
           <article className="fire-retention-result"><div className="retention-values"><strong>65%</strong><span aria-hidden="true">→</span><strong>72%</strong></div><b className="result-delta">+7pp</b><p>踩踩次日留存 65% → 72%（+7pp）</p></article>
           <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p>续火花用户占踩踩用户约 70%</p></article>
@@ -154,12 +172,12 @@ function BathProjectDetail() {
       <p className="bath-scope-note t-caption">本节不展开该需求的完整内容，仅聚焦当时遇到的一个核心交互难点。</p>
 
       <section className="bath-background" aria-labelledby="bath-background-title">
-        <div className="bath-stage-marker"><b>S</b><span>Background</span></div>
-        <div><h3 className="t-title-2" id="bath-background-title">背景</h3><p className="t-body">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p></div>
+        <DetailSectionHeading letter="S" english="Background" title="背景" id="bath-background-title" />
+        <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p>
       </section>
 
       <section className="bath-challenge" aria-labelledby="bath-challenge-title">
-        <header className="bath-section-heading"><div className="bath-stage-marker"><b>T</b><span>Core challenge</span></div><h3 className="t-title-1" id="bath-challenge-title">核心难点：连续交互下的消耗不可预期</h3></header>
+        <DetailSectionHeading letter="T" english="Core challenge" title="核心难点：连续交互下的消耗不可预期" id="bath-challenge-title" />
 
         <div className="bath-compare" aria-label="离散交互与连续交互对比">
           <article className="bath-compare-discrete">
@@ -189,7 +207,8 @@ function BathProjectDetail() {
       </section>
 
       <section className="bath-solution" aria-labelledby="bath-solution-title">
-        <header className="bath-section-heading"><div className="bath-stage-marker"><b>A</b><span>Action</span></div><div><h3 className="t-title-1" id="bath-solution-title">解法：分段进度条 + 节点结算</h3><p className="t-body-sm">将连续动作离散化，把进度条从展示组件重新定义为<strong>连续交互与离散消耗之间的转译中介</strong>。</p></div></header>
+        <DetailSectionHeading letter="A" english="Action" title="解法：分段进度条 + 节点结算" id="bath-solution-title" />
+        <p className="t-body-sm bath-solution-intro">将连续动作离散化，把进度条从展示组件重新定义为<strong>连续交互与离散消耗之间的转译中介</strong>。</p>
         <div className="bath-solution-layout">
           <figure className="bath-demo">
             <video src="/qqpet-bath-demo.mov" autoPlay muted loop playsInline controls preload="metadata" aria-label="拖拽香皂搓澡与分段进度反馈演示" />
@@ -207,8 +226,8 @@ function BathProjectDetail() {
       </section>
 
       <section className="bath-result" aria-labelledby="bath-result-title">
-        <div className="bath-stage-marker"><b>R</b><span>Result &amp; learning</span></div>
-        <div><h3 className="t-title-2" id="bath-result-title">结果与沉淀</h3><p className="t-body">本次设计在<strong>保留原有拖拽交互趣味性</strong>的基础上，最大限度对齐了用户的操作预期，优化了连续交互下的消耗感知。</p><p className="t-body">同时也提升了我<strong>从用户体验视角出发、针对交互类需求进行体验优化</strong>的设计能力。</p></div>
+        <DetailSectionHeading letter="R" english="Result & learning" title="结果与沉淀" id="bath-result-title" />
+        <div className="bath-result-copy"><p className="t-body">本次设计在<strong>保留原有拖拽交互趣味性</strong>的基础上，最大限度对齐了用户的操作预期，优化了连续交互下的消耗感知。</p><p className="t-body">同时也提升了我<strong>从用户体验视角出发、针对交互类需求进行体验优化</strong>的设计能力。</p></div>
       </section>
     </div>
   );
@@ -226,16 +245,16 @@ function InviteProjectDetail() {
       <h2 className="sr-only">邀请奖励活动项目复盘</h2>
 
       <section className="invite-background" aria-labelledby="invite-background-title">
-        <div className="invite-stage-marker"><b>S</b><span>Background</span></div>
+        <DetailSectionHeading letter="S" english="Background" title="背景" id="invite-background-title" />
         <div>
-          <h3 className="t-title-2" id="invite-background-title">背景</h3>
           <p className="t-body">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要开辟可持续的新增来源。</p>
           <div className="invite-background-flow" aria-label="新增增速变化过程"><span>平台流量驱动</span><b aria-hidden="true">→</b><span>核心流量释放完毕</span><b aria-hidden="true">→</b><strong>自然新增增速明显回落</strong></div>
         </div>
       </section>
 
       <section className="invite-strategy" aria-labelledby="invite-strategy-title">
-        <header className="invite-section-heading"><div className="invite-stage-marker"><b>T</b><span>Strategy</span></div><div><h3 className="t-title-1" id="invite-strategy-title">策略选择：为什么是社交裂变</h3><p className="t-body-sm">当时可选路径有三条：继续争取平台放量、通过内容玩法创新吸引用户、开展社交裂变。</p></div></header>
+        <DetailSectionHeading letter="T" english="Strategy" title="策略选择：为什么是社交裂变" id="invite-strategy-title" />
+        <p className="t-body-sm invite-section-intro">当时可选路径有三条：继续争取平台放量、通过内容玩法创新吸引用户、开展社交裂变。</p>
         <div className="invite-strategy-compare" aria-label="三条增长路径比较">
           <article><span className="tnum">01</span><h4 className="t-title-3">继续争取平台放量</h4></article>
           <article><span className="tnum">02</span><h4 className="t-title-3">通过内容玩法创新吸引用户</h4></article>
@@ -245,7 +264,7 @@ function InviteProjectDetail() {
       </section>
 
       <section className="invite-actions" aria-labelledby="invite-actions-title">
-        <header className="invite-section-heading"><div className="invite-stage-marker"><b>A</b><span>Action</span></div><h3 className="t-title-1" id="invite-actions-title">行动</h3></header>
+        <DetailSectionHeading letter="A" english="Action" title="行动" id="invite-actions-title" />
 
         <article className="invite-target">
           <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
@@ -299,7 +318,7 @@ function InviteProjectDetail() {
       </section>
 
       <section className="invite-results" aria-labelledby="invite-results-title">
-        <header className="invite-section-heading"><div className="invite-stage-marker"><b>R</b><span>Result &amp; learning</span></div><h3 className="t-title-1" id="invite-results-title">结果与沉淀</h3></header>
+        <DetailSectionHeading letter="R" english="Result & learning" title="结果与沉淀" id="invite-results-title" />
         <div className="invite-result-visuals" aria-label="邀请活动效果验证">
           <article><small>邀请入口点击 UV</small><strong>+95.31%</strong></article>
           <article className="invite-before-after"><small>邀请渠道日均新增领养</small><div><span>1.0 万</span><b aria-hidden="true">→</b><strong>9.7 万</strong></div><em>+861.29%</em></article>
@@ -398,16 +417,16 @@ export function WorkExplorer() {
               {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
                 <h2 className="sr-only">{selected.title}项目复盘</h2>
                 <div className="detail-framing">
-                  <article><span className="t-overline">Background</span><h3 className="t-title-2">问题背景</h3><p className="t-body-sm">{selected.background}</p></article>
-                  <article className="thesis-card"><span className="t-overline">Core thesis</span><h3 className="t-title-2">核心判断</h3><p className="t-body">{selected.thesis}</p></article>
+                  <article><DetailSectionHeading letter="S" english="Background" title="问题背景" /><p className="t-body-sm">{selected.background}</p></article>
+                  <article className="thesis-card"><DetailSectionHeading letter="T" english="Core thesis" title="核心判断" /><p className="t-body">{selected.thesis}</p></article>
                 </div>
                 <section className="detail-actions">
-                  <div className="detail-section-title"><span className="t-overline">Action</span><h3 className="t-title-1">产品推导与核心方案</h3></div>
+                  <DetailSectionHeading letter="A" english="Action" title="产品推导与核心方案" />
                   <div className="action-grid">
                     {selected.sections.map((section, index) => <article key={section.title}><b className="tnum">{String(index + 1).padStart(2, "0")}</b><h4 className="t-title-3">{section.title}</h4><p className="t-body-sm">{section.body}</p></article>)}
                   </div>
                 </section>
-                <section className="detail-result"><span className="t-overline">Result / Learning</span><p className="t-body">{selected.result}</p></section>
+                <section className="detail-result"><DetailSectionHeading letter="R" english="Result / Learning" title="结果与沉淀" /><p className="t-body">{selected.result}</p></section>
               </div>}
             </div>
       )}
