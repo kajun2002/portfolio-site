@@ -193,6 +193,72 @@ const bathSolutions = [
   [<><strong>达节点方结算</strong>——推至节点才扣除道具并计入清洁值，未达则回退且不消耗</>, "消除误扣顾虑，规则严谨且可回退"],
 ];
 
+function SicknessProjectDetail() {
+  return (
+    <div className="section-shell detail-body sickness-case">
+      <h2 className="sr-only">生病机制项目复盘</h2>
+
+      <section className="sickness-st-flow" aria-label="从背景到核心作用的产品推导">
+        <article className="sickness-stage sickness-stage-s">
+          <DetailSectionHeading letter="S" english="Background" title="背景" />
+          <p className="t-body">养成玩法缺少「不照顾会有代价」的负向激励，宠物状态始终稳定，用户缺少必须回来的理由。</p>
+        </article>
+
+        <div className="sickness-flow-arrow" aria-hidden="true">→</div>
+
+        <article className="sickness-stage sickness-stage-t">
+          <DetailSectionHeading letter="T" english="Core role" title="核心作用" />
+          <p className="t-body">通过生病状态强化宠物的被需要感，以负向激励驱动用户定期回访照顾。</p>
+          <p className="t-body">同时把生病这一负向状态，转化为社交互动与流失召回的触点。</p>
+        </article>
+      </section>
+
+      <section className="sickness-actions" aria-labelledby="sickness-action-title">
+        <DetailSectionHeading letter="A" english="Action" title="两个核心设计" id="sickness-action-title" />
+        <div className="sickness-action-grid">
+          <article className="sickness-action-card">
+            <div className="sickness-action-heading">
+              <b className="tnum">01</b>
+              <h4 className="t-title-2">帮好友治疗：把负向状态转化为社交互动</h4>
+            </div>
+            <p className="t-body-sm">推动「帮好友治疗」功能上线，好友可为生病宠物提供治疗，形成「发现—帮助—回访致谢」的互动闭环，让生病不只是个人负担，也成为好友间的互动理由。</p>
+            <div className="sickness-action-loop" aria-label="好友治疗互动闭环">
+              <span>发现</span><b aria-hidden="true">→</b><span>帮助</span><b aria-hidden="true">→</b><span>回访致谢</span>
+            </div>
+            <figure className="sickness-action-media">
+              <img src="/sickness-help-treatment.png" alt="QQ 宠物帮好友治疗页面" />
+              <figcaption className="t-caption">帮忙治疗页面：好友可直接为生病宠物提供治疗</figcaption>
+            </figure>
+          </article>
+
+          <article className="sickness-action-card">
+            <div className="sickness-action-heading">
+              <b className="tnum">02</b>
+              <h4 className="t-title-2">情感化召回：把流失回归转化为情感重逢</h4>
+            </div>
+            <p className="t-body-sm">原方案中，流失用户回归后宠物已被系统自动治愈，是一次冷处理的结果通知。重构为主人回归后共同参与康复过程，接入「治疗中」状态与动效，把一次高价值召回触点转化为情感重逢，而非一条已完成的系统消息。</p>
+            <div className="sickness-recall-shift" aria-label="从冷处理到情感重逢的方案转变">
+              <span>系统自动治愈</span><b aria-hidden="true">→</b><strong>主人共同参与康复</strong>
+            </div>
+            <figure className="sickness-action-media">
+              <img src="/sickness-return-recovery.png" alt="回归用户与宠物共同康复时的自愈气泡" />
+              <figcaption className="t-caption">回归用户自愈气泡：把系统结果通知转化为情感重逢</figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section className="sickness-results" aria-labelledby="sickness-result-title">
+        <DetailSectionHeading letter="R" english="Result" title="结果" id="sickness-result-title" />
+        <p className="t-body">在原有养成链路中补齐了负向激励环节，并使宠物的负向状态同时承接照顾动机、好友互动与流失召回三重作用。</p>
+        <div className="sickness-result-chain" aria-label="生病机制承接的三重作用">
+          <span>照顾动机</span><b aria-hidden="true">＋</b><span>好友互动</span><b aria-hidden="true">＋</b><span>流失召回</span>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function BathProjectDetail() {
   return (
     <div className="section-shell detail-body bath-case">
@@ -442,7 +508,7 @@ export function WorkExplorer() {
                   </div>
                 </div>
               </div>
-              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
+              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
                 <h2 className="sr-only">{selected.title}项目复盘</h2>
                 <div className="detail-framing">
                   <article><DetailSectionHeading letter="S" english="Background" title="问题背景" /><p className="t-body-sm">{selected.background}</p></article>
