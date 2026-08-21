@@ -312,14 +312,23 @@ img { display:block; max-width:100%; }
 .fire-constraint-row>span { display:flex; min-height:64px; align-items:center; padding:var(--sp-3) var(--sp-4); color:var(--ink-700); font-size:var(--fs-body-sm); line-height:1.5; }
 .fire-constraint-row>span:first-child { background:rgba(255,255,255,.38); }
 .fire-constraint-row>b,.fire-constraint-head>span { color:var(--tone); text-align:center; }
-.fire-action-lower { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:var(--sp-4); margin-top:var(--sp-4); }
+.fire-mechanism-figure { display:grid; gap:var(--sp-2); margin-top:var(--sp-5); }
+.fire-mechanism-figure img { display:block; width:100%; max-height:480px; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.66); }
+.fire-mechanism-figure figcaption,.fire-perception-media figcaption,.fire-equity-figure figcaption { color:var(--ink-500); text-align:center; }
+.fire-action-lower { display:grid; grid-template-columns:1fr; gap:var(--sp-4); margin-top:var(--sp-4); }
 .fire-perception-map { display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:var(--sp-2); }
-.fire-perception-map>div { padding:var(--sp-4); border:1px solid var(--border-hairline); border-radius:var(--r-sm); background:rgba(255,255,255,.56); }
+.fire-perception-map>div { display:flex; min-width:0; flex-direction:column; padding:var(--sp-4); border:1px solid var(--border-hairline); border-radius:var(--r-sm); background:rgba(255,255,255,.56); }
 .fire-perception-map>div>strong { color:var(--ink-800); font-size:var(--fs-title-3); }.fire-perception-map>div>p { margin-top:var(--sp-2); }
 .fire-perception-map>span { align-self:center; color:var(--tone); font-size:24px; }
-.fire-equity>p { margin-top:var(--sp-3); }
+.fire-perception-media { display:grid; flex:1; align-content:end; gap:var(--sp-2); margin-top:var(--sp-4); }
+.fire-perception-media img,.fire-perception-media video { display:block; width:100%; height:360px; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.74); box-shadow:var(--shadow-soft); }
+.fire-perception-media video { cursor:pointer; }
+.fire-equity-layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(260px,.52fr); align-items:center; gap:var(--sp-5); }
+.fire-equity-copy>p { margin-top:var(--sp-3); }
 .fire-equity-chain { display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2); margin-top:var(--sp-4); }
 .fire-equity-chain span { padding:8px 11px; border:1px solid var(--tone-line); border-radius:999px; color:var(--ink-700); background:var(--tone-soft); font-size:var(--fs-caption); font-weight:600; }.fire-equity-chain b { color:var(--tone); }
+.fire-equity-figure { display:grid; gap:var(--sp-2); }
+.fire-equity-figure img { display:block; width:100%; max-height:380px; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.68); box-shadow:var(--shadow-soft); }
 .fire-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-4); }
 .fire-result-grid article { display:flex; min-height:180px; flex-direction:column; justify-content:center; padding:var(--sp-5); }
 .fire-result-grid article>p { margin-top:var(--sp-3); color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.5; }
@@ -438,6 +447,8 @@ img { display:block; max-width:100%; }
   .fire-case { padding-block:var(--sp-6) var(--sp-16); }.fire-stage,.fire-mechanism,.fire-perception,.fire-equity { padding:var(--sp-5); }
   .fire-constraint-head,.fire-constraint-row { grid-template-columns:1fr; }.fire-constraint-head>span,.fire-constraint-row>b { padding:4px; transform:rotate(90deg); }.fire-constraint-head>strong { text-align:center; }
   .fire-perception-map { grid-template-columns:1fr; }.fire-perception-map>span { justify-self:center; }
+  .fire-perception-media img,.fire-perception-media video { height:auto; max-height:520px; }
+  .fire-equity-layout { grid-template-columns:1fr; }
   .reflection-closing { align-items:flex-start; flex-direction:column; }.reflection-closing b { transform:rotate(90deg); }.deck-footer { margin-top:var(--sp-8); }
 }
 @media (prefers-reduced-motion:reduce) {

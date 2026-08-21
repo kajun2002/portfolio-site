@@ -123,25 +123,53 @@ function FireProjectDetail() {
               </div>
             ))}
           </div>
+          <figure className="fire-mechanism-figure">
+            <img src="/fire-stages-and-levels.png" alt="火花从点亮、成长到待重燃的阶段与分级设计" />
+            <figcaption className="t-caption">火花阶段与分级：由关系建立、成长到维护，承接四项约束的完整机制</figcaption>
+          </figure>
         </article>
 
         <div className="fire-action-lower">
           <article className="fire-perception">
             <div className="fire-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">关系感知：让资产被看见</h4></div>
             <div className="fire-perception-map">
-              <div><strong>关系可感知</strong><p className="t-body-sm">互动越频繁，火花等级越高，把持续投入转化为可见的成长进度</p></div>
+              <div className="fire-perception-item">
+                <strong>关系可感知</strong>
+                <p className="t-body-sm">互动越频繁，火花等级越高，把持续投入转化为可见的成长进度</p>
+                <figure className="fire-perception-media">
+                  <img src="/fire-relationship-card.jpg" alt="展示互踩天数与好友关系的火花分享卡" />
+                  <figcaption className="t-caption">将互动时长转化为可展示的关系成果</figcaption>
+                </figure>
+              </div>
               <span aria-hidden="true">＋</span>
-              <div><strong>关系专属化</strong><p className="t-body-sm">多场景统一外显补足 QQ 宠物缺少高频关系展示位的短板；踩踩按钮异化为火花形态，配点亮动效，强化「这段关系与众不同」</p></div>
+              <div className="fire-perception-item">
+                <strong>关系专属化</strong>
+                <p className="t-body-sm">多场景统一外显补足 QQ 宠物缺少高频关系展示位的短板；踩踩按钮异化为火花形态，配点亮动效，强化「这段关系与众不同」</p>
+                <figure className="fire-perception-media">
+                  <video src="/fire-exclusive-animation.mov" controls preload="metadata" playsInline aria-label="火花关系专属动效演示">
+                    当前浏览器不支持视频播放。
+                  </video>
+                  <figcaption className="t-caption">点击播放：火花状态与专属交互动效</figcaption>
+                </figure>
+              </div>
             </div>
           </article>
 
           <article className="fire-equity">
             <div className="fire-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">权益绑定：把关系资产变成账户资产</h4></div>
-            <p className="t-body-sm">火花与勋章、宠物打工加成联动，形成闭环：</p>
-            <div className="fire-equity-chain" aria-label="权益激励闭环">
-              <span>持续互动</span><b aria-hidden="true">→</b><span>关系成长</span><b aria-hidden="true">→</b><span>权益解锁</span><b aria-hidden="true">→</b><span>反向激励互动</span>
+            <div className="fire-equity-layout">
+              <div className="fire-equity-copy">
+                <p className="t-body-sm">火花与勋章、宠物打工加成联动，形成闭环：</p>
+                <div className="fire-equity-chain" aria-label="权益激励闭环">
+                  <span>持续互动</span><b aria-hidden="true">→</b><span>关系成长</span><b aria-hidden="true">→</b><span>权益解锁</span><b aria-hidden="true">→</b><span>反向激励互动</span>
+                </div>
+                <p className="t-body-sm">让用户动机从短期「打卡」升级为长期「经营」。</p>
+              </div>
+              <figure className="fire-equity-figure">
+                <img src="/fire-medal.jpg" alt="续火花满七天后获得的火花勋章" />
+                <figcaption className="t-caption">关系成长后解锁火花勋章</figcaption>
+              </figure>
             </div>
-            <p className="t-body-sm">让用户动机从短期「打卡」升级为长期「经营」。</p>
           </article>
         </div>
       </section>
