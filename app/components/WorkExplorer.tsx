@@ -93,6 +93,9 @@ function FireProjectDetail() {
           <DetailSectionHeading letter="S" english="Background" title="背景" />
           <p className="t-body-sm">已有「踩踩」功能承接 QQ 资料卡点赞的轻互动习惯：低成本表达关注，也能外显社交活跃度。</p>
           <p className="t-body-sm">但它只能回答「我有多受欢迎」，无法回答「我和谁关系更特别」——互动完成即结束，双方没有继续投入的理由。</p>
+          <figure className="fire-background-figure">
+            <img src="/fire-behavior-migration.png" alt="从 QQ 资料卡点赞到 QQ 宠物踩踩的轻互动行为迁移示意图" />
+          </figure>
         </article>
 
         <div className="fire-flow-arrow" aria-hidden="true">→</div>
