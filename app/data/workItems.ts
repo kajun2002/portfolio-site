@@ -4,7 +4,7 @@ export type WorkItem = {
   level2?: "人－人" | "人－宠物";
   title: string;
   subtitle: string;
-  tone: "orange" | "aqua" | "violet" | "blue";
+  tone: "orange" | "green" | "blue";
   metrics: { value: string; label: string }[];
   background: string;
   thesis: string;
@@ -39,7 +39,7 @@ export const workItems: WorkItem[] = [
     level2: "人－宠物",
     title: "生病机制",
     subtitle: "负向激励唤起照顾责任与回访",
-    tone: "aqua",
+    tone: "green",
     metrics: [{ value: "惩罚 → 陪伴", label: "机制叙事转向" }],
     background: "养成玩法缺少「不照顾会有代价」的负向激励，宠物状态始终稳定，用户缺少必须回来的理由。",
     thesis: "通过生病状态强化宠物的被需要感，以负向激励驱动用户定期回访照顾。同时把生病这一负向状态，转化为社交互动与流失召回的触点。",
@@ -55,7 +55,7 @@ export const workItems: WorkItem[] = [
     level2: "人－宠物",
     title: "洗澡与一键护理",
     subtitle: "保留拖拽乐趣，同时让消耗可预期",
-    tone: "aqua",
+    tone: "green",
     metrics: [{ value: "连续 → 离散", label: "交互反馈翻译" }],
     background: "拖拽洗澡具有过程感，但连续操作让用户难以判断清洁进度与道具消耗；同时，道具层次单一、免费补满也限制了玩法扩展。",
     thesis: "核心矛盾是“过程要可玩”与“结果要确定”，不能为了规则清晰而牺牲互动乐趣。",
@@ -72,7 +72,7 @@ export const workItems: WorkItem[] = [
     level2: "人－宠物",
     title: "AI 对讲 Skill",
     subtitle: "话题玩法让陪伴更有活感",
-    tone: "violet",
+    tone: "green",
     metrics: [{ value: "模型 × Skill × Eval", label: "完整 AI 产品链路" }],
     background: "宠物对讲容易停留在“打招呼—闲聊—退出”的浅层循环：用户不知道聊什么，回复又可能出现语气越界、重复和前后矛盾。",
     thesis: "宠物 AI 不需要比通用助手更工具化；核心是性格稳定、互动有趣，并让边界本身也符合宠物人设。",
