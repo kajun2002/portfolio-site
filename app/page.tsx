@@ -158,14 +158,71 @@ export default function Home() {
 
       <section className="reflection-deck deck-slide" id="reflection">
         <div className="section-shell reflection-deck-inner">
-          <header className="slide-heading"><div><span className="t-overline">Reflection</span><h2 className="t-title-1">经验沉淀与思考</h2></div><p className="t-body-sm">把项目经验沉淀成可复用的产品判断，而不是一次性的执行动作。</p></header>
-          <div className="reflection-map">
-            <article><span className="t-overline tnum">01</span><h3 className="t-title-2">问题定义</h3><p className="t-body-sm">从业务目标向下拆解，先找到真正影响目标的核心矛盾，再设计可执行、可验证的产品答案。</p></article>
-            <article><span className="t-overline tnum">02</span><h3 className="t-title-2">方案取舍</h3><p className="t-body-sm">综合用户价值、业务收益与实现成本给出判断；资源受限时，以 MVP 守住最关键的用户价值。</p></article>
-            <article><span className="t-overline tnum">03</span><h3 className="t-title-2">体验设计</h3><p className="t-body-sm">从用户连续行为与情绪体验出发，让规则、反馈和产品调性形成一致的体验表达。</p></article>
-            <article><span className="t-overline tnum">04</span><h3 className="t-title-2">AI 产品</h3><p className="t-body-sm">AI 能力不止是 Prompt，而是模型选择、业务评测、玩法设计与持续迭代的完整链路。</p></article>
+          <header className="slide-heading reflection-heading">
+            <div><span className="t-overline">Reflection</span><h2 className="t-title-1">经验沉淀与思考</h2></div>
+          </header>
+
+          <div className="reflection-groups">
+            <section className="reflection-group" aria-labelledby="reflection-experience-title">
+              <header className="reflection-group-head">
+                <span className="t-overline tnum">01 / EXPERIENCE</span>
+                <h3 id="reflection-experience-title" className="t-title-2">经验沉淀</h3>
+              </header>
+              <div className="reflection-list">
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>建立完整的需求闭环认知</h4></div>
+                  <p>实习中我完整跑通了需求从 0-1 的全过程：用户需求洞察 → PRD 撰写 → 设计、开发对接 → 上线验收 → 数据复盘与迭代。</p>
+                </article>
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，能够推动项目完整落地</h4></div>
+                  <p>实习期间作为需求 owner 独立负责邀请奖励活动一、二期，洗澡交互形式的确定，以及踩踩续火花的多期优化。过程中需要持续判断优先级与做 MVP 取舍——例如邀请活动中的活动页信息展示优先级；原方案受配置平台能力限制且仅有两天上线窗口，我将其拆分为两条消息，在守住「感知到具体是谁」这一核心目标的前提下抢住了流量窗口。</p>
+                </article>
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4></div>
+                  <p className="reflection-key">产品在协作中的职责，是明确目标与边界，并在成本、排期与体验之间给出判断。</p>
+                  <p className="reflection-support">与设计、开发对接时，我更清楚产品侧应该输出什么、把守哪条边界。同时也建立了风险前置意识——邀请奖励活动涉及点券发放与黑灰产风险，我主动拉通安全同学对齐并配置防刷规则，而不是等问题出现后被动响应。</p>
+                </article>
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4></div>
+                  <p className="reflection-key">把 AI 从「辅助表达」用成「个人工作系统」。</p>
+                  <p className="reflection-support">我用 AI 生成 HTML 原型、概念视觉图与简易 Demo，以更低成本支撑方案表达与前期沟通。更重要的是把高频工作沉淀为可复用方法——整理了数据埋点上报 skill、需求文档 skill，将标准流程、注意事项与 AI 易错点固化下来，提高效率。</p>
+                </article>
+              </div>
+            </section>
+
+            <section className="reflection-group reflection-thinking" aria-labelledby="reflection-thinking-title">
+              <header className="reflection-group-head">
+                <span className="t-overline tnum">02 / THINKING</span>
+                <h3 id="reflection-thinking-title" className="t-title-2">产品思考</h3>
+              </header>
+              <div className="reflection-list">
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>给结论必须带损益权衡，而非主观偏好</h4></div>
+                  <p>产品判断不是仅仅提出问题和想法，而是<strong>在用户价值、业务目标与实现成本之间做阶段性取舍</strong>——如何在众多方案中选出最合适的一个，以及它的优点与局限是什么、能不能做、怎么做。</p>
+                  <p className="reflection-support">火花需求中，我曾提出参考抖音增加「点亮中」状态。复盘后意识到，「加一个状态」本身很简单，但<strong>为什么加、怎么加（在不打扰、不产生社交压力的同时完成建立引导）</strong>才是产品需要重点考虑的。产品需要清楚背后的逻辑是什么、要有自己的思考，而不是停留在执行层面。</p>
+                </article>
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4></div>
+                  <p className="reflection-key">AI 帮我表达得更快，不能替我想清楚。</p>
+                  <p className="reflection-support">需求背后的业务背景、用户路径、功能边界与状态流转，最了解的人只能是自己。过度依赖 AI 最典型的失败形态是「文档看似完整，但核心逻辑不闭环」——正常流程写得漂亮，异常路径缺失、状态流转有断点。</p>
+                  <p>因此我的顺序是：先自己明确业务目标、用户路径与问题边界，再交给 AI 做结构与表达优化。</p>
+                </article>
+                <article className="reflection-item">
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4></div>
+                  <p className="reflection-key">做完不等于结束，能否复用才决定成长速度。</p>
+                  <p className="reflection-support">我的复盘围绕几个固定问题：前期问题定义是否清楚、评审是否出现反复沟通（意味着前置对齐不足）、开发阶段是否有信息缺失、上线数据是否符合预期、卡点能否通过流程或文档规范避免。</p>
+                  <p className="reflection-support">同时把工作显性化：需求文档、评审结论、数据口径、进度与阻塞点统一整理并及时同步。协作方只有清楚当前结论与下一步动作，需求才能顺畅推进。</p>
+                </article>
+              </div>
+            </section>
           </div>
-          <div className="reflection-closing"><strong className="t-body-sm">发现问题</strong><b aria-hidden="true">→</b><strong className="t-body-sm">拆解原因</strong><b aria-hidden="true">→</b><strong className="t-body-sm">明确目标</strong><b aria-hidden="true">→</b><strong className="t-body-sm">评估方案</strong><b aria-hidden="true">→</b><strong className="t-body-sm">验证结果</strong></div>
+
+          <section className="reflection-finale" aria-labelledby="reflection-finale-title">
+            <span className="t-overline">收口</span>
+            <p>这段实习让我从基础执行，逐步建立起产品闭环意识、跨团队协作能力、工具提效能力与复盘沉淀习惯。</p>
+            <h3 id="reflection-finale-title">从「能完成分配的需求」，到「能定义问题、论证路径、推动落地并判断下一步」。</h3>
+            <p>后续我希望继续提升业务理解、产品判断与复杂需求推进能力。</p>
+          </section>
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
         </div>
       </section>
