@@ -350,6 +350,52 @@ const inviteMechanisms = [
   ["活动限时 3 天", "制造紧迫感，抢在流量退潮前完成验证"],
 ];
 
+function SkillProjectDetail() {
+  return (
+    <div className="section-shell detail-body skill-case">
+      <h2 className="sr-only">AI 对讲 Skill 项目复盘</h2>
+
+      <section className="skill-background" aria-labelledby="skill-background-title">
+        <DetailSectionHeading letter="S" english="Background" title="背景" id="skill-background-title" />
+        <p className="t-body">用户与宠物的对话停留在<strong>「打招呼—闲聊—退出」</strong>的浅层循环，缺少话题钩子与持续互动动机。而传统指令式 Prompt 使用门槛偏高，普通用户既不易理解，也难以持续使用。</p>
+      </section>
+
+      <section className="skill-thesis" aria-labelledby="skill-thesis-title">
+        <DetailSectionHeading letter="T" english="Core thesis" title="核心判断" id="skill-thesis-title" />
+        <blockquote className="skill-core-insight">
+          宠物不同于工具型 AI——它不需要更「聪明」，而是要<strong>更有活感、有趣味、有话题</strong>。因此关键不在于提升模型能力，而在于用一套可承载性格与话题的机制，<strong>替代用户直接书写 Prompt</strong>。
+        </blockquote>
+      </section>
+
+      <section className="skill-actions" aria-labelledby="skill-actions-title">
+        <DetailSectionHeading letter="A" english="Action" title="行动" id="skill-actions-title" />
+
+        <article className="skill-action-card">
+          <div className="skill-action-head">
+            <b className="tnum">01</b>
+            <h4 className="t-title-3">玩法设计：从市场调研到宠物场景落地</h4>
+          </div>
+          <p className="t-body-sm">前期调研市面上的主流 Skill 玩法，以<strong>是否契合宠物人设、是否具备话题延展性、是否有可分享产物</strong>为筛选标准，收敛出适合宠物场景的方向，并开发落地<strong>「宠物答案书」「图片评论家」</strong>等 Skill。</p>
+        </article>
+
+        <article className="skill-action-card">
+          <div className="skill-action-head">
+            <b className="tnum">02</b>
+            <h4 className="t-title-3">评测体系：让约束可被验证</h4>
+          </div>
+          <p className="t-body-sm skill-action-lead">核心认知是——<strong>约束不能只写在 Prompt 里，必须下沉为可执行的评测 case</strong>，否则无法判断它是否真的生效。</p>
+          <p className="t-body-sm">因此基于宠物业务自建评测集，覆盖性格表现、指令遵循、信息补全等维度，并区分正向约束与负向约束；在 eval 平台设计技能能力指标（含负向拒答验证）与路由边界指标，依据评测结果定位缺陷并驱动迭代。</p>
+        </article>
+      </section>
+
+      <section className="skill-result" aria-labelledby="skill-result-title">
+        <DetailSectionHeading letter="R" english="Result & learning" title="结果与沉淀" id="skill-result-title" />
+        <p className="t-body">将<strong>「Skill 调研 → 开发 → 评测 → 迭代」</strong>沉淀为可复用链路，可迁移至其他 AI 技能场景。</p>
+      </section>
+    </div>
+  );
+}
+
 function InviteProjectDetail() {
   return (
     <div className="section-shell detail-body invite-case">
@@ -540,7 +586,7 @@ export function WorkExplorer() {
                 </div>
               </div>
               <div className="work-detail-content" key={selected.id}>
-                {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
+                {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "skill" ? <SkillProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
                   <h2 className="sr-only">{selected.title}项目复盘</h2>
                   <div className="detail-framing">
                     <article><DetailSectionHeading letter="S" english="Background" title="问题背景" /><p className="t-body-sm">{selected.background}</p></article>

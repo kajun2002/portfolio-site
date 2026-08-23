@@ -408,6 +408,19 @@ img { display:block; max-width:100%; }
 .bath-solution-head,.bath-solution-row { display:grid; grid-template-columns:minmax(0,1.06fr) 34px minmax(0,.94fr); align-items:center; gap:var(--sp-3); }.bath-solution-head { padding:14px var(--sp-5); color:var(--ink-800); background:var(--tone-soft); font-size:var(--fs-body-sm); font-weight:700; letter-spacing:.02em; }.bath-solution-head span { text-align:center; color:var(--tone); }.bath-solution-row { min-height:88px; padding:var(--sp-4) var(--sp-5); border-top:1px solid var(--border-hairline); color:var(--ink-700); line-height:1.6; }.bath-solution-row>b { color:var(--tone); text-align:center; }.bath-solution-row>span:last-child { color:var(--ink-600); }
 .bath-result { border-color:var(--tone-line); background:var(--glass-3); }
 
+/* Skill case: background → thesis → actions (2 cards) → result. */
+.skill-case { display:grid; gap:var(--sp-8); }
+.skill-background,.skill-thesis,.skill-result { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
+.skill-background p,.skill-result p { margin:0; }
+.skill-core-insight { margin:0; padding:var(--sp-5) var(--sp-6); border-left:4px solid var(--tone); border-radius:0 var(--r-sm) var(--r-sm) 0; background:var(--tone-soft); color:var(--ink-800); font-size:var(--fs-body); line-height:1.7; }
+.skill-core-insight strong { color:var(--ink-900); }
+.skill-actions { display:grid; gap:var(--sp-5); }
+.skill-action-card { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
+.skill-action-head { display:flex; align-items:center; gap:var(--sp-3); margin-bottom:var(--sp-4); }
+.skill-action-card .t-body-sm { margin:0; }
+.skill-action-card .t-body-sm + .t-body-sm { margin-top:var(--sp-3); }
+.skill-action-lead { color:var(--ink-800); font-weight:500; }
+
 /* Invite case: strategy comparison → definition and mechanism → MVP tradeoff → growth proof. */
 .invite-case { display:grid; gap:var(--sp-10); }
 .invite-background { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
