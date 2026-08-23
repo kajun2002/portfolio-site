@@ -276,46 +276,48 @@ function BathProjectDetail() {
       <h2 className="sr-only">洗澡与一键护理项目复盘</h2>
       <p className="bath-scope-note t-caption">本节不展开该需求的完整内容，仅聚焦当时遇到的一个核心交互难点。</p>
 
-      <section className="bath-background" aria-labelledby="bath-background-title">
-        <DetailSectionHeading letter="S" english="Background" title="背景" id="bath-background-title" />
-        <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p>
-        <figure className="bath-bg-figure">
-          <img src="/bath-demo.jpg" alt="拖拽香皂给宠物搓澡的交互界面" />
-          <figcaption className="t-caption">拖拽香皂，给宠物洗香香</figcaption>
-        </figure>
-      </section>
+      <div className="bath-two-col">
+        <section className="bath-background" aria-labelledby="bath-background-title">
+          <DetailSectionHeading letter="S" english="Background" title="背景" id="bath-background-title" />
+          <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p>
+          <figure className="bath-bg-figure">
+            <img src="/bath-demo.jpg" alt="拖拽香皂给宠物搓澡的交互界面" />
+            <figcaption className="t-caption">拖拽香皂，给宠物洗香香</figcaption>
+          </figure>
+        </section>
 
-      <section className="bath-challenge" aria-labelledby="bath-challenge-title">
-        <DetailSectionHeading letter="T" english="Core challenge" title="核心难点：连续交互下的消耗不可预期" id="bath-challenge-title" />
+        <section className="bath-challenge" aria-labelledby="bath-challenge-title">
+          <DetailSectionHeading letter="T" english="Core challenge" title="核心难点" id="bath-challenge-title" />
 
-        <div className="bath-compare" aria-label="离散交互与连续交互对比">
-          <div className="bath-compare-discrete">
-            <span className="bath-compare-label">喂食 · 离散交互</span>
-            <div className="bath-discrete-flow"><span>点击一次</span><b aria-hidden="true">→</b><span>扣除一个饼干</span><b aria-hidden="true">→</b><span>增加 10 点体力</span></div>
-            <p className="t-body-sm">一次操作对应一次结算，用户对成本有天然预期。</p>
-          </div>
-          <div className="bath-vs" aria-hidden="true">VS</div>
-          <div className="bath-compare-continuous">
-            <span className="bath-compare-label">拖拽搓澡 · 连续交互</span>
-            <div className="bath-continuous-line"><span>开始拖拽</span><i /><span>何时结算？</span></div>
-            <p className="t-body-sm">拖拽搓澡不具备这种操作边界，由此产生两个问题：</p>
-            <div className="bath-pain-points">
-              <div><b>01</b><strong>消耗不可预期。</strong><span>用户既无法预判&quot;洗至干净需要多少道具&quot;，也无法感知&quot;拖动到何种程度会扣除一块香皂&quot;。</span></div>
-              <div><b>02</b><strong>心智规则断裂。</strong><span>用户已建立&quot;一次操作 = 一次消耗 = 一次收益&quot;的认知，连续交互打破了这一规则，带来误操作顾虑与消费迟疑。</span></div>
+          <div className="bath-compare" aria-label="离散交互与连续交互对比">
+            <div className="bath-compare-discrete">
+              <span className="bath-compare-label">喂食 · 离散交互</span>
+              <div className="bath-discrete-flow"><span>点击一次</span><b aria-hidden="true">→</b><span>扣除一个饼干</span><b aria-hidden="true">→</b><span>增加 10 点体力</span></div>
+              <p className="t-body-sm">一次操作对应一次结算，用户对成本有天然预期。</p>
+            </div>
+            <div className="bath-vs" aria-hidden="true">VS</div>
+            <div className="bath-compare-continuous">
+              <span className="bath-compare-label">拖拽搓澡 · 连续交互</span>
+              <div className="bath-continuous-line"><span>开始拖拽</span><i /><span>何时结算？</span></div>
+              <p className="t-body-sm">拖拽搓澡不具备这种操作边界，由此产生两个问题：</p>
+              <div className="bath-pain-points">
+                <div><b>01</b><strong>消耗不可预期。</strong><span>用户既无法预判&quot;洗至干净需要多少道具&quot;，也无法感知&quot;拖动到何种程度会扣除一块香皂&quot;。</span></div>
+                <div><b>02</b><strong>心智规则断裂。</strong><span>用户已建立&quot;一次操作 = 一次消耗 = 一次收益&quot;的认知，连续交互打破了这一规则，带来误操作顾虑与消费迟疑。</span></div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bath-rejected" aria-label="两种不成立的直觉方案">
-          <h4 className="t-title-3">两种直觉方案均不成立：</h4>
-          <div className="bath-rejected-grid">
-            <div><span>方案 A</span><strong>按时长实时扣除</strong><p className="t-body-sm">时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身即不可解释；</p></div>
-            <div><span>方案 B</span><strong>结束后一次性结算</strong><p className="t-body-sm">过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣。</p></div>
+          <div className="bath-rejected" aria-label="两种不成立的直觉方案">
+            <h4 className="t-title-3">两种直觉方案均不成立：</h4>
+            <div className="bath-rejected-grid">
+              <div><span>方案 A</span><strong>按时长实时扣除</strong><p className="t-body-sm">时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身即不可解释；</p></div>
+              <div><span>方案 B</span><strong>结束后一次性结算</strong><p className="t-body-sm">过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣。</p></div>
+            </div>
           </div>
-        </div>
 
-        <blockquote className="bath-core-insight"><small>真正要解决的不是&quot;扣多少&quot;，而是</small><strong>让用户在连续操作中，同时获得过程感与消耗预期</strong></blockquote>
-      </section>
+          <blockquote className="bath-core-insight"><small>真正要解决的不是&quot;扣多少&quot;，而是</small><strong>让用户在连续操作中，同时获得过程感与消耗预期</strong></blockquote>
+        </section>
+      </div>
 
       <section className="bath-solution" aria-labelledby="bath-solution-title">
         <DetailSectionHeading letter="A" english="Action" title="解法：分段进度条 + 节点结算" id="bath-solution-title" />
