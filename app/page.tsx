@@ -17,6 +17,42 @@ export default function Home() {
   const scrollLockTimer = useRef<number | null>(null);
   const waveTimer = useRef<number | null>(null);
   const isProgrammaticScroll = useRef(false);
+  const visualRef = useRef<HTMLButtonElement | null>(null);
+  const heroImgRef = useRef<HTMLImageElement | null>(null);
+  const [heroBox, setHeroBox] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+
+  // 计算 hero 图片内容（object-fit: contain）在容器内的实际显示区域，
+  // 让气泡锚定到图片本身，屏幕缩放时不偏移。
+  useEffect(() => {
+    const update = () => {
+      const img = heroImgRef.current;
+      const visual = visualRef.current;
+      if (!img || !visual || !img.naturalWidth) return;
+      const ir = img.getBoundingClientRect();
+      const vr = visual.getBoundingClientRect();
+      const scale = Math.min(ir.width / img.naturalWidth, ir.height / img.naturalHeight);
+      const w = img.naturalWidth * scale;
+      const h = img.naturalHeight * scale;
+      setHeroBox({
+        x: ir.left - vr.left + (ir.width - w) / 2,
+        y: ir.top - vr.top + (ir.height - h),
+        w,
+        h,
+      });
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    const visual = visualRef.current;
+    const img = heroImgRef.current;
+    if (visual) ro.observe(visual);
+    window.addEventListener("resize", update);
+    img?.addEventListener("load", update);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+      img?.removeEventListener("load", update);
+    };
+  }, []);
 
   const triggerWave = useCallback(() => {
     if (isWaving) return;
@@ -99,15 +135,24 @@ export default function Home() {
         </div>
         <button
           type="button"
+          ref={visualRef}
           className={`landing-visual${isWaving ? " is-waving" : ""}`}
           onClick={triggerWave}
           disabled={isWaving}
           aria-label={isWaving ? "Kaiden 正在挥手打招呼" : "点击 Kaiden，让他挥手打招呼"}
         >
-          <img className="hero-ai hero-ai-standing" src="/hero-ai-standing.png" alt="Kaiden 与小狗的 3D 卡通形象" />
+          <img ref={heroImgRef} className="hero-ai hero-ai-standing" src="/hero-ai-standing.png" alt="Kaiden 与小狗的 3D 卡通形象" />
           <img className="hero-ai hero-ai-waving" src="/hero-ai-waving.png" alt="" aria-hidden="true" />
-          <span className="speech-bubble" aria-hidden="true">Hi, 👋</span>
-          <span className="speech-bubble speech-bubble-pet" aria-hidden="true">Hi，我是巴乐</span>
+          <span
+            className="speech-bubble"
+            style={heroBox ? { left: heroBox.x + heroBox.w * 0.04, top: heroBox.y + heroBox.h * 0.12 } : undefined}
+            aria-hidden="true"
+          >Hi, 👋</span>
+          <span
+            className="speech-bubble speech-bubble-pet"
+            style={heroBox ? { left: heroBox.x + heroBox.w * 0.87, top: heroBox.y + heroBox.h * 0.66 } : undefined}
+            aria-hidden="true"
+          >Hi，我是巴乐</span>
         </button>
       </section>
 
