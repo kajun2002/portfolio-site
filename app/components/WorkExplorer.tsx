@@ -493,7 +493,7 @@ export function WorkExplorer() {
                 <div className="companion-nodes">
                   {companion.map((item) => (
                     <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => toggleProject(item.id)} aria-controls="work-detail">
-                      <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small><i className="node-plus" aria-hidden="true">＋</i>
+                      <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small>
                       {companionArtwork[item.id] && <img className="compact-node-art" src={companionArtwork[item.id]!.src} alt={companionArtwork[item.id]!.alt} />}
                     </button>
                   ))}

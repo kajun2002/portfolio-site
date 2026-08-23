@@ -211,10 +211,8 @@ img { display:block; max-width:100%; }
 .compact-node { position:relative; min-height:0; display:grid; align-content:center; gap:var(--sp-1); padding:var(--sp-6) 48px var(--sp-6) var(--sp-6); }
 .compact-node.has-art { padding-right:108px; }
 .compact-node>span { color:var(--ink-800); font-size:var(--fs-title-3); font-weight:600; line-height:1.32; }.compact-node>small { color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.6; }
-.compact-node>i { position:absolute; right:var(--sp-5); top:50%; color:var(--tone); font-size:24px; font-style:normal; transform:translateY(-50%); transition:transform .32s var(--ease-spring); }
-.compact-node-art { position:absolute; right:46px; top:50%; width:52px; height:52px; object-fit:contain; transform:translateY(-50%); pointer-events:none; filter:drop-shadow(0 6px 10px rgba(15,23,42,.08)); }
+.compact-node-art { position:absolute; right:24px; top:50%; width:52px; height:52px; object-fit:contain; transform:translateY(-50%); pointer-events:none; filter:drop-shadow(0 6px 10px rgba(15,23,42,.08)); }
 .compact-node.tone-green .compact-node-art { width:62px; height:48px; }
-.compact-node[aria-expanded="true"]>i { transform:translateY(-50%) rotate(45deg); }
 .branch-content.single-branch-content { display:flex; flex-direction:column; gap:0; }.single-branch-content .project-node-main { flex:1; min-height:308px; }
 .growth-logic { display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2); margin-top:var(--sp-4); padding:var(--sp-4); border:1px solid var(--glass-line); border-radius:var(--r-sm); background:var(--glass-3); box-shadow:var(--shadow-xs); }
 .growth-logic span { color:var(--ink-600); font-size:var(--fs-caption); line-height:1.6; }.growth-logic b { color:var(--brand-500); font-weight:500; }
@@ -249,9 +247,8 @@ img { display:block; max-width:100%; }
   .companion-nodes { gap:clamp(7px,1.2vh,12px); }
   .compact-node { gap:clamp(2px,.6vh,6px); padding:clamp(10px,1.8vh,17px) 42px clamp(10px,1.8vh,17px) clamp(14px,1.5vw,22px); }
   .compact-node.has-art { padding-right:96px; }
-  .compact-node-art { right:42px; width:46px; height:46px; }
+  .compact-node-art { right:20px; width:46px; height:46px; }
   .compact-node.tone-green .compact-node-art { width:56px; height:44px; }
-  .compact-node>i { right:16px; }
   .single-branch-content .project-node-main { min-height:0; }
   .growth-logic { gap:clamp(7px,.8vw,12px); margin-top:clamp(7px,1.2vh,12px); padding:clamp(9px,1.4vh,14px) clamp(11px,1.2vw,18px); }
 }
