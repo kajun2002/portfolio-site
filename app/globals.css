@@ -581,8 +581,9 @@ img { display:block; max-width:100%; }
 .reflection-item .reflection-support { color:var(--ink-600); }
 .reflection-thinking .reflection-item-head>span { color:var(--violet-600); border-color:rgba(124,58,237,.24); }
 .reflection-finale { margin-top:var(--sp-5); padding:var(--sp-7); border:1px solid var(--border-brand); border-radius:var(--r-lg); background:var(--glass-3); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
+.reflection-finale>.t-overline { display:block; margin-bottom:var(--sp-3); }
 .reflection-finale p { margin-top:var(--sp-3); color:var(--ink-600); font-size:15px; line-height:1.7; }
-.reflection-finale h3 { max-width:24em; margin-top:var(--sp-3); color:var(--ink-900); font-size:clamp(24px,2.6vw,38px); line-height:1.35; letter-spacing:-.025em; }
+.reflection-finale h3 { margin-top:var(--sp-2); color:var(--ink-900); font-size:22px; font-weight:600; line-height:1.55; letter-spacing:-.01em; }
 .deck-footer { display:flex; align-items:center; justify-content:space-between; gap:var(--sp-4); margin-top:auto; padding-top:var(--sp-8); }
 
 @media (max-width:1000px) {
