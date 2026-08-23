@@ -434,16 +434,30 @@ function InviteProjectDetail() {
 
 export function WorkExplorer() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const workRef = useRef<HTMLElement | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
 
+  function scrollWorkIntoView(behavior: ScrollBehavior = "smooth") {
+    window.requestAnimationFrame(() => {
+      const element = workRef.current;
+      if (!element) return;
+      const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+      const top = Math.max(0, element.getBoundingClientRect().top + window.scrollY - headerHeight);
+      window.scrollTo({ top, behavior });
+    });
+  }
+
   function openProject(id: string) {
+    const isSwitchingDetailTab = selectedId !== null;
     setSelectedId(id);
-    window.setTimeout(() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+    if (!isSwitchingDetailTab) {
+      scrollWorkIntoView("auto");
+    }
   }
 
   function closeProject() {
     setSelectedId(null);
-    window.setTimeout(() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
+    scrollWorkIntoView();
   }
 
   function toggleProject(id: string) {
@@ -455,7 +469,7 @@ export function WorkExplorer() {
   const companion = workItems.filter((item) => item.level2 === "人－宠物");
 
   return (
-    <section className="work-deck" id="work">
+    <section className={`work-deck${selected ? " is-detail-mode" : ""}`} id="work" ref={workRef}>
       {!selected ? <div className="section-shell work-overview">
         <header className="slide-heading">
           <div><span className="t-overline">Work map · QQ 宠物</span><h2 className="t-title-1">从业务目标到产品答案</h2></div>
@@ -511,20 +525,22 @@ export function WorkExplorer() {
                   </div>
                 </div>
               </div>
-              {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
-                <h2 className="sr-only">{selected.title}项目复盘</h2>
-                <div className="detail-framing">
-                  <article><DetailSectionHeading letter="S" english="Background" title="问题背景" /><p className="t-body-sm">{selected.background}</p></article>
-                  <article className="thesis-card"><DetailSectionHeading letter="T" english="Core thesis" title="核心判断" /><p className="t-body">{selected.thesis}</p></article>
-                </div>
-                <section className="detail-actions">
-                  <DetailSectionHeading letter="A" english="Action" title="产品推导与核心方案" />
-                  <div className="action-grid">
-                    {selected.sections.map((section, index) => <article key={section.title}><b className="tnum">{String(index + 1).padStart(2, "0")}</b><h4 className="t-title-3">{section.title}</h4><p className="t-body-sm">{section.body}</p></article>)}
+              <div className="work-detail-content" key={selected.id}>
+                {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
+                  <h2 className="sr-only">{selected.title}项目复盘</h2>
+                  <div className="detail-framing">
+                    <article><DetailSectionHeading letter="S" english="Background" title="问题背景" /><p className="t-body-sm">{selected.background}</p></article>
+                    <article className="thesis-card"><DetailSectionHeading letter="T" english="Core thesis" title="核心判断" /><p className="t-body">{selected.thesis}</p></article>
                   </div>
-                </section>
-                <section className="detail-result"><DetailSectionHeading letter="R" english="Result / Learning" title="结果与沉淀" /><p className="t-body">{selected.result}</p></section>
-              </div>}
+                  <section className="detail-actions">
+                    <DetailSectionHeading letter="A" english="Action" title="产品推导与核心方案" />
+                    <div className="action-grid">
+                      {selected.sections.map((section, index) => <article key={section.title}><b className="tnum">{String(index + 1).padStart(2, "0")}</b><h4 className="t-title-3">{section.title}</h4><p className="t-body-sm">{section.body}</p></article>)}
+                    </div>
+                  </section>
+                  <section className="detail-result"><DetailSectionHeading letter="R" english="Result / Learning" title="结果与沉淀" /><p className="t-body">{selected.result}</p></section>
+                </div>}
+              </div>
             </div>
       )}
     </section>
