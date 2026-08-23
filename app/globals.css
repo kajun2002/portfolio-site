@@ -320,7 +320,7 @@ img { display:block; max-width:100%; }
 .fire-constraint-row>span { display:flex; min-height:64px; align-items:center; padding:var(--sp-3) var(--sp-4); color:var(--ink-700); font-size:var(--fs-body-sm); line-height:1.5; }
 .fire-constraint-row>span:first-child { background:rgba(255,255,255,.38); }
 .fire-constraint-row>b,.fire-constraint-head>span { color:var(--tone); text-align:center; }
-.fire-mechanism-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); align-items:start; gap:var(--sp-5); }
+.fire-mechanism-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:start; gap:var(--sp-5); }
 .fire-mechanism-figure { display:grid; gap:var(--sp-2); }
 .fire-mechanism-figure img { display:block; width:90%; height:auto; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.66); }
 .fire-mechanism-figure figcaption,.fire-perception-media figcaption,.fire-equity-figure figcaption { color:var(--ink-500); text-align:center; }
