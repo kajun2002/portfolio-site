@@ -448,9 +448,9 @@ export function WorkExplorer() {
   }
 
   function openProject(id: string) {
-    const isSwitchingDetailTab = selectedId !== null;
+    const isSameProject = selectedId === id;
     setSelectedId(id);
-    if (!isSwitchingDetailTab) {
+    if (!isSameProject) {
       scrollWorkIntoView("auto");
     }
   }
