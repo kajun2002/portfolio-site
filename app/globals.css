@@ -391,7 +391,7 @@ img { display:block; max-width:100%; }
 .bath-result { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .bath-result p { margin:0; }.bath-result p+p { margin-top:var(--sp-3); }
 .bath-background-copy,.bath-result-copy { padding-left:calc(36px + var(--sp-3)); }
-.bath-challenge { display:grid; gap:var(--sp-3); }
+.bath-challenge { display:grid; gap:var(--sp-3); align-content:start; }
 .bath-challenge-intro { margin:0; color:var(--ink-700); line-height:1.7; }
 .bath-pain-list { display:grid; gap:var(--sp-2); }
 .bath-pain-item { display:flex; gap:var(--sp-3); padding:var(--sp-3) var(--sp-4); border-radius:var(--r-md); background:rgba(255,255,255,.5); line-height:1.6; }
