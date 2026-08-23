@@ -247,7 +247,7 @@ function SicknessProjectDetail() {
               <b className="tnum">02</b>
               <h4 className="t-title-2">情感化召回：把流失回归转化为情感重逢</h4>
             </div>
-            <p className="t-body-sm">主人回归后与宠物共同参与康复过程，接入「治疗中」状态与治愈动效，把一次高价值召回触点转化为情感重逢。</p>
+            <p className="t-body-sm">针对流失回归场景，将主人回归行为与宠物康复过程绑定：接入「治疗中」状态与治愈动效，把一条系统通知转化为共同参与的情感重逢，用情感连接驱动留存。</p>
             <div className="sickness-recall-shift" aria-label="从冷处理到情感重逢的方案转变">
               <span>系统自动治愈</span><b aria-hidden="true">→</b><strong>主人共同参与康复</strong>
             </div>
