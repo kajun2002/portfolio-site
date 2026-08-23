@@ -380,18 +380,15 @@ img { display:block; max-width:100%; }
 /* Bath case: one interaction problem, from contrast to translation */
 .bath-case { display:grid; gap:var(--sp-10); }
 .bath-scope-note { width:max-content; max-width:100%; margin:0; padding:8px 12px; border:1px solid var(--border-hairline); border-radius:999px; color:var(--ink-500); background:rgba(255,255,255,.42); }
-.bath-two-col { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:var(--sp-5); align-items:start; }
-.bath-two-col > .bath-background {
-  padding:var(--sp-5) var(--sp-6); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md);
-}
-.bath-two-col > .bath-background > p { margin:0; }
-.bath-bg-figure { margin-top:var(--sp-3); text-align:center; }
-.bath-bg-figure img { display:inline-block; max-width:50%; height:auto; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.72); box-shadow:var(--shadow-soft); }
-.bath-two-col > .bath-challenge { padding:var(--sp-5) var(--sp-6); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
+.bath-intro-card { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:var(--sp-6); align-items:center; padding:var(--sp-6) var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
+.bath-intro-text { display:grid; gap:var(--sp-2); align-content:start; }
+.bath-intro-text > p { margin:0; }
+.bath-intro-challenge { display:grid; gap:var(--sp-2); align-content:start; margin-top:var(--sp-4); padding-top:var(--sp-4); border-top:1px solid var(--border-hairline); }
+.bath-bg-figure { margin:0; text-align:center; }
+.bath-bg-figure img { display:inline-block; max-width:72%; height:auto; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.72); box-shadow:var(--shadow-soft); }
 .bath-result { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .bath-result p { margin:0; }.bath-result p+p { margin-top:var(--sp-3); }
 .bath-background-copy,.bath-result-copy { padding-left:calc(36px + var(--sp-3)); }
-.bath-challenge { display:grid; gap:var(--sp-2); align-content:start; }
 .bath-challenge-intro { margin:0; color:var(--ink-700); line-height:1.7; }
 .bath-pain-list { display:grid; gap:var(--sp-2); }
 .bath-pain-item { display:flex; gap:var(--sp-3); padding:var(--sp-2) var(--sp-3); border-radius:var(--r-md); background:rgba(255,255,255,.5); line-height:1.6; }
@@ -631,7 +628,7 @@ img { display:block; max-width:100%; }
   .sickness-st-flow,.sickness-action-grid { grid-template-columns:1fr; }.sickness-flow-arrow { transform:rotate(90deg); }
   .sickness-action-card { padding:0 0 var(--sp-6); }
   .sickness-action-card + .sickness-action-card { padding:var(--sp-6) 0 0; border-left:0; border-top:1px solid var(--border-hairline); }
-  .bath-background,.bath-result { grid-template-columns:1fr; }.bath-two-col { grid-template-columns:1fr; }.bath-solution-layout { grid-template-columns:1fr; }.bath-demo video { min-height:260px; max-height:480px; }
+  .bath-background,.bath-result { grid-template-columns:1fr; }.bath-intro-card { grid-template-columns:1fr; }.bath-solution-layout { grid-template-columns:1fr; }.bath-demo video { min-height:260px; max-height:480px; }
   .invite-target-layout { grid-template-columns:1fr; }.invite-activity-figure img { height:440px; }.invite-mvp-evolution { grid-template-columns:1fr 150px 1fr; }.invite-mvp figure img { height:430px; }.invite-result-visuals { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .fire-action-lower,.fire-result-grid { grid-template-columns:1fr; }
   .fire-equity { padding:var(--sp-6) 0 0; border-left:0; border-top:1px solid var(--border-hairline); }

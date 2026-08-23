@@ -276,39 +276,40 @@ function BathProjectDetail() {
       <h2 className="sr-only">洗澡与一键护理项目复盘</h2>
       <p className="bath-scope-note t-caption">本节不展开该需求的完整内容，仅聚焦当时遇到的一个核心交互难点。</p>
 
-      <div className="bath-two-col">
-        <section className="bath-background" aria-labelledby="bath-background-title">
+      <section className="bath-intro-card" aria-labelledby="bath-background-title">
+        <div className="bath-intro-text">
           <DetailSectionHeading letter="S" english="Background" title="背景" id="bath-background-title" />
           <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p>
-          <figure className="bath-bg-figure">
-            <img src="/bath-demo.jpg" alt="拖拽香皂给宠物搓澡的交互界面" />
-            <figcaption className="t-caption">拖拽香皂，给宠物洗香香</figcaption>
-          </figure>
-        </section>
 
-        <section className="bath-challenge" aria-labelledby="bath-challenge-title">
-          <DetailSectionHeading letter="T" english="Core challenge" title="核心难点" id="bath-challenge-title" />
+          <div className="bath-intro-challenge">
+            <DetailSectionHeading letter="T" english="Core challenge" title="核心难点" id="bath-challenge-title" />
 
-          <p className="t-body-sm bath-challenge-intro">
-            洗澡采用<strong>拖拽香皂搓澡</strong>的连续交互形式——这与喂食等离散交互（点击一次 = 扣除一个饼干 = 增加体力）有本质区别：<strong>连续动作没有天然的操作边界</strong>。
-          </p>
+            <p className="t-body-sm bath-challenge-intro">
+              洗澡采用<strong>拖拽香皂搓澡</strong>的连续交互形式——这与喂食等离散交互（点击一次 = 扣除一个饼干 = 增加体力）有本质区别：<strong>连续动作没有天然的操作边界</strong>。
+            </p>
 
-          <div className="bath-pain-list">
-            <div className="bath-pain-item"><b>01</b><span className="bath-pain-title">消耗不可预期</span><span className="bath-pain-desc">用户无法预判「洗至干净需要多少道具」，也无法感知「拖动到何种程度会扣除一块香皂」。</span></div>
-            <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">心智规则断裂</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，连续交互打破这一规则，带来误操作顾虑与消费迟疑。</span></div>
+            <div className="bath-pain-list">
+              <div className="bath-pain-item"><b>01</b><span className="bath-pain-title">消耗不可预期</span><span className="bath-pain-desc">用户无法预判「洗至干净需要多少道具」，也无法感知「拖动到何种程度会扣除一块香皂」。</span></div>
+              <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">心智规则断裂</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，连续交互打破这一规则，带来误操作顾虑与消费迟疑。</span></div>
+            </div>
+
+            <p className="t-body-sm bath-reject-intro">而两种直觉方案均不成立：</p>
+            <div className="bath-reject-row">
+              <span className="bath-reject-tag">A</span><span>按时长实时扣除 → 时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身不可解释</span>
+            </div>
+            <div className="bath-reject-row">
+              <span className="bath-reject-tag">B</span><span>结束后一次性结算 → 过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣</span>
+            </div>
+
+            <blockquote className="bath-core-insight">让用户在连续操作中，同时获得<strong>过程感</strong>与<strong>消耗预期</strong></blockquote>
           </div>
+        </div>
 
-          <p className="t-body-sm bath-reject-intro">而两种直觉方案均不成立：</p>
-          <div className="bath-reject-row">
-            <span className="bath-reject-tag">A</span><span>按时长实时扣除 → 时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身不可解释</span>
-          </div>
-          <div className="bath-reject-row">
-            <span className="bath-reject-tag">B</span><span>结束后一次性结算 → 过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣</span>
-          </div>
-
-          <blockquote className="bath-core-insight">让用户在连续操作中，同时获得<strong>过程感</strong>与<strong>消耗预期</strong></blockquote>
-        </section>
-      </div>
+        <figure className="bath-bg-figure">
+          <img src="/bath-demo.jpg" alt="拖拽香皂给宠物搓澡的交互界面" />
+          <figcaption className="t-caption">拖拽香皂，给宠物洗香香</figcaption>
+        </figure>
+      </section>
 
       <section className="bath-solution" aria-labelledby="bath-solution-title">
         <DetailSectionHeading letter="A" english="Action" title="解法：分段进度条 + 节点结算" id="bath-solution-title" />
