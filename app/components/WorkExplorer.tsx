@@ -118,18 +118,20 @@ function FireProjectDetail() {
 
         <article className="fire-mechanism">
           <div className="fire-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">机制设计：从四项约束反推设计</h4></div>
-          <div className="fire-constraint-table" role="table" aria-label="四项约束与对应设计">
-            <div className="fire-constraint-head" role="row"><strong role="columnheader">约束</strong><span aria-hidden="true">→</span><strong role="columnheader">对应设计</strong></div>
-            {fireConstraints.map(([constraint, design]) => (
-              <div className="fire-constraint-row" role="row" key={constraint}>
-                <span role="cell">{constraint}</span><b aria-hidden="true">→</b><span role="cell">{design}</span>
-              </div>
-            ))}
+          <div className="fire-mechanism-grid">
+            <div className="fire-constraint-table" role="table" aria-label="四项约束与对应设计">
+              <div className="fire-constraint-head" role="row"><strong role="columnheader">约束</strong><span aria-hidden="true">→</span><strong role="columnheader">对应设计</strong></div>
+              {fireConstraints.map(([constraint, design]) => (
+                <div className="fire-constraint-row" role="row" key={constraint}>
+                  <span role="cell">{constraint}</span><b aria-hidden="true">→</b><span role="cell">{design}</span>
+                </div>
+              ))}
+            </div>
+            <figure className="fire-mechanism-figure">
+              <img src="/fire-stages-and-levels.png" alt="火花从点亮、成长到待重燃的阶段与分级设计" />
+              <figcaption className="t-caption">火花阶段与分级：由关系建立、成长到维护，承接四项约束的完整机制</figcaption>
+            </figure>
           </div>
-          <figure className="fire-mechanism-figure">
-            <img src="/fire-stages-and-levels.png" alt="火花从点亮、成长到待重燃的阶段与分级设计" />
-            <figcaption className="t-caption">火花阶段与分级：由关系建立、成长到维护，承接四项约束的完整机制</figcaption>
-          </figure>
         </article>
 
         <div className="fire-action-lower">
