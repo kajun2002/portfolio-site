@@ -170,20 +170,22 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>建立完整的需求闭环认知</h4></div>
-                  <p>实习中我完整跑通了需求从 0-1 的全过程：用户需求洞察 → PRD 撰写 → 设计、开发对接 → 上线验收 → 数据复盘与迭代。</p>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>完整经历需求从 0-1 落地，熟悉每个环节</h4><span className="reflection-tag">闭环</span></div>
+                  <p className="reflection-key">从需求洞察到数据复盘，走过 0-1 的每一步，清楚每个环节要交付什么、如何衔接。</p>
+                  <p className="reflection-support">实习中我完整跑通了用户需求洞察 → PRD 撰写 → 设计、开发对接 → 上线验收 → 数据复盘与迭代的全过程。对流程的理解不止于纸面，而是来自每个环节的亲身实践。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，能够推动项目完整落地</h4></div>
-                  <p>实习期间作为需求 owner 独立负责邀请奖励活动一、二期，洗澡交互形式的确定，以及踩踩续火花的多期优化。过程中需要持续判断优先级与做 MVP 取舍——例如邀请活动中的活动页信息展示优先级；原方案受配置平台能力限制且仅有两天上线窗口，我将其拆分为两条消息，在守住「感知到具体是谁」这一核心目标的前提下抢住了流量窗口。</p>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，有判断力地推动项目落地</h4><span className="reflection-tag">Owner</span></div>
+                  <p className="reflection-key">对项目结果负责：在关键节点主动给出判断、做出取舍，推动项目走到落地。</p>
+                  <p className="reflection-support">实习期间作为需求 owner 独立负责邀请奖励活动一、二期，洗澡交互形式的确定，以及踩踩续火花的多期优化。过程中需要持续判断优先级与做 MVP 取舍——例如邀请活动中的活动页信息展示优先级；原方案受配置平台能力限制且仅有两天上线窗口，我将其拆分为两条消息，在守住「感知到具体是谁」这一核心目标的前提下抢住了流量窗口。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4></div>
-                  <p className="reflection-key">产品在协作中的职责，是明确目标与边界，并在成本、排期与体验之间给出判断。</p>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4><span className="reflection-tag">协作</span></div>
+                  <p className="reflection-key">产品是跨团队协作的枢纽——把各方拉齐到同一目标，专业能力才能转化为落地结果。</p>
                   <p className="reflection-support">与设计、开发对接时，我更清楚产品侧应该输出什么、把守哪条边界。同时也建立了风险前置意识——邀请奖励活动涉及点券发放与黑灰产风险，我主动拉通安全同学对齐并配置防刷规则，而不是等问题出现后被动响应。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4><span className="reflection-tag">提效</span></div>
                   <p className="reflection-key">把 AI 从「辅助表达」用成「个人工作系统」。</p>
                   <p className="reflection-support">我用 AI 生成 HTML 原型、概念视觉图与简易 Demo，以更低成本支撑方案表达与前期沟通。更重要的是把高频工作沉淀为可复用方法——整理了数据埋点上报 skill、需求文档 skill，将标准流程、注意事项与 AI 易错点固化下来，提高效率。</p>
                 </article>
@@ -197,18 +199,19 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>给结论必须带损益权衡，而非主观偏好</h4></div>
-                  <p>产品判断不是仅仅提出问题和想法，而是<strong>在用户价值、业务目标与实现成本之间做阶段性取舍</strong>——如何在众多方案中选出最合适的一个，以及它的优点与局限是什么、能不能做、怎么做。</p>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>提出想法只是起点，给出判断才是产品价值</h4><span className="reflection-tag">判断</span></div>
+                  <p className="reflection-key">产品判断是在用户价值、业务目标与实现成本之间做阶段性取舍。</p>
+                  <p className="reflection-support">如何在众多方案中选出最合适的一个，它的优点与局限是什么、能不能做、怎么做。</p>
                   <p className="reflection-support">火花需求中，我曾提出参考抖音增加「点亮中」状态。复盘后意识到，「加一个状态」本身很简单，但<strong>为什么加、怎么加（在不打扰、不产生社交压力的同时完成建立引导）</strong>才是产品需要重点考虑的。产品需要清楚背后的逻辑是什么、要有自己的思考，而不是停留在执行层面。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4><span className="reflection-tag">方法</span></div>
                   <p className="reflection-key">AI 帮我表达得更快，不能替我想清楚。</p>
                   <p className="reflection-support">需求背后的业务背景、用户路径、功能边界与状态流转，最了解的人只能是自己。过度依赖 AI 最典型的失败形态是「文档看似完整，但核心逻辑不闭环」——正常流程写得漂亮，异常路径缺失、状态流转有断点。</p>
-                  <p>因此我的顺序是：先自己明确业务目标、用户路径与问题边界，再交给 AI 做结构与表达优化。</p>
+                  <p className="reflection-support">因此我的顺序是：先自己明确业务目标、用户路径与问题边界，再交给 AI 做结构与表达优化。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4><span className="reflection-tag">复盘</span></div>
                   <p className="reflection-key">做完不等于结束，能否复用才决定成长速度。</p>
                   <p className="reflection-support">我的复盘围绕几个固定问题：前期问题定义是否清楚、评审是否出现反复沟通（意味着前置对齐不足）、开发阶段是否有信息缺失、上线数据是否符合预期、卡点能否通过流程或文档规范避免。</p>
                   <p className="reflection-support">同时把工作显性化：需求文档、评审结论、数据口径、进度与阻塞点统一整理并及时同步。协作方只有清楚当前结论与下一步动作，需求才能顺畅推进。</p>
