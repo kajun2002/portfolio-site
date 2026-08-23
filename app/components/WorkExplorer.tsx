@@ -170,10 +170,16 @@ function FireProjectDetail() {
                 </div>
                 <p className="t-body-sm">让用户动机从短期「打卡」升级为长期「经营」。</p>
               </div>
-              <figure className="fire-equity-figure">
-                <img src="/fire-medal.jpg" alt="续火花满七天后获得的火花勋章" />
-                <figcaption className="t-caption">关系成长后解锁火花勋章</figcaption>
-              </figure>
+              <div className="fire-equity-figures">
+                <figure className="fire-equity-figure">
+                  <img src="/fire-medal.jpg" alt="续火花满七天后获得的火花勋章" />
+                  <figcaption className="t-caption">关系成长后解锁火花勋章</figcaption>
+                </figure>
+                <figure className="fire-equity-figure">
+                  <img src="/fire-spark-bonus.png" alt="不同火花等级对应不同的宠物打工金币加成" />
+                  <figcaption className="t-caption">火花等级越高，打工加成越多</figcaption>
+                </figure>
+              </div>
             </div>
           </article>
         </div>
