@@ -319,13 +319,13 @@ function BathProjectDetail() {
 
       <section className="bath-solution" aria-labelledby="bath-solution-title">
         <DetailSectionHeading letter="A" english="Action" title="解法：分段进度条 + 节点结算" id="bath-solution-title" />
-        <p className="t-body-sm bath-solution-intro">将连续动作离散化，把进度条从展示组件重新定义为<strong>连续交互与离散消耗之间的转译中介</strong>。</p>
         <div className="bath-solution-layout">
           <figure className="bath-demo">
             <video src="/qqpet-bath-demo.mov" autoPlay muted loop playsInline controls preload="metadata" aria-label="拖拽香皂搓澡与分段进度反馈演示" />
             <figcaption className="t-caption"><strong>核心概念</strong><span>分段进度条 + 节点结算</span></figcaption>
           </figure>
           <div className="bath-solution-map" role="table" aria-label="设计与解决问题的对应关系">
+            <p className="bath-solution-thesis">将连续动作离散化，把进度条从展示组件重新定义为<strong>连续交互与离散消耗之间的转译中介</strong>。</p>
             <div className="bath-solution-head" role="row"><strong role="columnheader">设计</strong><span aria-hidden="true">→</span><strong role="columnheader">解决的问题</strong></div>
             {bathSolutions.map(([design, outcome], index) => (
               <div className="bath-solution-row" role="row" key={index}>
