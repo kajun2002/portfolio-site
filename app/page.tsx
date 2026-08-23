@@ -172,26 +172,22 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <span className="reflection-tag">闭环</span>
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>走过需求 0-1 的全流程</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>走过需求 0-1 的全流程</h4><span className="reflection-tag">闭环</span></div>
                   <p className="reflection-key">从需求洞察到数据复盘，每个环节都有第一手认知。</p>
                   <p className="reflection-support">实习中完整参与了用户洞察、PRD 撰写、设计开发对接、上线验收与数据复盘。</p>
                 </article>
                 <article className="reflection-item">
-                  <span className="reflection-tag">Owner</span>
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，推动项目落地</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，推动项目落地</h4><span className="reflection-tag">Owner</span></div>
                   <p className="reflection-key">对项目结果负责，关键节点主动判断、推动落地。</p>
                   <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花多期优化；两天上线窗口下将活动拆为两条消息，守住「感知到具体是谁」的核心目标抢下流量。</p>
                 </article>
                 <article className="reflection-item">
-                  <span className="reflection-tag">协作</span>
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4><span className="reflection-tag">协作</span></div>
                   <p className="reflection-key">产品是跨团队协作的枢纽：把各方拉齐到同一目标，专业能力才能转化为落地结果。</p>
                   <p className="reflection-support">与设计、开发对接时清楚产品要输出什么、把守哪条边界；邀请奖励活动涉及点券与黑灰产风险时，主动拉通安全同学配置防刷规则。</p>
                 </article>
                 <article className="reflection-item">
-                  <span className="reflection-tag">提效</span>
-                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4><span className="reflection-tag">AI提效</span></div>
                   <p className="reflection-key">把 AI 从「辅助表达」用成「个人工作系统」。</p>
                   <p className="reflection-support">用 AI 生成 HTML 原型、概念视觉图与简易 Demo；把高频工作沉淀为可复用方法——整理数据埋点与需求文档 skill，将标准流程、注意事项、AI 易错点固化下来。</p>
                 </article>
@@ -205,20 +201,17 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <span className="reflection-tag">判断</span>
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>提出想法只是起点，给出判断才是产品价值</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>提出想法只是起点，给出判断才是产品价值</h4><span className="reflection-tag">判断</span></div>
                   <p className="reflection-key">产品判断是在用户价值、业务目标与实现成本之间做阶段性取舍。</p>
                   <p className="reflection-support">火花需求中我曾提出参考抖音增加「点亮中」状态。复盘后意识到「加一个状态」很简单，但<strong>为什么加、怎么加</strong>（不打扰、不产生社交压力地完成引导）才是产品要回答的问题。</p>
                 </article>
                 <article className="reflection-item">
-                  <span className="reflection-tag">方法</span>
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4><span className="reflection-tag">AI边界</span></div>
                   <p className="reflection-key">AI 帮我表达得更快，不能替我想清楚。</p>
                   <p className="reflection-support">业务背景、用户路径与状态流转，最了解的人只能是自己——过度依赖 AI 的典型失败是「文档看似完整，核心逻辑不闭环」。我的顺序：先想清楚边界，再交给 AI 做表达。</p>
                 </article>
                 <article className="reflection-item">
-                  <span className="reflection-tag">复盘</span>
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4></div>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4><span className="reflection-tag">复盘</span></div>
                   <p className="reflection-key">做完不等于结束，能否复用才决定成长速度。</p>
                   <p className="reflection-support">复盘围绕固定问题：问题定义是否清楚、评审是否反复、上线数据是否符合预期、卡点能否用流程避免；同时把评审结论与数据口径显性化同步，协作方清楚结论与下一步，需求才顺畅。</p>
                 </article>
