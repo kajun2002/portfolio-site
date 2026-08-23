@@ -382,12 +382,12 @@ img { display:block; max-width:100%; }
 .bath-scope-note { width:max-content; max-width:100%; margin:0; padding:8px 12px; border:1px solid var(--border-hairline); border-radius:999px; color:var(--ink-500); background:rgba(255,255,255,.42); }
 .bath-two-col { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:var(--sp-5); align-items:stretch; }
 .bath-two-col > .bath-background {
-  padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md);
+  padding:var(--sp-5) var(--sp-6); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md);
 }
 .bath-two-col > .bath-background > p { margin:0; }
-.bath-bg-figure { margin-top:var(--sp-5); text-align:center; }
+.bath-bg-figure { margin-top:var(--sp-3); text-align:center; }
 .bath-bg-figure img { display:inline-block; max-width:100%; height:auto; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.72); box-shadow:var(--shadow-soft); }
-.bath-two-col > .bath-challenge { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); align-self:stretch; }
+.bath-two-col > .bath-challenge { padding:var(--sp-5) var(--sp-6); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); align-self:stretch; }
 .bath-result { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .bath-result p { margin:0; }.bath-result p+p { margin-top:var(--sp-3); }
 .bath-background-copy,.bath-result-copy { padding-left:calc(36px + var(--sp-3)); }
