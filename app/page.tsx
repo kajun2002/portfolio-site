@@ -106,6 +106,7 @@ export default function Home() {
         >
           <img className="hero-ai hero-ai-standing" src="/hero-ai-standing.png" alt="Kaiden 与小狗的 3D 卡通形象" />
           <img className="hero-ai hero-ai-waving" src="/hero-ai-waving.png" alt="" aria-hidden="true" />
+          <span className="speech-bubble" aria-hidden="true">Hi, 👋</span>
         </button>
       </section>
 
