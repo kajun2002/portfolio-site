@@ -322,7 +322,7 @@ function BathProjectDetail() {
 
         <figure className="bath-bg-figure">
           <img src="/bath-demo.jpg" alt="拖拽香皂给宠物搓澡的交互界面" />
-          <figcaption className="t-caption">拖拽香皂，给宠物洗香香</figcaption>
+          <figcaption className="t-caption">洗澡页面：洗澡为拖动交互形式</figcaption>
         </figure>
       </section>
 
