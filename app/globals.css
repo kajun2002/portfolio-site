@@ -346,6 +346,7 @@ img { display:block; max-width:100%; }
 .fire-stage,.fire-mechanism,.fire-perception,.fire-equity,.fire-result-grid article { border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .fire-stage { position:relative; padding:var(--sp-6); }
 .fire-stage-t { border-color:var(--tone-line); background:var(--glass-3); display:flex; flex-direction:column; }
+.fire-stage-t::after { content:""; flex:.55; }
 .fire-stage p { margin-top:var(--sp-3); }
 .fire-background-figure { margin-top:var(--sp-5); overflow:hidden; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.72); box-shadow:var(--shadow-soft); }
 .fire-background-figure img { display:block; width:100%; height:auto; max-height:420px; object-fit:contain; }
