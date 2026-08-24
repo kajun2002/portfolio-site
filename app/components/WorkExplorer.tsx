@@ -2,6 +2,24 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getWorkItem, workItems, type WorkItem } from "../data/workItems";
+import { toHash } from "../route";
+
+/** 左栏直接复用工作地图的树状分组，让详情页里也能看到项目所属的主线。 */
+const railBranches = [
+  {
+    overline: "01 / Activation",
+    label: "促活",
+    groups: [
+      { label: "人－人", items: workItems.filter((item) => item.level1 === "促活" && item.level2 === "人－人") },
+      { label: "人－宠物", items: workItems.filter((item) => item.level1 === "促活" && item.level2 === "人－宠物") },
+    ],
+  },
+  {
+    overline: "02 / Acquisition",
+    label: "拉新",
+    groups: [{ label: "社交裂变", items: workItems.filter((item) => item.level1 === "拉新") }],
+  },
+];
 
 function AnimatedMetric({ value }: { value: string }) {
   const match = /^([+≈-]?)(\d+(?:\.\d+)?)(%)?$/.exec(value);
@@ -480,36 +498,45 @@ function InviteProjectDetail() {
   );
 }
 
-export function WorkExplorer() {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+type WorkExplorerProps = {
+  selectedId: string | null;
+  onOpen: (id: string) => void;
+  onClose: () => void;
+};
+
+export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps) {
   const workRef = useRef<HTMLElement | null>(null);
+  const railRef = useRef<HTMLElement | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
+  const selectedIndex = workItems.findIndex((item) => item.id === selectedId);
+  const nextItem = selectedIndex >= 0 ? workItems[(selectedIndex + 1) % workItems.length] : undefined;
 
-  function scrollWorkIntoView(behavior: ScrollBehavior = "smooth") {
-    window.requestAnimationFrame(() => {
-      const element = workRef.current;
-      if (!element) return;
-      const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
-      const top = Math.max(0, element.getBoundingClientRect().top + window.scrollY - headerHeight);
-      window.scrollTo({ top, behavior });
+  // 左栏在矮屏上会自己滚动，切换项目后把当前项带回视野。
+  useEffect(() => {
+    const rail = railRef.current;
+    const active = rail?.querySelector<HTMLElement>("a[aria-current='page']");
+    if (!rail || !active || rail.scrollHeight <= rail.clientHeight) return;
+    const railRect = rail.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    if (activeRect.top >= railRect.top && activeRect.bottom <= railRect.bottom) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    rail.scrollTo({
+      top: rail.scrollTop + (activeRect.top - railRect.top) - (railRect.height - activeRect.height) / 2,
+      behavior: reduceMotion ? "instant" : "smooth",
     });
+  }, [selectedId]);
+
+  function handleOpen(event: React.MouseEvent, id: string) {
+    // 保留 href 让中键/右键「新标签打开」可用，普通点击仍走 SPA
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    onOpen(id);
   }
 
-  function openProject(id: string) {
-    const isSameProject = selectedId === id;
-    setSelectedId(id);
-    if (!isSameProject) {
-      scrollWorkIntoView("auto");
-    }
-  }
-
-  function closeProject() {
-    setSelectedId(null);
-    scrollWorkIntoView();
-  }
-
-  function toggleProject(id: string) {
-    openProject(id);
+  function handleClose(event: React.MouseEvent) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    onClose();
   }
 
   const fire = getWorkItem("fire")!;
@@ -530,7 +557,7 @@ export function WorkExplorer() {
             <div className="branch-content">
               <section className="relationship-group primary-group">
                 <div className="group-label"><strong className="t-title-3">人－人</strong><small>沉淀关系资产，强化彼此感知</small></div>
-                <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => toggleProject(fire.id)} aria-controls="work-detail">
+                <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => onOpen(fire.id)}>
                   <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
                   <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
                   <MetricStrip metrics={fire.metrics} />
@@ -540,7 +567,7 @@ export function WorkExplorer() {
                 <div className="group-label"><strong className="t-title-3">人－宠物</strong><small>打造被需要感，加深情感投入</small></div>
                 <div className="companion-nodes">
                   {companion.map((item) => (
-                    <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => toggleProject(item.id)} aria-controls="work-detail">
+                    <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => onOpen(item.id)}>
                       <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small>
                       {companionArtwork[item.id] && <img className="compact-node-art" src={companionArtwork[item.id]!.src} alt={companionArtwork[item.id]!.alt} />}
                     </button>
@@ -554,7 +581,7 @@ export function WorkExplorer() {
             <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新：</h3><p className="t-body-sm">拓展新增来源</p></div>
             <div className="branch-content single-branch-content">
               <div className="group-label"><strong className="t-title-3">社交裂变</strong></div>
-              <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => toggleProject(invite.id)} aria-controls="work-detail">
+              <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => onOpen(invite.id)}>
                 <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p>
                 <img className="invite-bar-art" src="/qqpet-invite-bar.png" alt="邀请奖励活动栏：限时邀请好友领养并获得奖励" />
                 <MetricStrip metrics={invite.metrics} />
@@ -563,17 +590,49 @@ export function WorkExplorer() {
           </article>
         </div>
       </div> : (
-            <div className={`work-detail tone-${selected.tone}`} id="work-detail" role="region" aria-label={`${selected.title}项目复盘`}>
-              <div className="context-bar">
-                <div className="section-shell context-inner">
-                  <div className="context-path t-caption"><span>{selected.level1}</span>{selected.level2 && <><b aria-hidden="true">›</b><span>{selected.level2}</span></>}<b aria-hidden="true">›</b><strong>{selected.title}</strong></div>
-                  <div className="context-switcher" aria-label="切换项目">
-                    {workItems.map((item) => <button type="button" key={item.id} className={`t-caption ${item.id === selected.id ? "active" : ""}`} onClick={() => openProject(item.id)}>{item.title}</button>)}
-                    <button className="collapse-detail t-caption" type="button" onClick={closeProject}>收起详情 ×</button>
-                  </div>
+            <div className={`work-detail tone-${selected.tone}`} id="work-detail">
+              <div className="detail-topbar">
+                <div className="section-shell detail-topbar-inner">
+                  <a className="detail-topbar-back t-caption" href={toHash("work")} onClick={handleClose}><b aria-hidden="true">←</b>工作地图</a>
+                  <span className="detail-topbar-title">{selected.title}</span>
+                  <span className="detail-topbar-count t-caption tnum">{selectedIndex + 1} / {workItems.length}</span>
                 </div>
               </div>
-              <div className="work-detail-content" key={selected.id}>
+              <div className="section-shell detail-layout">
+                <aside className="project-rail" ref={railRef}>
+                  <a className="rail-back t-caption" href={toHash("work")} onClick={handleClose}><b aria-hidden="true">←</b>工作地图</a>
+                  <nav className="rail-nav" aria-label="项目导航">
+                    {railBranches.map((branch) => (
+                      <div className="rail-branch" key={branch.label}>
+                        <span className="rail-overline t-overline tnum">{branch.overline}</span>
+                        <strong className="rail-branch-title">{branch.label}</strong>
+                        {branch.groups.map((group) => (
+                          <div className="rail-group" key={group.label}>
+                            <small className="rail-group-label">{group.label}</small>
+                            <ul>
+                              {group.items.map((item) => (
+                                <li key={item.id}>
+                                  <a
+                                    className={`rail-item tone-${item.tone}${item.id === selected.id ? " active" : ""}`}
+                                    href={toHash("work", item.id)}
+                                    aria-current={item.id === selected.id ? "page" : undefined}
+                                    onClick={(event) => handleOpen(event, item.id)}
+                                  >
+                                    <i className="rail-dot" aria-hidden="true" />
+                                    <span>{item.title}</span>
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </nav>
+                </aside>
+
+                <div className="detail-main">
+                  <article className="work-detail-content" key={selected.id} aria-label={`${selected.title}项目复盘`}>
                 {selected.id === "fire" ? <FireProjectDetail /> : selected.id === "sick" ? <SicknessProjectDetail /> : selected.id === "bath" ? <BathProjectDetail /> : selected.id === "skill" ? <SkillProjectDetail /> : selected.id === "invite" ? <InviteProjectDetail /> : <div className="section-shell detail-body">
                   <h2 className="sr-only">{selected.title}项目复盘</h2>
                   <div className="detail-framing">
@@ -588,6 +647,20 @@ export function WorkExplorer() {
                   </section>
                   <section className="detail-result"><DetailSectionHeading letter="R" english="Result / Learning" title="结果与沉淀" /><p className="t-body">{selected.result}</p></section>
                 </div>}
+                  </article>
+
+                  {nextItem && (
+                    <footer className="detail-next">
+                      <a className={`detail-next-link tone-${nextItem.tone}`} href={toHash("work", nextItem.id)} onClick={(event) => handleOpen(event, nextItem.id)}>
+                        <small className="t-caption">下一个项目</small>
+                        <strong className="t-title-3">{nextItem.title}</strong>
+                        <span className="t-body-sm">{nextItem.subtitle}</span>
+                        <b aria-hidden="true">→</b>
+                      </a>
+                      <a className="detail-next-map t-caption" href={toHash("work")} onClick={handleClose}>回到工作地图</a>
+                    </footer>
+                  )}
+                </div>
               </div>
             </div>
       )}

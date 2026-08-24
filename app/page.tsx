@@ -3,16 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Header } from "./components/Header";
 import { WorkExplorer } from "./components/WorkExplorer";
-
-const sectionIds = ["about", "experience", "work", "reflection"] as const;
-type SectionId = (typeof sectionIds)[number];
-
-function isSectionId(value: string): value is SectionId {
-  return sectionIds.includes(value as SectionId);
-}
+import { isSectionId, parseHash, sectionIds, toHash, type SectionId } from "./route";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<SectionId>("about");
+  const [projectId, setProjectId] = useState<string | null>(null);
+  const projectIdRef = useRef<string | null>(null);
   const [isWaving, setIsWaving] = useState(false);
   const scrollLockTimer = useRef<number | null>(null);
   const waveTimer = useRef<number | null>(null);
@@ -20,6 +16,11 @@ export default function Home() {
   const visualRef = useRef<HTMLButtonElement | null>(null);
   const heroImgRef = useRef<HTMLImageElement | null>(null);
   const [heroBox, setHeroBox] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+
+  // 滚动监听里要读当前项目，但不能让它成为监听器的依赖，否则每次切换都要重绑
+  useEffect(() => {
+    projectIdRef.current = projectId;
+  }, [projectId]);
 
   // 计算 hero 图片内容（object-fit: contain）在容器内的实际显示区域，
   // 让气泡锚定到图片本身，屏幕缩放时不偏移。
@@ -74,35 +75,58 @@ export default function Home() {
       if (section && section.offsetTop <= marker) current = id;
     }
     setActiveSection(current);
+    // 详情页打开时 URL 归项目所有，滚动不得把 #work/fire 改写回 #work
+    if (projectIdRef.current) return;
     if (window.location.hash !== `#${current}`) {
       window.history.replaceState(null, "", `#${current}`);
     }
   }, []);
 
-  const navigateTo = useCallback((id: string, pushHistory = true, smooth = true) => {
-    if (!isSectionId(id)) return;
-    const section = document.getElementById(id);
-    if (!section) return;
-    setActiveSection(id);
-    if (pushHistory) window.history.pushState(null, "", `#${id}`);
+  // 详情的开合会改变页面高度，所以位置要等布局稳定后再测量。
+  const scrollToSection = useCallback((id: SectionId, smooth: boolean) => {
     if (scrollLockTimer.current) window.clearTimeout(scrollLockTimer.current);
     isProgrammaticScroll.current = true;
-    const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({
-      top: Math.max(0, section.offsetTop - headerHeight),
-      behavior: smooth && !reduceMotion ? "smooth" : "instant",
-    });
-    scrollLockTimer.current = window.setTimeout(() => {
-      isProgrammaticScroll.current = false;
-      updateActiveFromScroll();
-    }, smooth && !reduceMotion ? 900 : 50);
+    const behavior: ScrollBehavior = smooth && !reduceMotion ? "smooth" : "instant";
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      const section = document.getElementById(id);
+      const headerHeight = document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+      if (section) window.scrollTo({ top: Math.max(0, section.offsetTop - headerHeight), behavior });
+      scrollLockTimer.current = window.setTimeout(() => {
+        isProgrammaticScroll.current = false;
+        updateActiveFromScroll();
+      }, behavior === "smooth" ? 900 : 80);
+    }));
   }, [updateActiveFromScroll]);
+
+  const navigateTo = useCallback((id: string) => {
+    if (!isSectionId(id)) return;
+    setProjectId(null);
+    setActiveSection(id);
+    window.history.pushState(null, "", toHash(id));
+    scrollToSection(id, true);
+  }, [scrollToSection]);
+
+  const openProject = useCallback((id: string) => {
+    setProjectId(id);
+    setActiveSection("work");
+    window.history.pushState(null, "", toHash("work", id));
+    scrollToSection("work", false);
+  }, [scrollToSection]);
+
+  const closeProject = useCallback(() => {
+    setProjectId(null);
+    setActiveSection("work");
+    window.history.pushState(null, "", toHash("work"));
+    scrollToSection("work", false);
+  }, [scrollToSection]);
 
   useEffect(() => {
     const syncFromLocation = () => {
-      const hash = window.location.hash.slice(1);
-      window.requestAnimationFrame(() => navigateTo(isSectionId(hash) ? hash : "about", false, false));
+      const route = parseHash(window.location.hash);
+      setProjectId(route.projectId);
+      setActiveSection(route.section);
+      scrollToSection(route.section, false);
     };
     syncFromLocation();
     window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
@@ -115,7 +139,7 @@ export default function Home() {
       window.removeEventListener("popstate", syncFromLocation);
       window.removeEventListener("hashchange", syncFromLocation);
     };
-  }, [navigateTo, updateActiveFromScroll]);
+  }, [scrollToSection, updateActiveFromScroll]);
 
   return (
     <main className="deck-site">
@@ -201,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      <WorkExplorer />
+      <WorkExplorer selectedId={projectId} onOpen={openProject} onClose={closeProject} />
 
       <section className="reflection-deck deck-slide" id="reflection">
         <div className="section-shell reflection-deck-inner">
