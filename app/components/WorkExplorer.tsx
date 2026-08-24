@@ -472,8 +472,8 @@ function InviteProjectDetail() {
         </div>
         <p className="t-body-sm invite-result-summary">邀请入口点击 UV 提升 <strong>95.31%</strong>；邀请渠道日均新增领养由 1.0 万增至 9.7 万（<strong>+861.29%</strong>），贡献占比由 11.52% 提升至 <strong>55.02%</strong>；带动大盘日均新增提升 <strong>101.24%</strong>，成为本期新增增长的核心来源。</p>
         <div className="invite-learning-grid">
-          <article><span className="t-overline">能力沉淀</span><p className="t-body-sm">本次需求锻炼了我在<strong>策略选择、MVP 判断与跨部门协同</strong>三方面的能力：能在多条路径中论证取舍依据，能在能力与时间受限时识别&quot;什么必须保、什么可以让&quot;，也能主动前置识别风险并推动协同解决。</p></article>
-          <article className="invite-cognition"><span className="t-overline">认知延伸</span><blockquote>拉新的终点不是量，而是互动。</blockquote><p className="t-body-sm">更重要的是意识到：<strong>拉新的终点不是量，而是互动。</strong> 若邀请而来的是沉默用户，对业务并无价值。因此在活动之后，我推动了好友列表推荐新注册用户等需求，把新增承接到互动场景中——这也是我的工作从拉新自然延伸到促活的原因。</p></article>
+          <article><div className="invite-subsection-heading"><h4 className="t-title-2">能力沉淀</h4></div><p className="t-body-sm">本次需求锻炼了我在<strong>策略选择、MVP 判断与跨部门协同</strong>三方面的能力：能在多条路径中论证取舍依据，能在能力与时间受限时识别&quot;什么必须保、什么可以让&quot;，也能主动前置识别风险并推动协同解决。</p></article>
+          <article className="invite-cognition"><div className="invite-subsection-heading"><h4 className="t-title-2">认知延伸</h4></div><blockquote>拉新的终点不是量，而是互动。</blockquote><p className="t-body-sm">更重要的是意识到：<strong>拉新的终点不是量，而是互动。</strong> 若邀请而来的是沉默用户，对业务并无价值。因此在活动之后，我推动了好友列表推荐新注册用户等需求，把新增承接到互动场景中——这也是我的工作从拉新自然延伸到促活的原因。</p></article>
         </div>
       </section>
     </div>
