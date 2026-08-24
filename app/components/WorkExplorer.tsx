@@ -415,9 +415,9 @@ function InviteProjectDetail() {
         <DetailSectionHeading letter="A" english="Action" title="行动" id="invite-actions-title" />
 
         <article className="invite-target">
-          <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
           <div className="invite-target-layout">
             <div className="invite-target-copy">
+              <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
               <div className="invite-north-star"><small>北极星指标</small><strong>邀请渠道带来的新增领养用户数</strong></div>
               <div className="invite-definition-compare" aria-label="常规做法与有效邀请口径对比">
                 <div><small>部分裂变活动</small><strong>“发送邀请”即计为成功</strong><span>分享、点击均未转化为真实新增</span></div>
@@ -425,18 +425,8 @@ function InviteProjectDetail() {
                 <div><small>有效邀请口径</small><strong>受邀好友完成宠物领养</strong><span>确保奖励发放与业务目标严格对齐</span></div>
               </div>
               <p className="t-body-sm">部分裂变活动将&quot;发送邀请&quot;即计为成功，但分享、点击均未转化为真实新增。以完成领养作为口径，可确保奖励发放与业务目标严格对齐。</p>
-            </div>
-            <figure className="invite-activity-figure">
-              <img src="/invite-activity.png" alt="邀请奖励活动页面" />
-              <figcaption className="t-caption"><strong>活动页面</strong><span>邀请奖励活动整体形态</span></figcaption>
-            </figure>
-          </div>
-        </article>
 
-        <article className="invite-mechanism">
-          <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">机制设计：以参与门槛倒推奖励模型</h4></div>
-          <div className="invite-mechanism-layout">
-            <div className="invite-mechanism-copy">
+              <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">机制设计：以参与门槛倒推奖励模型</h4></div>
               <p className="t-body-sm">在主流裂变玩法（满 N 人发奖／每邀一人即发奖／阶梯大奖）中，选择<strong>每邀 1 人即得奖</strong>。</p>
               <p className="t-body-sm">判断依据：既然口径是&quot;完成领养&quot;，<strong>受邀方的转化成本本就较高</strong>；若再要求邀满 3 人才发奖，参与压力过大、易中途放弃。</p>
               <div className="invite-mechanism-table" role="table" aria-label="机制与设计意图">
@@ -444,9 +434,9 @@ function InviteProjectDetail() {
                 {inviteMechanisms.map(([mechanism, intent]) => <div className="invite-mechanism-row" role="row" key={mechanism}><span role="cell">{mechanism}</span><b aria-hidden="true">→</b><span role="cell">{intent}</span></div>)}
               </div>
             </div>
-            <figure className="invite-rules-figure">
-              <img src="/invite-rules.png" alt="邀请奖励活动规则：成功邀请口径、奖励内容与发放方式" />
-              <figcaption className="t-caption"><strong>活动规则</strong><span>成功邀请口径、奖励与发放方式</span></figcaption>
+            <figure className="invite-activity-figure">
+              <img src="/invite-activity.png" alt="邀请奖励活动页面" />
+              <figcaption className="t-caption"><strong>活动页面</strong><span>邀请奖励活动整体形态</span></figcaption>
             </figure>
           </div>
         </article>
