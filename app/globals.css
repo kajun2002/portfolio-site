@@ -350,7 +350,7 @@ img { display:block; max-width:100%; }
 .fire-force-model small { color:var(--ink-500); }.fire-force-model strong { color:var(--ink-800); font-size:var(--fs-title-3); }.fire-force-model span { color:var(--ink-600); font-size:var(--fs-caption); line-height:1.45; }
 .fire-force-model>b { align-self:center; color:var(--tone); font-size:22px; }
 .fire-force-result { display:grid; justify-items:center; gap:6px; margin-top:var(--sp-4); color:var(--tone); }
-.fire-force-arrow-down { width:29px; height:auto; margin-top:-14px; }
+.fire-force-arrow-down { width:44px; height:auto; margin-top:-34px; }
 .fire-force-result strong { padding:7px 13px; border:1px solid var(--tone-line); border-radius:999px; background:var(--tone-soft); font-size:var(--fs-body-sm); text-align:center; }
 .fire-actions,.fire-results { padding-top:var(--sp-10); }
 .fire-subsection-heading { display:flex; align-items:center; gap:var(--sp-3); margin-bottom:var(--sp-4); }
