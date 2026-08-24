@@ -265,9 +265,12 @@ export default function Home() {
           </div>
 
           <section className="reflection-finale" aria-labelledby="reflection-finale-title">
-            <span className="t-overline">总结</span>
+            <header className="reflection-group-head">
+              <span className="t-overline tnum">03 / SUMMARY</span>
+              <h3 id="reflection-finale-title" className="t-title-2">总结</h3>
+            </header>
             <p>这段实习让我从基础执行，逐步建立起产品闭环意识、跨团队协作能力、工具提效能力与复盘沉淀习惯。</p>
-            <p><strong id="reflection-finale-title" className="finale-highlight">从「能完成分配的需求」，到「能定义问题、论证路径、推动落地并判断下一步」。</strong></p>
+            <p><strong className="finale-highlight">从「能完成分配的需求」，到「能定义问题、论证路径、推动落地并判断下一步」。</strong></p>
             <p>后续我希望继续提升业务理解、产品判断与复杂需求推进能力。</p>
           </section>
           <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
