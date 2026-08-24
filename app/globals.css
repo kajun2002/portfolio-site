@@ -415,10 +415,7 @@ img { display:block; max-width:100%; }
 .sickness-action-media img { display:block; width:100%; height:336px; flex:1; object-fit:contain; background:var(--ink-100); }
 .sickness-action-media figcaption { padding:var(--sp-3) var(--sp-4); color:var(--ink-500); }
 .sickness-results { padding:var(--sp-7); border-color:var(--tone-line); background:var(--glass-3); }
-.sickness-results>p { margin:0 0 0 calc(36px + var(--sp-3)); color:var(--ink-600); }
-.sickness-result-chain { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:var(--sp-3); margin:var(--sp-5) 0 0 calc(36px + var(--sp-3)); }
-.sickness-result-chain span { padding:10px 14px; border:1px solid var(--tone-line); border-radius:999px; color:var(--ink-800); background:var(--tone-soft); font-weight:700; }
-.sickness-result-chain b { color:var(--tone); }
+.sickness-results>p { margin:0; color:var(--ink-600); }
 
 /* Bath case: one interaction problem, from contrast to translation */
 .bath-case { display:grid; gap:var(--sp-10); }
@@ -695,7 +692,7 @@ img { display:block; max-width:100%; }
   .site-header nav { padding-inline:14px; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%); }
   .detail-body { padding-block:var(--sp-8) var(--sp-16); }.action-grid { grid-template-columns:1fr; }.action-grid article,.action-grid article:nth-child(n) { grid-column:1 / -1; min-height:auto; }
   .detail-actions,.fire-actions,.sickness-actions,.invite-actions { padding:var(--sp-5); }
-  .sickness-case { gap:var(--sp-8); }.sickness-stage,.sickness-results { padding:var(--sp-5); }.sickness-action-media img { height:auto; max-height:336px; }.sickness-results>p,.sickness-result-chain { margin-left:0; }
+  .sickness-case { gap:var(--sp-8); }.sickness-stage,.sickness-results { padding:var(--sp-5); }.sickness-action-media img { height:auto; max-height:336px; }.sickness-results>p { margin-left:0; }
   .bath-case { gap:var(--sp-8); }.bath-solution-head,.bath-solution-row { grid-template-columns:1fr; gap:7px; }.bath-solution-head span,.bath-solution-row>b { display:none; }.bath-solution-row { min-height:0; }.bath-demo video { min-height:220px; }
   .invite-case { gap:var(--sp-8); }.invite-strategy-compare { grid-template-columns:1fr; }.invite-strategy-compare .invite-strategy-choice { grid-row:auto; }.invite-strategy-ceiling { grid-column:auto; grid-row:3; }.invite-definition-compare { grid-template-columns:1fr; }.invite-definition-compare>b { justify-self:center; }.invite-mechanism-head,.invite-mechanism-row { grid-template-columns:1fr; gap:6px; }.invite-mechanism-head b,.invite-mechanism-row b { display:none; }.invite-mvp-evolution { grid-template-columns:1fr; }.invite-mvp-constraint>span { transform:rotate(90deg); }.invite-mvp-copy,.invite-result-visuals,.invite-learning-grid { grid-template-columns:1fr; }.invite-mvp figure img,.invite-activity-figure img { flex:none; height:auto; max-height:520px; }
   .detail-result { grid-template-columns:1fr; gap:var(--sp-2); }.reflection-deck-inner { padding-block:var(--sp-8) var(--sp-16); }.reflection-groups { grid-template-columns:1fr; }

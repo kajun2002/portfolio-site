@@ -280,9 +280,6 @@ function SicknessProjectDetail() {
       <section className="sickness-results" aria-labelledby="sickness-result-title">
         <DetailSectionHeading letter="R" english="Result" title="结果" id="sickness-result-title" />
         <p className="t-body">在原有养成链路中补齐了负向激励环节，并使宠物的负向状态同时承接照顾动机、好友互动与流失召回三重作用。</p>
-        <div className="sickness-result-chain" aria-label="生病机制承接的三重作用">
-          <span>照顾动机</span><b aria-hidden="true">＋</b><span>好友互动</span><b aria-hidden="true">＋</b><span>流失召回</span>
-        </div>
       </section>
     </div>
   );
