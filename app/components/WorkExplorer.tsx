@@ -300,12 +300,12 @@ function BathProjectDetail() {
             <DetailSectionHeading letter="T" english="Core challenge" title="核心难点" id="bath-challenge-title" />
 
             <p className="t-body-sm bath-challenge-intro">
-              洗澡采用<strong>拖拽香皂搓澡</strong>的连续交互形式——这与喂食等离散交互（点击一次 = 扣除一个饼干 = 增加体力）有本质区别：<strong>连续动作没有天然的操作边界</strong>。
+              洗澡采用<strong>「拖拽香皂搓澡」的连续交互</strong>——与喂食「点击一次 = 扣除一个饼干 = 增加体力」的离散交互有本质区别，由此产生两个交互难点：
             </p>
 
             <div className="bath-pain-list">
-              <div className="bath-pain-item"><b>01</b><span className="bath-pain-title">消耗不可预期</span><span className="bath-pain-desc">用户无法预判「洗至干净需要多少道具」，也无法感知「拖动到何种程度会扣除一块香皂」。</span></div>
-              <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">心智规则断裂</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，连续交互打破这一规则，带来误操作顾虑与消费迟疑。</span></div>
+              <div className="bath-pain-item"><b>01</b><span className="bath-pain-title">消耗不可预期</span><span className="bath-pain-desc">用户无法预判「完全洗干净需要多少道具」，也无法感知「拖动到何种程度会扣除一块香皂并增加清洁值」。</span></div>
+              <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">消耗与清洁值难以同步感知</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，而拖拽是连续的，用户难以同时感知「扣了多少道具」和「涨了多少清洁值」。</span></div>
             </div>
 
             <p className="t-body-sm bath-reject-intro">而两种直觉方案均不成立：</p>
