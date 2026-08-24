@@ -127,7 +127,7 @@ function FireProjectDetail() {
             <b aria-hidden="true">＋</b>
             <div><small>对对方是</small><strong>社交压力</strong><span>不能单方面抛弃共同经营的关系</span></div>
           </div>
-          <div className="fire-force-result"><span aria-hidden="true">↓</span><strong>这两种力共同驱动用户互动回访。</strong></div>
+          <div className="fire-force-result"><img className="fire-force-arrow-down" src="/arrow-down.png" alt="" aria-hidden="true" /><strong>这两种力共同驱动用户互动回访。</strong></div>
         </article>
       </section>
 
