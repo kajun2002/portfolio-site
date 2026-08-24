@@ -452,7 +452,7 @@ function InviteProjectDetail() {
 
             <figure className="invite-activity-figure">
               <img src="/invite-activity.png" alt="邀请奖励活动页面" />
-              <figcaption className="t-caption"><strong>活动页面</strong><span>邀请奖励活动整体形态</span></figcaption>
+              <figcaption className="t-caption">活动页面：icon引导、重要信息分层展示并新增端外分享能力入口</figcaption>
             </figure>
           </div>
         </article>
