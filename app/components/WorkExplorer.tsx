@@ -416,8 +416,8 @@ function InviteProjectDetail() {
 
         <article className="invite-target">
           <div className="invite-target-layout">
+            <div className="invite-subsection-heading invite-target-lead"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
             <div className="invite-target-left">
-            <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
             <div className="invite-north-star"><small>北极星指标</small><strong>邀请渠道带来的新增领养用户数</strong></div>
             <div className="invite-definition-compare" aria-label="常规做法与有效邀请口径对比">
               <div><small>部分裂变活动</small><strong>“发送邀请”即计为成功</strong><span>分享、点击均未转化为真实新增</span></div>
