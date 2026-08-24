@@ -508,6 +508,7 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
   const workRef = useRef<HTMLElement | null>(null);
   const railRef = useRef<HTMLElement | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
+  const selectedIndex = workItems.findIndex((item) => item.id === selectedId);
 
   // 左栏在矮屏上会自己滚动，切换项目后把当前项带回视野。
   useEffect(() => {
