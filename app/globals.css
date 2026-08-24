@@ -425,11 +425,9 @@ img { display:block; max-width:100%; }
 /* Invite case: strategy comparison → definition and mechanism → MVP tradeoff → growth proof. */
 .invite-case { display:grid; gap:var(--sp-10); }
 .invite-background { padding:var(--sp-7); border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-2); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
-.invite-background>div:last-child { padding-left:calc(36px + var(--sp-3)); }.invite-background p,.invite-risk p { margin:0; }
-.invite-background-flow { display:flex; flex-wrap:wrap; align-items:center; gap:var(--sp-2); margin-top:var(--sp-4); }
-.invite-background-flow span,.invite-background-flow strong { padding:9px 12px; border:1px solid var(--border-subtle); border-radius:999px; color:var(--ink-700); background:rgba(255,255,255,.58); font-size:var(--fs-caption); }
-.invite-background-flow strong { border-color:var(--tone-line); color:var(--tone); background:var(--tone-soft); }.invite-background-flow b { color:var(--tone); }
-.invite-strategy,.invite-actions,.invite-results { display:grid; gap:var(--sp-5); }
+.invite-bg-copy { padding-left:calc(36px + var(--sp-3)); }.invite-background p,.invite-risk p { margin:0; }
+.invite-strategy-part { display:grid; gap:var(--sp-4); margin-top:var(--sp-5); padding-top:var(--sp-5); border-top:1px solid var(--border-hairline); }
+.invite-actions,.invite-results { display:grid; gap:var(--sp-5); }
 .invite-strategy-compare { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-3); }
 .invite-strategy-compare>article { min-height:148px; padding:var(--sp-5); border:1px solid var(--glass-line); border-radius:var(--r-md); background:var(--glass-2); box-shadow:var(--shadow-glass); }
 .invite-strategy-compare>article>span { color:var(--ink-400); font-size:var(--fs-overline); letter-spacing:.12em; }.invite-strategy-compare h4 { margin:var(--sp-4) 0 0; }
@@ -463,7 +461,7 @@ img { display:block; max-width:100%; }
 .detail-heading-mark { display:none; }
 .detail-heading-copy { gap:5px; }
 .detail-framing article { min-height:0; }
-.bath-background-copy,.bath-result-copy,.invite-background>div:last-child { padding-left:0; }
+.bath-background-copy,.bath-result-copy,.invite-bg-copy { padding-left:0; }
 
 .fire-background-figure figcaption {
   padding:10px 12px 12px;
