@@ -508,8 +508,6 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
   const workRef = useRef<HTMLElement | null>(null);
   const railRef = useRef<HTMLElement | null>(null);
   const selected = selectedId ? getWorkItem(selectedId) : undefined;
-  const selectedIndex = workItems.findIndex((item) => item.id === selectedId);
-  const nextItem = selectedIndex >= 0 ? workItems[(selectedIndex + 1) % workItems.length] : undefined;
 
   // 左栏在矮屏上会自己滚动，切换项目后把当前项带回视野。
   useEffect(() => {
@@ -649,17 +647,9 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
                 </div>}
                   </article>
 
-                  {nextItem && (
-                    <footer className="detail-next">
-                      <a className={`detail-next-link tone-${nextItem.tone}`} href={toHash("work", nextItem.id)} onClick={(event) => handleOpen(event, nextItem.id)}>
-                        <small className="t-caption">下一个项目</small>
-                        <strong className="t-title-3">{nextItem.title}</strong>
-                        <span className="t-body-sm">{nextItem.subtitle}</span>
-                        <b aria-hidden="true">→</b>
-                      </a>
-                      <a className="detail-next-map t-caption" href={toHash("work")} onClick={handleClose}>回到工作地图</a>
-                    </footer>
-                  )}
+                  <footer className="detail-next">
+                    <a className="detail-next-map t-caption" href={toHash("work")} onClick={handleClose}>回到工作地图</a>
+                  </footer>
                 </div>
               </div>
             </div>
