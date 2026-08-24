@@ -246,7 +246,7 @@ export default function Home() {
                   <p className="reflection-support">实习中完整参与了用户洞察、PRD 撰写、设计开发对接、上线验收与数据复盘。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，推动项目落地</h4><span className="reflection-tag">Owner</span></div>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 owner 意识，推动项目落地</h4><span className="reflection-tag">Owner意识</span></div>
                   <p className="reflection-key">对项目结果负责，关键节点主动判断、推动落地。</p>
                   <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花多期优化；两天上线窗口下将活动拆为两条消息，守住「感知到具体是谁」的核心目标抢下流量。</p>
                 </article>
