@@ -416,6 +416,7 @@ function InviteProjectDetail() {
 
         <article className="invite-target">
           <div className="invite-target-layout">
+            <div className="invite-target-left">
             <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">目标与口径：让激励直接服务最终目标</h4></div>
             <div className="invite-north-star"><small>北极星指标</small><strong>邀请渠道带来的新增领养用户数</strong></div>
             <div className="invite-definition-compare" aria-label="常规做法与有效邀请口径对比">
@@ -431,6 +432,7 @@ function InviteProjectDetail() {
             <div className="invite-mechanism-table" role="table" aria-label="机制与设计意图">
               <div className="invite-mechanism-head" role="row"><strong role="columnheader">机制</strong><b aria-hidden="true">→</b><strong role="columnheader">设计意图</strong></div>
               {inviteMechanisms.map(([mechanism, intent]) => <div className="invite-mechanism-row" role="row" key={mechanism}><span role="cell">{mechanism}</span><b aria-hidden="true">→</b><span role="cell">{intent}</span></div>)}
+            </div>
             </div>
 
             <figure className="invite-activity-figure">
