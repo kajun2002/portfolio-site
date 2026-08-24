@@ -460,9 +460,9 @@ function InviteProjectDetail() {
         <article className="invite-mvp">
           <div className="invite-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">卡点取舍：能力受限下的 MVP 判断</h4></div>
           <div className="invite-mvp-evolution" aria-label="原方案到落地方案的取舍过程">
-            <figure><span className="invite-figure-label">原方案</span><img src="/invite-mvp-before.png" alt="原方案：奖励邮件呈现好友信息与主页入口" /><figcaption className="t-caption"><strong>原方案：</strong>在奖励邮件中呈现受邀好友信息与主页访问入口，使新用户到来后<strong>即刻产生一次熟人互动</strong>。</figcaption></figure>
+            <figure><span className="invite-figure-label">原方案</span><img src="/invite-mvp-before.png" alt="原方案：奖励邮件呈现好友信息与主页入口" /><figcaption className="t-body-sm">在奖励邮件中呈现受邀好友信息与主页访问入口，使新用户到来后<strong>即刻产生一次熟人互动</strong>。</figcaption></figure>
             <div className="invite-mvp-constraint"><small>遇到约束</small><strong>配置平台不支持该能力</strong><strong>上线窗口仅两天</strong><span aria-hidden="true">→</span></div>
-            <figure><span className="invite-figure-label">落地方案</span><img src="/invite-mvp-after.png" alt="落地方案：好友到来通知和奖励到账通知" /><figcaption className="t-caption"><strong>取舍：</strong>拆分为「好友到来通知 + 奖励到账通知」两条消息。方案并非最优形态，但在能力受限下<strong>守住了&quot;感知到具体是谁&quot;这一核心目标</strong>，以最小成本抢住流量窗口。</figcaption></figure>
+            <figure><span className="invite-figure-label">落地方案</span><img src="/invite-mvp-after.png" alt="落地方案：好友到来通知和奖励到账通知" /><figcaption className="t-body-sm">拆分为「好友到来通知 + 奖励到账通知」两条消息。方案并非最优形态，但在能力受限下<strong>守住了&quot;感知到具体是谁&quot;这一核心目标</strong>，以最小成本抢住流量窗口。</figcaption></figure>
           </div>
         </article>
 
