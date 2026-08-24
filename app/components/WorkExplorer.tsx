@@ -435,13 +435,19 @@ function InviteProjectDetail() {
 
         <article className="invite-mechanism">
           <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">机制设计：以参与门槛倒推奖励模型</h4></div>
-          <div className="invite-model-options" aria-label="主流裂变玩法选择"><span>满 N 人发奖</span><span className="chosen">每邀一人即发奖</span><span>阶梯大奖</span></div>
-          <div className="invite-mechanism-reason"><span>口径是“完成领养”</span><b aria-hidden="true">→</b><span>受邀方的转化成本本就较高</span><b aria-hidden="true">→</b><strong>每邀 1 人即得奖</strong></div>
-          <p className="t-body-sm">在主流裂变玩法（满 N 人发奖／每邀一人即发奖／阶梯大奖）中，选择<strong>每邀 1 人即得奖</strong>。</p>
-          <p className="t-body-sm">判断依据：既然口径是&quot;完成领养&quot;，<strong>受邀方的转化成本本就较高</strong>；若再要求邀满 3 人才发奖，参与压力过大、易中途放弃。</p>
-          <div className="invite-mechanism-table" role="table" aria-label="机制与设计意图">
-            <div className="invite-mechanism-head" role="row"><strong role="columnheader">机制</strong><b aria-hidden="true">→</b><strong role="columnheader">设计意图</strong></div>
-            {inviteMechanisms.map(([mechanism, intent]) => <div className="invite-mechanism-row" role="row" key={mechanism}><span role="cell">{mechanism}</span><b aria-hidden="true">→</b><span role="cell">{intent}</span></div>)}
+          <div className="invite-mechanism-layout">
+            <div className="invite-mechanism-copy">
+              <p className="t-body-sm">在主流裂变玩法（满 N 人发奖／每邀一人即发奖／阶梯大奖）中，选择<strong>每邀 1 人即得奖</strong>。</p>
+              <p className="t-body-sm">判断依据：既然口径是&quot;完成领养&quot;，<strong>受邀方的转化成本本就较高</strong>；若再要求邀满 3 人才发奖，参与压力过大、易中途放弃。</p>
+              <div className="invite-mechanism-table" role="table" aria-label="机制与设计意图">
+                <div className="invite-mechanism-head" role="row"><strong role="columnheader">机制</strong><b aria-hidden="true">→</b><strong role="columnheader">设计意图</strong></div>
+                {inviteMechanisms.map(([mechanism, intent]) => <div className="invite-mechanism-row" role="row" key={mechanism}><span role="cell">{mechanism}</span><b aria-hidden="true">→</b><span role="cell">{intent}</span></div>)}
+              </div>
+            </div>
+            <figure className="invite-rules-figure">
+              <img src="/invite-rules.png" alt="邀请奖励活动规则：成功邀请口径、奖励内容与发放方式" />
+              <figcaption className="t-caption"><strong>活动规则</strong><span>成功邀请口径、奖励与发放方式</span></figcaption>
+            </figure>
           </div>
         </article>
 
