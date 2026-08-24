@@ -382,22 +382,22 @@ function SkillProjectDetail() {
       <section className="skill-actions" aria-labelledby="skill-actions-title">
         <DetailSectionHeading letter="A" english="Action" title="行动" id="skill-actions-title" />
 
-        <article className="skill-action-card">
+        <div className="skill-action-item">
           <div className="skill-action-head">
             <b className="tnum">01</b>
             <h4 className="t-title-3">玩法设计：从市场调研到宠物场景落地</h4>
           </div>
           <p className="t-body-sm">前期调研市面上的主流 Skill 玩法，以<strong>是否契合宠物人设、是否具备话题延展性、是否有可分享产物</strong>为筛选标准，收敛出适合宠物场景的方向，并开发落地<strong>「宠物答案书」「图片评论家」</strong>等 Skill。</p>
-        </article>
+        </div>
 
-        <article className="skill-action-card">
+        <div className="skill-action-item">
           <div className="skill-action-head">
             <b className="tnum">02</b>
             <h4 className="t-title-3">评测体系：让约束可被验证</h4>
           </div>
           <p className="t-body-sm skill-action-lead">核心认知是——<strong>约束不能只写在 Prompt 里，必须下沉为可执行的评测 case</strong>，否则无法判断它是否真的生效。</p>
           <p className="t-body-sm">因此基于宠物业务自建评测集，覆盖性格表现、指令遵循、信息补全等维度，并区分正向约束与负向约束；在 eval 平台设计技能能力指标（含负向拒答验证）与路由边界指标，依据评测结果定位缺陷并驱动迭代。</p>
-        </article>
+        </div>
       </section>
 
       <section className="skill-result" aria-labelledby="skill-result-title">
