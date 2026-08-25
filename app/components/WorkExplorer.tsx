@@ -57,12 +57,17 @@ function AnimatedMetric({ value }: { value: string }) {
 }
 
 function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
+  const raws = metrics.map((m) => {
+    const n = Number(m.value.replace(/[^\d.]/g, ""));
+    if (!Number.isFinite(n)) return 0;
+    return m.value.includes("×") ? n * 100 : n;
+  });
+  const maxRaw = Math.max(...raws, 1);
   return (
     <div className="work-metrics">
-      {metrics.map((metric) => {
-        const numeric = Number(metric.value.replace(/[^\d.]/g, ""));
+      {metrics.map((metric, i) => {
         const hasBar = metric.value.includes("%") || metric.value.includes("×");
-        const barWidth = !Number.isFinite(numeric) ? 0 : metric.value.includes("×") ? 100 : Math.min(numeric, 100);
+        const barWidth = Math.min((raws[i] / maxRaw) * 100, 100);
         return <div key={metric.label}><AnimatedMetric value={metric.value} /><span className="t-caption">{metric.label}</span>{hasBar && <span className="metric-bar" aria-hidden="true"><i style={{ width: `${barWidth}%` }} /></span>}</div>;
       })}
     </div>
