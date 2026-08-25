@@ -203,6 +203,24 @@ img { display:block; max-width:100%; }
 .metric-bar { height:3px; margin-top:var(--sp-3)!important; overflow:hidden; border-radius:2px; background:var(--ink-100); }
 .metric-bar i { display:block; height:100%; border-radius:2px; background:var(--grad-brand); transform-origin:left; animation:metric-grow .9s var(--ease-out) both; }
 @keyframes metric-grow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+
+/* 工作地图·踩踩续火花：2.5× 双条形对比 + 122% 超百进度条 */
+.fire-map-num { display:block; color:var(--ink-900); font-family:var(--font-display); font-size:clamp(26px,6cqw,36px); font-weight:600; line-height:1.05; letter-spacing:var(--ls-display); font-variant-numeric:tabular-nums; }
+.fire-map-num small { margin-left:2px; font-size:.48em; font-weight:600; }
+.fire-map-compare { display:grid; gap:6px; margin-top:var(--sp-3); }
+.fire-map-row { display:grid; grid-template-columns:52px minmax(0,1fr) auto; align-items:center; gap:8px; }
+.fire-map-row span { color:var(--ink-600); font-size:var(--fs-caption); }
+.fire-map-row b { color:var(--ink-800); font-size:var(--fs-caption); font-weight:600; font-variant-numeric:tabular-nums; }
+.fire-map-bar { display:block; height:8px; border-radius:999px; }
+.fire-map-bar-main { background:#4A8CFF; }
+.fire-map-bar-sub { width:40%; background:var(--ink-200); }
+.fire-map-overbar { position:relative; height:8px; margin-top:var(--sp-3); border-radius:999px; background:var(--ink-100); }
+.fire-map-overbar i { display:block; width:91%; height:100%; border-radius:999px; background:#5B62FF; }
+.fire-map-overbar em { position:absolute; left:74.6%; top:-3px; bottom:-3px; width:2px; border-radius:1px; background:#9aa0aa; }
+.fire-map-overnote { position:relative; height:15px; margin-top:7px; color:var(--ink-500); font-size:11px; }
+.fire-map-overnote span { position:absolute; white-space:nowrap; }
+.fire-map-overnote span:first-child { left:74.6%; transform:translateX(-50%); }
+.fire-map-overnote span:last-child { right:9%; }
 @container (max-width:420px) {
   .project-node-main .work-metrics { grid-template-columns:1fr; }
   .project-node-main .t-metric { font-size:clamp(24px,11cqw,34px); }

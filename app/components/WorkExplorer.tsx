@@ -68,6 +68,27 @@ function MetricStrip({ metrics }: { metrics: WorkItem["metrics"] }) {
   );
 }
 
+function FireMapMetrics() {
+  return (
+    <div className="work-metrics fire-map-metrics">
+      <div>
+        <strong className="fire-map-num">2.5<small>×</small></strong>
+        <span className="t-caption">火花用户日均互踩频次提升</span>
+        <div className="fire-map-compare">
+          <div className="fire-map-row"><span>火花关系</span><i className="fire-map-bar fire-map-bar-main" /><b>13.0 次</b></div>
+          <div className="fire-map-row"><span>无火花</span><i className="fire-map-bar fire-map-bar-sub" /><b>5.2 次</b></div>
+        </div>
+      </div>
+      <div>
+        <strong className="fire-map-num">122<small>%</small></strong>
+        <span className="t-caption">火花关系对数 / 社交互动关系对数</span>
+        <div className="fire-map-overbar" aria-hidden="true"><i /><em /></div>
+        <div className="fire-map-overnote"><span>原有互动 = 100%</span><span>超出 22%</span></div>
+      </div>
+    </div>
+  );
+}
+
 type DetailSectionHeadingProps = {
   letter: string;
   english: string;
@@ -551,7 +572,7 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
                 <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => onOpen(fire.id)}>
                   <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
                   <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
-                  <MetricStrip metrics={fire.metrics} />
+                  <FireMapMetrics />
                 </button>
               </section>
               <section className="relationship-group companion-group">
