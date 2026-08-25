@@ -384,14 +384,25 @@ img { display:block; max-width:100%; }
 .fire-equity-figure { display:flex; flex-direction:column; gap:var(--sp-2); }
 .fire-equity-figure figcaption { margin-top:auto; min-height:3em; }
 .fire-equity-figure img { display:block; width:100%; max-height:380px; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.68); box-shadow:var(--shadow-soft); }
-.fire-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-4); }
+.fire-result-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-4); }
 .fire-result-grid article { display:flex; min-height:180px; flex-direction:column; justify-content:center; padding:var(--sp-5); }
-.fire-result-grid article>p { margin-top:var(--sp-3); color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.5; }
-.retention-values { display:flex; align-items:center; gap:var(--sp-3); }.retention-values strong,.fire-frequency-result>strong { color:var(--ink-900); font-size:clamp(28px,4.8cqi,54px); line-height:1; }.retention-values span { color:var(--tone); font-size:26px; }
-.result-delta { align-self:flex-start; margin-top:var(--sp-2); padding:4px 9px; border-radius:999px; color:var(--tone); background:var(--tone-soft); font-size:var(--fs-caption); }
-.coverage-ring { position:relative; display:grid; width:112px; height:112px; place-items:center; border-radius:50%; background:conic-gradient(var(--tone) 0 70%,var(--ink-100) 70% 100%); }
-.coverage-ring::after { content:""; position:absolute; inset:10px; border-radius:50%; background:#fff; }.coverage-ring strong { position:relative; z-index:1; color:var(--ink-900); font-size:28px; }
-.comparison-bars { display:grid; gap:8px; margin-top:var(--sp-4); }.comparison-bars i { display:block; height:8px; border-radius:999px; background:var(--ink-200); }.comparison-bars i:first-child { width:48%; }.comparison-bars i:last-child { width:100%; background:var(--grad-brand); }
+.fire-result-grid article>p { margin-top:var(--sp-2); color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.5; }
+.fire-big-num { color:var(--ink-900); font-size:clamp(32px,4.8cqi,54px); line-height:1; }.fire-big-num small { font-size:.5em; font-weight:600; }
+/* 卡片 1：双条形对比（火花 13.0 次 vs 无火花 5.2 次） */
+.fire-compare-bars { display:grid; gap:10px; margin-top:var(--sp-4); }
+.fire-compare-row { display:grid; grid-template-columns:64px minmax(0,1fr) 52px; align-items:center; gap:var(--sp-2); }
+.fire-compare-row span { color:var(--ink-600); font-size:var(--fs-caption); }
+.fire-compare-row b { color:var(--ink-800); font-size:var(--fs-caption); font-weight:600; text-align:right; }
+.fire-bar { display:block; height:10px; border-radius:999px; }
+.fire-bar-main { width:100%; background:#4a8cff; }
+.fire-bar-sub { width:40%; background:var(--ink-200); }
+/* 卡片 2：超百进度条（填充越过 100% 基准线） */
+.fire-overfull-bar { position:relative; margin-top:var(--sp-5); height:10px; border-radius:999px; background:var(--ink-100); }
+.fire-overfull-fill { display:block; width:91%; height:100%; border-radius:999px; background:#5b62ff; }
+.fire-overfull-marker { position:absolute; top:-3px; bottom:-3px; left:74.6%; width:2px; border-radius:1px; background:var(--ink-400); }
+.fire-overfull-notes { position:relative; margin-top:var(--sp-2); height:18px; font-size:var(--fs-caption); color:var(--ink-500); }
+.fire-note-base { position:absolute; left:74.6%; transform:translateX(-50%); }
+.fire-note-over { position:absolute; right:9%; color:var(--ink-700); font-weight:600; }
 
 /* Sickness case: negative incentive → social interaction and emotional recall. */
 .sickness-case { display:grid; gap:var(--sp-10); }
