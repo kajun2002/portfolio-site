@@ -188,11 +188,11 @@ function FireProjectDetail() {
             <div className="fire-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">权益绑定：把关系资产变成账户资产</h4></div>
             <div className="fire-equity-layout">
               <div className="fire-equity-copy">
-                <p className="t-body-sm">火花与勋章、宠物打工加成联动，形成闭环：</p>
+                <p className="t-body">火花与勋章、宠物打工加成联动，形成闭环：</p>
                 <div className="fire-equity-chain" aria-label="权益激励闭环">
                   <span>持续互动</span><b aria-hidden="true">→</b><span>关系成长</span><b aria-hidden="true">→</b><span>权益解锁</span><b aria-hidden="true">→</b><span>反向激励互动</span>
                 </div>
-                <p className="t-body-sm">让用户动机从短期「打卡」升级为长期「经营」。</p>
+                <p className="t-body">让用户动机从短期「打卡」升级为长期「经营」。</p>
               </div>
               <div className="fire-equity-figures">
                 <figure className="fire-equity-figure">
