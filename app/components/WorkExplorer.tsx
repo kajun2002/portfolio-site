@@ -471,13 +471,23 @@ function InviteProjectDetail() {
 
       <section className="invite-results" aria-labelledby="invite-results-title">
         <DetailSectionHeading letter="R" english="Result & learning" title="结果与沉淀" id="invite-results-title" />
-        <div className="invite-result-visuals" aria-label="邀请活动效果验证">
-          <article><small>邀请入口点击 UV</small><strong>+95.31%</strong></article>
-          <article className="invite-before-after"><small>邀请渠道日均新增领养</small><div><span>1.0 万</span><b aria-hidden="true">→</b><strong>9.7 万</strong></div><em>+861.29%</em></article>
-          <article className="invite-before-after"><small>邀请渠道贡献占比</small><div><span>11.52%</span><b aria-hidden="true">→</b><strong>55.02%</strong></div></article>
-          <article><small>大盘日均新增</small><strong>+101.24%</strong></article>
+        <div className="invite-result-module">
+          <div className="invite-result-module-head"><h4 className="t-title-3">是否带来邀请行为增长</h4><span className="t-caption">活动期日均 vs 非活动期日均</span></div>
+          <div className="invite-result-visuals">
+            <article><small>邀请页曝光 UV（日均）</small><strong>24.5<em>万</em></strong><p className="invite-result-delta"><b>+119.5%</b><span>非活动期 11.2 万</span></p></article>
+            <article><small>邀请点击 UV（日均）</small><strong>9.5<em>万</em></strong><p className="invite-result-delta"><b>+95.3%</b><span>非活动期 4.9 万</span></p></article>
+          </div>
+          <p className="t-body-sm invite-result-summary">入口曝光与点击规模同步翻倍，<strong>说明活动有效激活了邀请入口</strong>。</p>
         </div>
-        <p className="t-body-sm invite-result-summary">邀请入口点击 UV 提升 <strong>95.31%</strong>；邀请渠道日均新增领养由 1.0 万增至 9.7 万（<strong>+861.29%</strong>），贡献占比由 11.52% 提升至 <strong>55.02%</strong>；带动大盘日均新增提升 <strong>101.24%</strong>，成为本期新增增长的核心来源。</p>
+
+        <div className="invite-result-module">
+          <div className="invite-result-module-head"><h4 className="t-title-3">是否带来领养贡献提升</h4><span className="t-caption">活动期 08/01–08/03 累计</span></div>
+          <div className="invite-result-visuals">
+            <article><small>邀请渠道累计新增领养</small><strong>29.5<em>万</em></strong><p className="invite-result-delta"><span>三天累计，日均约 9.8 万</span></p></article>
+            <article><small>邀请渠道领养贡献占比</small><strong>47<em>%</em></strong><p className="invite-result-delta"><b>+36 个百分点</b><span>活动前 11%</span></p></article>
+          </div>
+          <p className="t-body-sm invite-result-summary">活动前每 100 位新增领养用户中仅 11 位来自邀请，活动期间提升至 47 位，<strong>邀请从边缘渠道转为该阶段新增领养的首要来源</strong>，有效承接了开服推送退坡后的增长缺口。</p>
+        </div>
         <div className="invite-learning-grid">
           <article><div className="invite-subsection-heading"><h4 className="t-title-2">能力沉淀</h4></div><p className="t-body-sm">本次需求锻炼了我在<strong>策略选择、MVP 判断与跨部门协同</strong>三方面的能力：能在多条路径中论证取舍依据，能在能力与时间受限时识别&quot;什么必须保、什么可以让&quot;，也能主动前置识别风险并推动协同解决。</p></article>
           <article className="invite-cognition"><div className="invite-subsection-heading"><h4 className="t-title-2">认知延伸</h4></div><p className="t-body-sm">更重要的是意识到：<strong>拉新的终点不是量，而是互动。</strong> 若邀请而来的是沉默用户，对业务并无价值。因此在活动之后，我推动了好友列表推荐新注册用户等需求，把新增用户承接到互动场景中。</p></article>
