@@ -486,7 +486,7 @@ function InviteProjectDetail() {
             <article><small>邀请渠道累计新增领养</small><strong>29.5<em>万</em></strong><p className="invite-result-delta"><span>三天累计，日均约 9.8 万</span></p></article>
             <article><small>邀请渠道领养贡献占比</small><strong>47<em>%</em></strong><p className="invite-result-delta"><b>+36 个百分点</b><span>活动前 11%</span></p></article>
           </div>
-          <p className="t-body-sm invite-result-summary">活动前每 100 位新增领养用户中仅 11 位来自邀请，活动期间提升至 47 位，<strong>邀请从边缘渠道转为该阶段新增领养的首要来源</strong>，有效承接了开服推送退坡后的增长缺口。</p>
+          <p className="t-body-sm invite-result-summary"><strong>邀请成为该阶段新增领养的首要来源</strong>，及时承接了开服推送热度回落后的增长缺口。</p>
         </div>
         <div className="invite-learning-grid">
           <article><div className="invite-subsection-heading"><h4 className="t-title-2">能力沉淀</h4></div><p className="t-body-sm">本次需求锻炼了我在<strong>策略选择、MVP 判断与跨部门协同</strong>三方面的能力：能在多条路径中论证取舍依据，能在能力与时间受限时识别&quot;什么必须保、什么可以让&quot;，也能主动前置识别风险并推动协同解决。</p></article>
