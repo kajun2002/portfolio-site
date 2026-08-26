@@ -311,7 +311,7 @@ function BathProjectDetail() {
 
             <div className="bath-pain-list">
               <div className="bath-pain-item"><b>01</b><span className="bath-pain-title">消耗不可预期</span><span className="bath-pain-desc">用户无法预判「完全洗干净需要多少道具」，也无法感知「拖动到何种程度会扣除一块香皂并增加清洁值」。</span></div>
-              <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">消耗与清洁值难以同步感知</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，而拖拽是连续的，用户难以同时感知「扣了多少道具」和「涨了多少清洁值」。</span></div>
+              <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">消耗与清洁值难以同步感知</span><span className="bath-pain-desc">用户已建立点击消耗的认知，而拖拽是连续的，用户难以同时感知「扣了多少道具」和「涨了多少清洁值」。</span></div>
             </div>
 
             <blockquote className="bath-core-insight">让用户在连续操作中，同时获得<strong>过程感</strong>与<strong>消耗预期</strong></blockquote>
