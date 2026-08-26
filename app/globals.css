@@ -623,7 +623,7 @@ img { display:block; max-width:100%; }
   aspect-ratio:16/10;
   object-fit:contain;
 }
-.invite-target-layout>.invite-activity-figure img { width:auto; max-height:540px; margin:auto; flex:0 0 auto; height:auto; background:transparent; }
+.invite-target-layout>.invite-activity-figure img { width:auto; max-width:320px; margin:auto; flex:0 0 auto; height:auto; background:transparent; }
 
 .reflection-deck { background:transparent; }
 .reflection-deck-inner { min-height:calc(100svh - var(--nav-h)); display:flex; flex-direction:column; padding-block:var(--sp-12) var(--sp-8); }
