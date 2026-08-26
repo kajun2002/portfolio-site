@@ -435,7 +435,6 @@ function InviteProjectDetail() {
               <b aria-hidden="true">VS</b>
               <div><small>有效邀请口径</small><strong>受邀好友完成宠物领养</strong><span>确保奖励发放与业务目标严格对齐</span></div>
             </div>
-            <p className="t-body-sm">部分裂变活动将&quot;发送邀请&quot;即计为成功，但分享、点击均未转化为真实新增。以完成领养作为口径，可确保奖励发放与业务目标严格对齐。</p>
 
             <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">机制设计：以参与门槛倒推奖励模型</h4></div>
             <p className="t-body-sm">在主流裂变玩法（满 N 人发奖／每邀一人即发奖／阶梯大奖）中，选择<strong>每邀 1 人即得奖</strong>。</p>
