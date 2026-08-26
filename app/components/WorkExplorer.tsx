@@ -300,7 +300,7 @@ function BathProjectDetail() {
       <section className="bath-intro-card" aria-labelledby="bath-background-title">
         <div className="bath-intro-text">
           <DetailSectionHeading letter="S" english="Background" title="背景" id="bath-background-title" />
-          <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，采用<strong>拖拽香皂搓澡</strong>的交互形式完成。</p>
+          <p className="t-body bath-background-copy">洗澡是宠物养成中的高频照顾行为，<strong>「拖拽香皂搓澡」</strong>是用户喜爱并希望保留的交互形式。</p>
 
           <div className="bath-intro-challenge">
             <DetailSectionHeading letter="T" english="Core challenge" title="核心难点" id="bath-challenge-title" />
