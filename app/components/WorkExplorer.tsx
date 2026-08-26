@@ -465,8 +465,9 @@ function InviteProjectDetail() {
         </article>
 
         <article className="invite-risk">
-          <div className="invite-subsection-heading"><b className="tnum">04</b><h4 className="t-title-2">风险前置：主动引入安全评估</h4></div>
-          <p className="t-body">活动涉及点券发放，主动拉通安全中心识别黑灰产风险，并配置有效邀请上限与防刷规则。</p>
+          <div className="invite-subsection-heading"><b className="tnum">04</b><h4 className="t-title-2">主动风控</h4></div>
+          <p className="t-body">考虑到点券发放存在刷号风险，主动拉通安全中心评估黑灰产风险，并配置有效邀请上限与防刷规则，同时保留实时数据监控。</p>
+          <p className="t-body">安全复盘结论显示，活动整体风险可控：74.1% 用户邀请数集中在 1–3 人，属轻度裂变，无显著刷量；且头部用户经核查均为高等级真实账号，低质被邀请方占比约 10%。</p>
         </article>
       </section>
 
