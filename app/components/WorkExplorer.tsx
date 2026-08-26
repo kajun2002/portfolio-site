@@ -418,7 +418,7 @@ function InviteProjectDetail() {
           <div className="invite-strategy-compare" aria-label="三条增长路径比较">
             <article><span className="tnum">01</span><h4 className="t-title-3">自然社交裂变</h4><p className="t-body-sm">无激励驱动，节奏不可控。</p></article>
             <article><span className="tnum">02</span><h4 className="t-title-3">搜索路径</h4><p className="t-body-sm">用户自发行为，主动权有限。</p></article>
-            <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">活动社交裂变</h4><ul className="invite-strategy-points"><li className="t-body-sm">能够<strong>利用存量用户的关系链</strong>，邀请自带信任背书</li><li className="t-body-sm">能够<strong>突破产品触达边界</strong>，覆盖常规宣发触达不到的人群</li></ul></article>
+            <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">活动社交裂变</h4><ul className="invite-strategy-points"><li className="t-body-sm"><strong>利用存量用户的关系链</strong>，邀请自带信任背书</li><li className="t-body-sm"><strong>突破产品触达边界</strong>，覆盖常规宣发触达不到的人群</li></ul></article>
           </div>
         </div>
       </section>
