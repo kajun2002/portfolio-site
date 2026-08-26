@@ -212,7 +212,7 @@ function FireProjectDetail() {
       <section className="fire-results" aria-labelledby="fire-result-title">
         <DetailSectionHeading letter="R" english="Result" title="结果" id="fire-result-title" />
         <div className="fire-result-grid">
-          <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p><strong>踩踩用户已进入续火花关系</strong>（暑期口径）</p><p className="fire-result-note">约七成踩踩用户已进入续火花链路，说明火花玩法具备较强的用户接受度，并已成为踩踩关系沉淀的重要方式。剩余未建立火花关系的用户，仍是后续渗透提升的主要空间。</p></article>
+          <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p><strong>踩踩用户已进入续火花关系</strong>（暑期口径）</p><p className="fire-result-note">说明火花玩法具备较强的用户接受度，并已成为踩踩关系沉淀的重要方式。剩余未建立火花关系的用户，仍是后续渗透提升的主要空间。</p></article>
           <article className="fire-frequency-result"><strong>2.5×</strong><div className="comparison-bars" aria-hidden="true"><i /><i /></div><p><strong>火花用户日均互踩频次提升</strong>（日均 UV 口径）</p><p className="fire-result-note">有火花关系用户日均互踩 13.0 次，无火花关系用户为 5.2 次。对比可见，火花机制能够有效提升用户回访和互动意愿，将一次性踩踩行为转化为更稳定的持续互动。</p></article>
         </div>
       </section>
