@@ -389,7 +389,7 @@ img { display:block; max-width:100%; }
 .fire-result-grid article { display:flex; min-height:180px; flex-direction:column; justify-content:center; padding:var(--sp-5); }
 .fire-result-grid article>p { margin-top:var(--sp-3); color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.5; }
 .fire-result-grid article>p strong { color:var(--ink-900); }
-.fire-result-note { color:var(--ink-500)!important; font-size:var(--fs-caption)!important; }
+.fire-result-note { color:var(--ink-600)!important; font-size:var(--fs-body-sm)!important; line-height:1.6; }
 .fire-frequency-result>strong { color:var(--ink-900); font-size:clamp(28px,4.8cqi,54px); line-height:1; }
 .coverage-ring { position:relative; display:grid; width:112px; height:112px; place-items:center; border-radius:50%; background:conic-gradient(var(--tone) 0 70%,var(--ink-100) 70% 100%); }
 .coverage-ring::after { content:""; position:absolute; inset:10px; border-radius:50%; background:#fff; }.coverage-ring strong { position:relative; z-index:1; color:var(--ink-900); font-size:28px; }
