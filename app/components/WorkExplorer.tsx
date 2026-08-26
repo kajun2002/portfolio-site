@@ -314,14 +314,6 @@ function BathProjectDetail() {
               <div className="bath-pain-item"><b>02</b><span className="bath-pain-title">消耗与清洁值难以同步感知</span><span className="bath-pain-desc">用户已建立「一次操作 = 一次消耗 = 一次收益」的认知，而拖拽是连续的，用户难以同时感知「扣了多少道具」和「涨了多少清洁值」。</span></div>
             </div>
 
-            <p className="t-body-sm bath-reject-intro">而两种直觉方案均不成立：</p>
-            <div className="bath-reject-row">
-              <span className="bath-reject-tag">A</span><span>按时长实时扣除 → 时长与道具数量无法一一对应（1 秒扣一块，那 1.5 秒呢），规则本身不可解释</span>
-            </div>
-            <div className="bath-reject-row">
-              <span className="bath-reject-tag">B</span><span>结束后一次性结算 → 过程中缺乏反馈，用户对实际扣除量心里没底，容易担心被多扣</span>
-            </div>
-
             <blockquote className="bath-core-insight">让用户在连续操作中，同时获得<strong>过程感</strong>与<strong>消耗预期</strong></blockquote>
           </div>
         </div>
