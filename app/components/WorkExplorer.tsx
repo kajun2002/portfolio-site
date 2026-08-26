@@ -173,7 +173,7 @@ function FireProjectDetail() {
               <span aria-hidden="true">＋</span>
               <div className="fire-perception-item">
                 <strong>关系专属化</strong>
-                <p className="t-body-sm">多场景统一外显补足 QQ 宠物缺少高频关系展示位的短板；踩踩按钮异化为火花形态，配点亮动效，强化「这段关系与众不同」</p>
+                <p className="t-body-sm">多场景（宠友列表、消息页等）外显火花icon；踩踩按钮异化为火花形态，配点亮动效，强化「这段关系与众不同」</p>
                 <figure className="fire-perception-media">
                   <video src="/fire-exclusive-animation.mov" controls preload="metadata" playsInline aria-label="火花关系专属动效演示">
                     当前浏览器不支持视频播放。
