@@ -385,14 +385,15 @@ img { display:block; max-width:100%; }
 .fire-equity-figure { display:flex; flex-direction:column; gap:var(--sp-2); }
 .fire-equity-figure figcaption { margin-top:auto; min-height:3em; }
 .fire-equity-figure img { display:block; width:100%; max-height:380px; object-fit:contain; border:1px solid var(--border-hairline); border-radius:var(--r-md); background:rgba(255,255,255,.68); box-shadow:var(--shadow-soft); }
-.fire-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--sp-4); }
+.fire-result-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-4); }
 .fire-result-grid article { display:flex; min-height:180px; flex-direction:column; justify-content:center; padding:var(--sp-5); }
 .fire-result-grid article>p { margin-top:var(--sp-3); color:var(--ink-600); font-size:var(--fs-body-sm); line-height:1.5; }
-.retention-values { display:flex; align-items:center; gap:var(--sp-3); }.retention-values strong,.fire-frequency-result>strong { color:var(--ink-900); font-size:clamp(28px,4.8cqi,54px); line-height:1; }.retention-values span { color:var(--tone); font-size:26px; }
-.result-delta { align-self:flex-start; margin-top:var(--sp-2); padding:4px 9px; border-radius:999px; color:var(--tone); background:var(--tone-soft); font-size:var(--fs-caption); }
+.fire-result-grid article>p strong { color:var(--ink-900); }
+.fire-result-note { color:var(--ink-500)!important; font-size:var(--fs-caption)!important; }
+.fire-frequency-result>strong { color:var(--ink-900); font-size:clamp(28px,4.8cqi,54px); line-height:1; }
 .coverage-ring { position:relative; display:grid; width:112px; height:112px; place-items:center; border-radius:50%; background:conic-gradient(var(--tone) 0 70%,var(--ink-100) 70% 100%); }
 .coverage-ring::after { content:""; position:absolute; inset:10px; border-radius:50%; background:#fff; }.coverage-ring strong { position:relative; z-index:1; color:var(--ink-900); font-size:28px; }
-.comparison-bars { display:grid; gap:8px; margin-top:var(--sp-4); }.comparison-bars i { display:block; height:8px; border-radius:999px; background:var(--ink-200); }.comparison-bars i:first-child { width:48%; }.comparison-bars i:last-child { width:100%; background:var(--grad-brand); }
+.comparison-bars { display:grid; gap:8px; margin-top:var(--sp-4); }.comparison-bars i { display:block; height:8px; border-radius:999px; background:var(--ink-200); }.comparison-bars i:first-child { width:40%; }.comparison-bars i:last-child { width:100%; background:var(--grad-brand); }
 
 /* Sickness case: negative incentive → social interaction and emotional recall. */
 .sickness-case { display:grid; gap:var(--sp-10); }

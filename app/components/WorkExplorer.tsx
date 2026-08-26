@@ -212,9 +212,8 @@ function FireProjectDetail() {
       <section className="fire-results" aria-labelledby="fire-result-title">
         <DetailSectionHeading letter="R" english="Result" title="结果" id="fire-result-title" />
         <div className="fire-result-grid">
-          <article className="fire-retention-result"><div className="retention-values"><strong>65%</strong><span aria-hidden="true">→</span><strong>72%</strong></div><b className="result-delta">+7pp</b><p>踩踩次日留存 65% → 72%（+7pp）</p></article>
-          <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p>续火花用户占踩踩用户约 70%</p></article>
-          <article className="fire-frequency-result"><strong>+106.5%</strong><div className="comparison-bars" aria-hidden="true"><i /><i /></div><p>火花关系用户日均踩踩次数比非火花用户高 106.5%</p></article>
+          <article className="fire-coverage-result"><div className="coverage-ring"><strong>≈70%</strong></div><p><strong>踩踩用户已进入续火花关系</strong>（暑期口径）</p><p className="fire-result-note">续火花已从子功能成长为踩踩的主链路，约七成踩踩用户完成了关系沉淀，玩法认知与参与门槛已被验证跑通。</p></article>
+          <article className="fire-frequency-result"><strong>2.5×</strong><div className="comparison-bars" aria-hidden="true"><i /><i /></div><p><strong>火花用户日均互踩频次提升</strong>（日均 UV 口径）</p><p className="fire-result-note">有火花 13.0 次 / 无火花 5.2 次</p><p className="fire-result-note">天数累积与清零机制把一次性互动转化为每日习惯，火花关系是拉升踩踩活跃的核心杠杆。</p></article>
         </div>
       </section>
     </div>
