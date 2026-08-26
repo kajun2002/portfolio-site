@@ -413,13 +413,12 @@ function InviteProjectDetail() {
         <p className="t-body invite-bg-copy">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要开辟可持续的新增来源。</p>
 
         <div className="invite-strategy-part">
-          <DetailSectionHeading letter="T" english="Strategy" title="策略选择：为什么是社交裂变" id="invite-strategy-title" />
-          <p className="t-body-sm invite-section-intro">当时可选路径有三条：继续争取平台放量、通过内容玩法创新吸引用户、开展社交裂变。</p>
+          <DetailSectionHeading letter="T" english="Strategy" title="策略选择：为什么是活动社交裂变" id="invite-strategy-title" />
+          <p className="t-body-sm invite-section-intro">除平台投放外，目前新增领养路径主要有三条：自然社交裂变、搜索路径与活动社交裂变。</p>
           <div className="invite-strategy-compare" aria-label="三条增长路径比较">
-            <article><span className="tnum">01</span><h4 className="t-title-3">继续争取平台放量</h4></article>
-            <article><span className="tnum">02</span><h4 className="t-title-3">通过内容玩法创新吸引用户</h4></article>
-            <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">开展社交裂变</h4><p className="t-body-sm">它借助存量用户的关系链，可触达原本不关注宠物、常规宣发也无法覆盖的人群，<strong>是唯一能突破产品触达边界的手段</strong>；同时复用已有邀请入口与领养链路，是窗口期内最快可验证的方案。</p></article>
-            <div className="invite-strategy-ceiling"><span aria-hidden="true">↳</span><p className="t-body-sm">前两条存在共同的天花板——<strong>触达范围均受限于产品内的既有人群</strong>。</p></div>
+            <article><span className="tnum">01</span><h4 className="t-title-3">自然社交裂变</h4><p className="t-body-sm">无激励驱动，节奏不可控。</p></article>
+            <article><span className="tnum">02</span><h4 className="t-title-3">搜索路径</h4><p className="t-body-sm">用户自发行为，主动权有限。</p></article>
+            <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">活动社交裂变</h4><ul className="invite-strategy-points"><li className="t-body-sm">能够利用存量用户的关系链，<strong>邀请自带信任背书</strong></li><li className="t-body-sm">能够<strong>突破产品触达边界</strong>，覆盖常规宣发触达不到的人群</li></ul></article>
           </div>
         </div>
       </section>
