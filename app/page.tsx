@@ -256,9 +256,9 @@ export default function Home() {
                   <p className="reflection-support">与设计、开发对接时清楚产品要输出什么、把守哪条边界；邀请奖励活动涉及点券与黑灰产风险时，主动拉通安全同学配置防刷规则。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 与工具提效能力</h4><span className="reflection-tag">AI提效</span></div>
-                  <p className="reflection-key">把 AI 从「辅助表达」用成「个人工作系统」。</p>
-                  <p className="reflection-support">用 AI 生成 HTML 原型、概念视觉图与简易 Demo；把高频工作沉淀为可复用方法——整理数据埋点与需求文档 skill，将标准流程、注意事项、AI 易错点固化下来。</p>
+                  <div className="reflection-item-head"><span className="tnum">04</span><h4>AI应用与提效</h4><span className="reflection-tag">AI提效</span></div>
+                  <p className="reflection-key">把业务中学到的 AI 方法，沉淀成个人提效能力。</p>
+                  <p className="reflection-support">用 AI 生成 HTML 原型、概念视觉图与简易 Demo；在宠物对讲 Skill 的开发中学会了 Skill 开发方法，进而把高频工作也沉淀为可复用 skill——整理数据埋点与需求文档 skill，将标准流程、注意事项、AI 易错点固化下来。</p>
                 </article>
               </div>
             </section>
