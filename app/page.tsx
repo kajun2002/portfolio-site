@@ -241,7 +241,7 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>走过需求 0-1 的全流程</h4><span className="reflection-tag">闭环</span></div>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>完整跑通需求 0-1 全流程</h4><span className="reflection-tag">闭环</span></div>
                   <p className="reflection-key">从需求洞察到数据复盘，每个环节都有第一手认知。</p>
                   <p className="reflection-support">实习中完整参与了用户洞察、PRD 撰写、设计开发对接、上线验收与数据复盘。</p>
                 </article>
