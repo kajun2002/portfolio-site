@@ -282,7 +282,7 @@ export default function Home() {
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4><span className="reflection-tag">复盘</span></div>
                   <p className="reflection-key">做完不等于结束，能否复用才决定成长速度。</p>
-                  <p className="reflection-support">复盘围绕固定问题：问题定义是否清楚、评审是否反复、上线数据是否符合预期、卡点能否用流程避免；同时把评审结论与数据口径显性化同步，协作方清楚结论与下一步，需求才顺畅。</p>
+                  <p className="reflection-support">项目一开始往往是不尽善尽美的，需要不断的迭代优化，同时，把过程中遇到的卡点沉淀下来，下次用流程或规范提前避免，也是成长的一部分。</p>
                 </article>
               </div>
             </section>
