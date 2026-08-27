@@ -409,7 +409,7 @@ function InviteProjectDetail() {
 
       <section className="invite-background" aria-labelledby="invite-background-title">
         <DetailSectionHeading letter="S" english="Background" title="背景" id="invite-background-title" />
-        <p className="t-body invite-bg-copy">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要开辟可持续的新增来源。</p>
+        <p className="t-body invite-bg-copy">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要寻找可持续的新增来源。</p>
 
         <div className="invite-strategy-part">
           <DetailSectionHeading letter="T" english="Strategy" title="策略选择：为什么是活动社交裂变" id="invite-strategy-title" />
