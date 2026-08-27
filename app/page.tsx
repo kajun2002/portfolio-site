@@ -277,7 +277,7 @@ export default function Home() {
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 可以提效，但不能代替业务判断</h4><span className="reflection-tag">AI边界</span></div>
                   <p className="reflection-key">AI 帮我表达得更快，不能替我想清楚。</p>
-                  <p className="reflection-support">业务背景、用户路径与状态流转，最了解的人只能是自己——过度依赖 AI 的典型失败是「文档看似完整，核心逻辑不闭环」。我的顺序：先想清楚边界，再交给 AI 做表达。</p>
+                  <p className="reflection-support">最了解业务背景、用户需求的人是自己——过度依赖 AI 的典型失败是「文档看似完整，核心逻辑不闭环」。所以我的顺序：先想清楚业务逻辑和边界，再交给 AI 做表达。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>复盘与沉淀，是让经验变成能力的唯一方式</h4><span className="reflection-tag">复盘</span></div>
