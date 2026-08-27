@@ -160,11 +160,11 @@ function FireProjectDetail() {
 
         <div className="fire-action-lower">
           <article className="fire-perception">
-            <div className="fire-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">关系感知：让资产被看见</h4></div>
+            <div className="fire-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">感知强化：让资产被看见</h4></div>
             <div className="fire-perception-map">
               <div className="fire-perception-item">
                 <strong>关系可感知</strong>
-                <p className="t-body-sm">互动越频繁，火花等级越高，把持续投入转化为可见的成长进度；还能生成专属火花分享卡，给用户一个「炫耀」关系的出口。</p>
+                <p className="t-body-sm">不同等级的火花关系有不同的火花形态，把持续投入转化为可见的成长进度；还能生成专属火花分享卡，给用户一个「炫耀」关系的出口。</p>
                 <figure className="fire-perception-media">
                   <img src="/fire-relationship-card.jpg" alt="展示互踩天数与好友关系的火花分享卡" />
                   <figcaption className="t-caption">将互动时长转化为可展示的关系成果</figcaption>
