@@ -258,7 +258,7 @@ export default function Home() {
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">04</span><h4>AI应用与提效</h4><span className="reflection-tag">AI提效</span></div>
                   <p className="reflection-key">把业务中学到的 AI 方法，沉淀成个人提效能力。</p>
-                  <p className="reflection-support">用 AI 生成 HTML 原型、概念视觉图与简易 Demo；在宠物对讲 Skill 的开发中学会了 Skill 开发方法，进而把高频工作也沉淀为可复用 skill——整理数据埋点与需求文档 skill，将标准流程、注意事项、AI 易错点固化下来。</p>
+                  <p className="reflection-support">使用 AI 工具生成 HTML 原型、概念视觉图与简易 Demo；在对讲skill项目中掌握了 Skill 的开发方法，便把数据埋点、需求文档这类高频工作也沉淀成可复用 skill，将标准流程、注意事项与 AI 易错点固化下来，提高工作效率。</p>
                 </article>
               </div>
             </section>
