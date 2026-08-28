@@ -295,7 +295,7 @@ export default function Home() {
             </header>
             <div className="reflection-finale">
               <p>这段实习让我从基础执行，逐步建立起产品闭环意识、跨团队协作能力、工具提效能力与复盘沉淀习惯。</p>
-              <p><strong className="finale-highlight">从「能完成分配的需求」，到「能定义问题、论证路径、推动落地并判断下一步」。</strong></p>
+              <p><strong className="finale-highlight">从「能完成分配的需求」，成长到「能定义问题、论证路径、推动落地并判断下一步」。</strong></p>
               <p>后续我希望继续提升业务理解、产品判断与复杂需求推进能力。</p>
             </div>
           </section>
