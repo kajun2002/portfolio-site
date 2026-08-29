@@ -127,13 +127,24 @@ function FireProjectDetail() {
         <article className="fire-stage fire-stage-t">
           <DetailSectionHeading letter="T" english="Core thesis" title="核心判断" />
           <p className="t-body"><strong>需要把好友间的零散互动沉淀为社交资产。</strong></p>
-          <p className="t-body-sm fire-force-lead">因为资产一旦形成，会同时产生两种力：</p>
-          <div className="fire-force-model">
-            <div><small>对自己是</small><strong>沉没成本</strong><span>不愿放弃已积累的东西</span></div>
-            <b aria-hidden="true">＋</b>
-            <div><small>对对方是</small><strong>社交压力</strong><span>不能单方面抛弃共同经营的关系</span></div>
+          <p className="t-body-sm fire-force-lead">零散互动用完即散，不产生记忆，也不指向未来。而互动一旦沉淀为资产，会同时产生两股方向相反的力：</p>
+          <div className="fire-force-block">
+            <div className="fire-force-direction"><h5>正向拉力</h5><span>让用户想要持续经营</span></div>
+            <div className="fire-force-grid fire-force-grid-pull">
+              <article><strong>情感认同</strong><span>关系被记录、被确认</span></article>
+              <article><strong>社交货币</strong><span>难以速成，可对外展示</span></article>
+              <article><strong>目标感</strong><span>积累带来进度与追求</span></article>
+              <article><strong>实际收益</strong><span>资产可承载权益</span></article>
+            </div>
           </div>
-          <div className="fire-force-result"><img className="fire-force-arrow-down" src="/arrow-down.png" alt="" aria-hidden="true" /><strong>这两种力共同驱动用户互动回访。</strong></div>
+          <div className="fire-force-block">
+            <div className="fire-force-direction"><h5>负向约束</h5><span>让用户不愿轻易中断</span></div>
+            <div className="fire-force-grid fire-force-grid-constrain">
+              <article><strong>沉没成本</strong><span>不愿放弃自己的投入</span></article>
+              <article><strong>双向责任</strong><span>不便单方面中断关系</span></article>
+            </div>
+          </div>
+          <div className="fire-force-result"><img className="fire-force-arrow-down" src="/arrow-down.png" alt="" aria-hidden="true" /><strong>正向吸引投入，负向减少流失，共同驱动长期互动回访</strong></div>
         </article>
       </section>
 
