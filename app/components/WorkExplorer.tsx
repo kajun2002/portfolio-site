@@ -127,7 +127,7 @@ function FireProjectDetail() {
         <article className="fire-stage fire-stage-t">
           <DetailSectionHeading letter="T" english="Core thesis" title="核心判断" />
           <p className="t-body"><strong>需要把好友间的零散互动沉淀为社交资产。</strong></p>
-          <p className="t-body-sm fire-force-lead">零散互动用完即散，不产生记忆，也不指向未来。而互动一旦沉淀为资产，会同时产生两股方向相反的力：</p>
+          <p className="t-body-sm fire-force-lead">零散互动用完即散，不产生记忆，也不指向未来。而互动一旦沉淀为资产，会同时产生两股力：</p>
           <div className="fire-force-block">
             <div className="fire-force-direction"><h5>正向拉力</h5><span>让用户想要持续经营</span></div>
             <div className="fire-force-grid fire-force-grid-pull">
