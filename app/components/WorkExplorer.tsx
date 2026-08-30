@@ -553,7 +553,7 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
       {!selected ? <div className="section-shell work-overview">
         <header className="slide-heading">
           <div><span className="t-overline">Work map · QQ 宠物</span><h2 className="t-title-1">从业务目标到产品答案</h2></div>
-          <p className="t-body-sm">围绕 QQ 关系链构建与维系目标，以 QQ 宠物为载体，从 <strong>「人－人」</strong> 与 <strong>「人－宠物」</strong> 两层关系切入：前者沉淀关系资产、强化彼此感知，后者打造被需要感、深化情感投入。</p>
+          <p className="t-body-sm">围绕 QQ 关系链构建与维系目标，以 QQ 宠物为载体，从 <strong>「人－人」</strong> 与 <strong>「人－宠物」</strong> 两层关系切入：前者沉淀社交资产、利用存量社交关系链裂变，后者打造用户被需要感、深化情感投入。</p>
         </header>
 
         <div className="work-tree" aria-label="实习工作目录">
