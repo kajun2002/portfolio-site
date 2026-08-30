@@ -251,7 +251,7 @@ export default function Home() {
                   <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花多期优化；两天上线窗口下将活动拆为两条消息，守住「感知到具体是谁」的核心目标抢下流量。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力</h4><span className="reflection-tag">协作</span></div>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作能力与风控意识</h4><span className="reflection-tag">协作</span></div>
                   <p className="reflection-key">产品是跨团队协作的枢纽：把各方拉齐到同一目标，专业能力才能转化为落地结果。</p>
                   <p className="reflection-support">与设计、开发对接时清楚产品要输出什么、把守哪条边界；邀请奖励活动涉及点券与黑灰产风险时，主动拉通安全同学配置防刷规则。</p>
                 </article>
