@@ -688,6 +688,7 @@ img { display:block; max-width:100%; }
 @media (max-width:720px) {
   :root { --nav-h:64px; }
   .section-shell { width:calc(100% - 40px); }
+  .speech-bubble:not(.speech-bubble-pet) { display:none; }
   .brand { flex:0 0 auto; }.brand>div { display:none; }.brand>span { width:34px; height:34px; }
   .header-inner { gap:var(--sp-2); }.site-header nav { max-width:calc(100% - 48px); gap:2px; overflow-x:auto; scrollbar-width:none; }.site-header nav::-webkit-scrollbar { display:none; }.site-header nav a { min-height:42px; padding-inline:10px; font-size:14px; white-space:nowrap; }
   .landing-deck { min-height:calc(100svh - var(--nav-h)); grid-template-columns:1fr; grid-template-rows:auto minmax(220px,1fr); gap:var(--sp-4); padding-block:var(--sp-8) 0; }
