@@ -267,7 +267,8 @@ export default function Home() {
               <div className="reflection-list">
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">01</span><h4>AI 时代，产品经理的价值是策略决策</h4><span className="reflection-tag">判断</span></div>
-                  <p className="reflection-support">AI 可以快速完成信息整理、问题罗列和方案生成等重复性工作，但无法替代产品经理做最终判断。<strong>产品经理的核心价值，是定义问题、明确目标、做出取舍</strong>。例如火花需求中，我曾提出增加「点亮中」状态，复盘后意识到，关键不在于「要加」，而在于为什么加、解决什么问题、会带来什么副作用，以及是否适合当前产品阶段。</p>
+                  <p className="reflection-support">AI 可以快速完成信息整理、问题罗列和方案生成等重复性工作，但无法替代产品经理做最终判断。<strong>产品经理的核心价值，是定义问题、明确目标、做出取舍</strong>。</p>
+                  <p className="reflection-support">例如火花需求中，我曾提出增加「点亮中」状态，复盘后意识到，关键不在于「要加」，而在于为什么加、解决什么问题、会带来什么副作用，以及是否适合当前产品阶段。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">02</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
