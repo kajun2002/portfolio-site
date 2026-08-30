@@ -235,8 +235,8 @@ img { display:block; max-width:100%; }
   .project-node-main { min-height:0; padding:var(--work-card-y) clamp(16px,1.5vw,22px); }
   .node-title-row { gap:clamp(6px,.7vw,10px); margin-top:clamp(5px,.8vh,9px); }
   .project-node-main>p { margin-top:clamp(5px,.8vh,9px); }
-  .fire-level-art { height:clamp(44px,6.5vh,58px); margin-top:clamp(7px,1.1vh,11px); }
-  .invite-bar-art { height:clamp(44px,6.5vh,58px); margin-top:clamp(7px,1.1vh,11px); }
+  .fire-level-art { height:clamp(44px,6.5vh,58px); margin-top:0; }
+  .invite-bar-art { height:clamp(44px,6.5vh,58px); margin-top:0; }
   .project-node-main .work-metrics { grid-template-columns:1fr; gap:clamp(6px,.8vh,10px); margin:clamp(7px,1.2vh,11px) 0; }
   .work-metrics>div { padding:clamp(7px,1vh,11px) clamp(12px,1.2vw,18px); }
   .metric-bar { margin-top:clamp(7px,1vh,10px)!important; }
