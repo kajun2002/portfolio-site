@@ -1,7 +1,6 @@
 export type WorkItem = {
   id: string;
-  level1: "促活" | "拉新";
-  level2?: "人－人" | "人－宠物";
+  level1: "人－人" | "人－宠物";
   title: string;
   subtitle: string;
   tone: "orange" | "green" | "blue";
@@ -15,8 +14,7 @@ export type WorkItem = {
 export const workItems: WorkItem[] = [
   {
     id: "fire",
-    level1: "促活",
-    level2: "人－人",
+    level1: "人－人",
     title: "踩踩续火花",
     subtitle: "将单次踩踩沉淀为关系资产，推动长期互动与回访",
     tone: "orange",
@@ -35,8 +33,7 @@ export const workItems: WorkItem[] = [
   },
   {
     id: "sick",
-    level1: "促活",
-    level2: "人－宠物",
+    level1: "人－宠物",
     title: "生病机制",
     subtitle: "负向激励唤起照顾责任与回访",
     tone: "green",
@@ -51,8 +48,7 @@ export const workItems: WorkItem[] = [
   },
   {
     id: "bath",
-    level1: "促活",
-    level2: "人－宠物",
+    level1: "人－宠物",
     title: "洗澡与一键护理",
     subtitle: "保留拖拽乐趣，同时让消耗可预期",
     tone: "green",
@@ -68,8 +64,7 @@ export const workItems: WorkItem[] = [
   },
   {
     id: "skill",
-    level1: "促活",
-    level2: "人－宠物",
+    level1: "人－宠物",
     title: "AI 对讲 Skill",
     subtitle: "话题玩法让陪伴更有活感",
     tone: "green",
@@ -85,7 +80,7 @@ export const workItems: WorkItem[] = [
   },
   {
     id: "invite",
-    level1: "拉新",
+    level1: "人－人",
     title: "邀请奖励活动",
     subtitle: "借助存量关系链裂变，拓展新增领养",
     tone: "blue",

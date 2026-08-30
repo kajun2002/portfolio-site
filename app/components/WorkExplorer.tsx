@@ -7,17 +7,14 @@ import { toHash } from "../route";
 /** 左栏直接复用工作地图的树状分组，让详情页里也能看到项目所属的主线。 */
 const railBranches = [
   {
-    overline: "01 / Activation",
-    label: "促活",
-    groups: [
-      { label: "人－人", items: workItems.filter((item) => item.level1 === "促活" && item.level2 === "人－人") },
-      { label: "人－宠物", items: workItems.filter((item) => item.level1 === "促活" && item.level2 === "人－宠物") },
-    ],
+    overline: "01 / Relationship",
+    label: "人－人",
+    groups: [{ label: "沉淀关系资产", items: workItems.filter((item) => item.level1 === "人－人") }],
   },
   {
-    overline: "02 / Acquisition",
-    label: "拉新",
-    groups: [{ label: "社交裂变", items: workItems.filter((item) => item.level1 === "拉新") }],
+    overline: "02 / Companion",
+    label: "人－宠物",
+    groups: [{ label: "打造被需要感", items: workItems.filter((item) => item.level1 === "人－宠物") }],
   },
 ];
 
@@ -549,51 +546,44 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
 
   const fire = getWorkItem("fire")!;
   const invite = getWorkItem("invite")!;
-  const companion = workItems.filter((item) => item.level2 === "人－宠物");
+  const companion = workItems.filter((item) => item.level1 === "人－宠物");
 
   return (
     <section className={`work-deck${selected ? " is-detail-mode" : ""}`} id="work" ref={workRef}>
       {!selected ? <div className="section-shell work-overview">
         <header className="slide-heading">
           <div><span className="t-overline">Work map · QQ 宠物</span><h2 className="t-title-1">从业务目标到产品答案</h2></div>
-          <p className="t-body-sm">围绕 QQ 关系链构建与维系目标，以 QQ 宠物为载体，从 <strong>促活</strong> 与 <strong>拉新</strong> 两条主线出发：促活围绕「人—人」与「人—宠物」两层关系提升互动与回访，拉新通过社交裂变拓展新增领养。</p>
+          <p className="t-body-sm">围绕 QQ 关系链构建与维系目标，以 QQ 宠物为载体，从 <strong>「人－人」</strong> 与 <strong>「人－宠物」</strong> 两层关系切入：前者沉淀关系资产、强化彼此感知，后者打造被需要感、深化情感投入。</p>
         </header>
 
         <div className="work-tree" aria-label="实习工作目录">
-          <article className="tree-branch activate-branch">
-            <div className="branch-title"><span className="t-overline tnum">01 / Activation</span><h3 className="t-title-2">促活：</h3><p className="t-body-sm">提高存量活跃</p></div>
+          <article className="tree-branch">
+            <div className="branch-title"><span className="t-overline tnum">01 / Relationship</span><h3 className="t-title-2">人－人</h3><p className="t-body-sm">沉淀关系资产，强化彼此感知</p></div>
             <div className="branch-content">
-              <section className="relationship-group primary-group">
-                <div className="group-label"><strong className="t-title-3">人－人</strong><small>沉淀关系资产，强化彼此感知</small></div>
-                <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => onOpen(fire.id)}>
-                  <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
-                  <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
-                  <MetricStrip metrics={fire.metrics} />
-                </button>
-              </section>
-              <section className="relationship-group companion-group">
-                <div className="group-label"><strong className="t-title-3">人－宠物</strong><small>打造被需要感，加深情感投入</small></div>
-                <div className="companion-nodes">
-                  {companion.map((item) => (
-                    <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => onOpen(item.id)}>
-                      <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small>
-                      {companionArtwork[item.id] && <img className="compact-node-art" src={companionArtwork[item.id]!.src} alt={companionArtwork[item.id]!.alt} />}
-                    </button>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </article>
-
-          <article className="tree-branch acquire-branch">
-            <div className="branch-title"><span className="t-overline tnum">02 / Acquisition</span><h3 className="t-title-2">拉新：</h3><p className="t-body-sm">拓展新增来源</p></div>
-            <div className="branch-content single-branch-content">
-              <div className="group-label"><strong className="t-title-3">社交裂变</strong></div>
+              <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => onOpen(fire.id)}>
+                <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
+                <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
+                <MetricStrip metrics={fire.metrics} />
+              </button>
               <button className={`project-node project-node-main tone-${invite.tone}`} type="button" onClick={() => onOpen(invite.id)}>
                 <div className="node-title-row"><h4 className="t-title-2">{invite.title}</h4><span className="node-priority t-caption">增长项目</span></div><p className="t-body-sm">{invite.subtitle}</p>
                 <img className="invite-bar-art" src="/qqpet-invite-bar.png" alt="邀请奖励活动栏：限时邀请好友领养并获得奖励" />
                 <MetricStrip metrics={invite.metrics} />
               </button>
+            </div>
+          </article>
+
+          <article className="tree-branch">
+            <div className="branch-title"><span className="t-overline tnum">02 / Companion</span><h3 className="t-title-2">人－宠物</h3><p className="t-body-sm">打造被需要感，加深情感投入</p></div>
+            <div className="branch-content">
+              <div className="companion-nodes">
+                {companion.map((item) => (
+                  <button className={`project-node compact-node tone-${item.tone} ${companionArtwork[item.id] ? "has-art" : ""}`} type="button" key={item.id} onClick={() => onOpen(item.id)}>
+                    <span className="t-title-3">{item.title}</span><small className="t-body-sm">{item.subtitle}</small>
+                    {companionArtwork[item.id] && <img className="compact-node-art" src={companionArtwork[item.id]!.src} alt={companionArtwork[item.id]!.alt} />}
+                  </button>
+                ))}
+              </div>
             </div>
           </article>
         </div>
