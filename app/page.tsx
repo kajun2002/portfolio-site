@@ -270,22 +270,17 @@ export default function Home() {
               </header>
               <div className="reflection-list">
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">01</span><h4>从「提出方案」到「做出产品判断」</h4><span className="reflection-tag">判断</span></div>
-                  <p className="reflection-key">从关注「有没有方案」，转向关注方案背后的目标、成本与取舍。</p>
-                  <p className="reflection-support">火花需求中，我曾提出增加「点亮中」状态。复盘后意识到，真正需要回答的不是「能不能加一个状态」，而是它解决什么问题、会带来什么副作用，以及什么方案最适合当前产品阶段。</p>
+                  <div className="reflection-item-head"><span className="tnum">01</span><h4>AI 时代，产品经理的价值是策略决策</h4><span className="reflection-tag">判断</span></div>
+                  <p className="reflection-key">产品经理的核心价值，是定义问题、明确目标、做出取舍。</p>
+                  <p className="reflection-support">AI 可以快速完成信息整理、问题罗列和方案生成等重复性工作，但无法替代产品经理做最终判断。例如火花需求中，我曾提出增加「点亮中」状态，复盘后意识到，关键不在于「要加」，而在于为什么加、解决什么问题、会带来什么副作用，以及是否适合当前产品阶段。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>AI 时代，产品判断更重要</h4><span className="reflection-tag">AI边界</span></div>
-                  <p className="reflection-key">先建立自己的业务理解与判断，再用 AI 提升方案探索与验证效率。</p>
-                  <p className="reflection-support">实际使用 AI 后，我发现 AI 很容易快速生成一套「看起来完整」的方案，但业务目标是否正确、用户路径是否成立、规则边界是否闭环，仍依赖产品经理自己的判断。因此，我更关注自身对业务、用户和场景的理解，以及提出问题、定义边界和做出取舍的能力。</p>
-                </article>
-                <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
                   <p className="reflection-key">将重复问题沉淀为流程、检查项或工具，避免在后续项目中重复踩坑。</p>
                   <p className="reflection-support">每次项目结束后，我会复盘哪些判断有效、哪些问题前期遗漏、哪些卡点可以提前规避。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">04</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
                   <p className="reflection-key">平台逻辑关注「信息有没有传达」，产品设计更要关注「用户如何感知这条信息」。</p>
                   <p className="reflection-support">生病需求原通过弹窗告知宠物自愈，但既遮挡宠物表现，也削弱了主人回归时的情感连接，因此改为由宠物以角色口吻表达状态变化，让功能自然融入用户体验。</p>
                 </article>
