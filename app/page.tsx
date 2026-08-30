@@ -272,7 +272,8 @@ export default function Home() {
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">02</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
-                  <p className="reflection-support">生病需求原通过弹窗告知宠物自愈，但既遮挡宠物表现，也削弱了主人回归时的情感连接，因此改为由宠物以角色口吻表达状态变化。这让我意识到，<strong>平台逻辑关注「信息有没有传达」，产品设计更要关注「用户如何感知这条信息」</strong>，让功能自然融入用户体验。</p>
+                  <p className="reflection-support">生病需求原通过弹窗告知宠物自愈，但既遮挡宠物表现，也削弱了主人回归时的情感连接，因此改为由宠物以角色口吻表达状态变化。</p>
+                  <p className="reflection-support">这让我意识到，<strong>平台逻辑关注「信息有没有传达」，产品设计更要关注「用户如何感知这条信息」</strong>，让功能自然融入用户体验。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
