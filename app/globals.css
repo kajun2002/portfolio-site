@@ -640,7 +640,6 @@ img { display:block; max-width:100%; }
 .reflection-item p { margin:var(--sp-3) 0 0 46px; color:var(--ink-700); font-size:15px; line-height:1.75; }
 .reflection-item p+p { margin-top:var(--sp-2); }
 .reflection-item p strong { color:var(--ink-900); font-weight:750; text-decoration:underline; text-decoration-color:rgba(91,98,255,.3); text-decoration-thickness:3px; text-underline-offset:4px; }
-.reflection-item .reflection-key { color:var(--ink-900); font-size:16px; font-weight:750; line-height:1.65; }
 .reflection-item .reflection-support { color:var(--ink-600); }
 .reflection-thinking .reflection-item-head>.tnum { color:var(--violet-600); border-color:rgba(124,58,237,.24); }
 .reflection-groups + .reflection-group { margin-top:var(--sp-5); }

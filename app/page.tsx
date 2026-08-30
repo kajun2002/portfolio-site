@@ -242,23 +242,19 @@ export default function Home() {
               <div className="reflection-list">
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">01</span><h4>完整跑通需求 0-1 全流程</h4><span className="reflection-tag">闭环</span></div>
-                  <p className="reflection-key">能够从需求判断持续跟进至上线结果，并结合数据与用户反馈迭代方案。</p>
-                  <p className="reflection-support">实习期间完整参与用户洞察、方案设计、PRD 撰写、设计开发协同、上线验收与数据复盘。</p>
+                  <p className="reflection-support">实习期间完整参与用户洞察、方案设计、PRD 撰写、设计开发协同、上线验收与数据复盘，<strong>能够从需求判断持续跟进至上线结果，并结合数据与用户反馈迭代方案</strong>。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 Owner 意识，推动项目落地</h4><span className="reflection-tag">Owner意识</span></div>
-                  <p className="reflection-key">能够围绕核心目标主动判断优先级并做取舍。</p>
-                  <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花等多期需求。例如邀请活动仅有两天上线窗口时，将方案拆分为两条消息分阶段交付，优先保证用户能够感知「成功邀请的是谁」这一核心目标。</p>
+                  <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花等多期需求。面对排期、资源与方案变化，<strong>能够围绕核心目标主动判断优先级并做取舍</strong>。例如邀请活动仅有两天上线窗口时，将方案拆分为两条消息分阶段交付，优先保证用户能够感知「成功邀请的是谁」这一核心目标。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作与风险意识</h4><span className="reflection-tag">协作</span></div>
-                  <p className="reflection-key">需求推进中不仅关注方案本身，也提前识别实现边界、协作依赖与潜在风险。</p>
-                  <p className="reflection-support">与设计、开发明确方案优先级与实现边界；邀请奖励活动涉及点券资产及黑灰产风险时，主动拉通安全团队配置防刷规则，保障活动安全上线。</p>
+                  <p className="reflection-support">需求推进中不仅关注方案本身，也会<strong>提前识别实现边界、协作依赖与潜在风险</strong>。与设计、开发明确方案优先级与实现边界；邀请奖励活动涉及点券资产及黑灰产风险时，主动拉通安全团队配置防刷规则，保障活动安全上线。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">04</span><h4>AI 应用与提效</h4><span className="reflection-tag">AI提效</span></div>
-                  <p className="reflection-key">将标准流程、检查项和常见易错点固化，减少重复工作与交付遗漏。</p>
-                  <p className="reflection-support">使用 AI 快速生成 HTML 原型、概念视觉图与简易 Demo，提升方案验证效率；同时将数据埋点、需求文档等高频工作沉淀为可复用 Skill。</p>
+                  <p className="reflection-support">使用 AI 快速生成 HTML 原型、概念视觉图与简易 Demo，提升方案验证效率；同时<strong>将数据埋点、需求文档等高频工作沉淀为可复用 Skill</strong>，将标准流程、检查项和常见易错点固化，减少重复工作与交付遗漏。</p>
                 </article>
               </div>
             </section>
@@ -271,18 +267,15 @@ export default function Home() {
               <div className="reflection-list">
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">01</span><h4>AI 时代，产品经理的价值是策略决策</h4><span className="reflection-tag">判断</span></div>
-                  <p className="reflection-key">产品经理的核心价值，是定义问题、明确目标、做出取舍。</p>
-                  <p className="reflection-support">AI 可以快速完成信息整理、问题罗列和方案生成等重复性工作，但无法替代产品经理做最终判断。例如火花需求中，我曾提出增加「点亮中」状态，复盘后意识到，关键不在于「要加」，而在于为什么加、解决什么问题、会带来什么副作用，以及是否适合当前产品阶段。</p>
+                  <p className="reflection-support">AI 可以快速完成信息整理、问题罗列和方案生成等重复性工作，但无法替代产品经理做最终判断。<strong>产品经理的核心价值，是定义问题、明确目标、做出取舍</strong>。例如火花需求中，我曾提出增加「点亮中」状态，复盘后意识到，关键不在于「要加」，而在于为什么加、解决什么问题、会带来什么副作用，以及是否适合当前产品阶段。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">02</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
-                  <p className="reflection-key">将重复问题沉淀为流程、检查项或工具，避免在后续项目中重复踩坑。</p>
-                  <p className="reflection-support">每次项目结束后，我会复盘哪些判断有效、哪些问题前期遗漏、哪些卡点可以提前规避。</p>
+                  <div className="reflection-item-head"><span className="tnum">02</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
+                  <p className="reflection-support">生病需求原通过弹窗告知宠物自愈，但既遮挡宠物表现，也削弱了主人回归时的情感连接，因此改为由宠物以角色口吻表达状态变化。这让我意识到，<strong>平台逻辑关注「信息有没有传达」，产品设计更要关注「用户如何感知这条信息」</strong>，让功能自然融入用户体验。</p>
                 </article>
                 <article className="reflection-item">
-                  <div className="reflection-item-head"><span className="tnum">03</span><h4>从平台逻辑转向用户体验</h4><span className="reflection-tag">体验</span></div>
-                  <p className="reflection-key">平台逻辑关注「信息有没有传达」，产品设计更要关注「用户如何感知这条信息」。</p>
-                  <p className="reflection-support">生病需求原通过弹窗告知宠物自愈，但既遮挡宠物表现，也削弱了主人回归时的情感连接，因此改为由宠物以角色口吻表达状态变化，让功能自然融入用户体验。</p>
+                  <div className="reflection-item-head"><span className="tnum">03</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
+                  <p className="reflection-support">每次项目结束后，我会复盘哪些判断有效、哪些问题前期遗漏、哪些卡点可以提前规避，并<strong>将重复问题进一步沉淀为流程、检查项或工具</strong>，避免在后续项目中重复踩坑。</p>
                 </article>
               </div>
             </section>
