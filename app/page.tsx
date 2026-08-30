@@ -277,7 +277,7 @@ export default function Home() {
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>把项目经验沉淀为可复用能力</h4><span className="reflection-tag">复盘</span></div>
-                  <p className="reflection-support">每次项目结束后，我会复盘哪些判断有效、哪些问题前期遗漏、哪些卡点可以提前规避，并<strong>将重复问题进一步沉淀为流程、检查项或工具</strong>，避免在后续项目中重复踩坑。</p>
+                  <p className="reflection-support">每次项目结束后，我会复盘哪些判断有效、哪些问题前期遗漏、哪些卡点可以提前规避，并<strong>将重复问题进一步沉淀为流程、检查项或工具</strong>，避免在后续项目中重复踩坑。例如邀请奖励一期后，将奖励发放、安全防刷等易遗漏事项整理为检查项，在二期需求中前置确认，减少临上线阶段的反复补漏。</p>
                 </article>
               </div>
             </section>
