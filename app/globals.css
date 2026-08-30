@@ -165,7 +165,7 @@ img { display:block; max-width:100%; }
 
 .work-deck { position:relative; scroll-margin-top:var(--nav-h); background:transparent; }
 .work-overview { position:relative; min-height:calc(100svh - var(--nav-h)); padding-block:var(--sp-12) var(--sp-16); }
-.work-tree { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:var(--sp-4); margin-top:var(--sp-6); }
+.work-tree { display:grid; grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr); gap:var(--sp-4); margin-top:var(--sp-6); }
 .tree-branch { position:relative; min-width:0; display:flex; flex-direction:column; overflow:hidden; border:1px solid var(--glass-line); border-radius:var(--r-lg); background:var(--glass-1); box-shadow:var(--shadow-glass); -webkit-backdrop-filter:var(--glass-blur-md); backdrop-filter:var(--glass-blur-md); }
 .tree-branch::after { content:""; position:absolute; left:12%; right:12%; top:0; height:1px; background:var(--grad-hair); }
 .branch-title { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:baseline; column-gap:var(--sp-2); row-gap:var(--sp-2); padding:var(--sp-6); border-bottom:1px solid var(--border-hairline); }
