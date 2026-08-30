@@ -246,7 +246,7 @@ export default function Home() {
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">02</span><h4>具备 Owner 意识，推动项目落地</h4><span className="reflection-tag">Owner意识</span></div>
-                  <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花等多期需求。面对排期、资源与方案变化，<strong>能够围绕核心目标主动判断优先级并做取舍</strong>。例如邀请活动仅有两天上线窗口时，将方案拆分为两条消息分阶段交付，优先保证用户能够感知「成功邀请的是谁」这一核心目标。</p>
+                  <p className="reflection-support">独立负责邀请奖励活动一/二期、洗澡交互、踩踩续火花等多期需求。面对排期、资源与方案变化，<strong>能够围绕核心目标主动判断优先级并做取舍</strong>。</p>
                 </article>
                 <article className="reflection-item">
                   <div className="reflection-item-head"><span className="tnum">03</span><h4>跨团队协作与风险意识</h4><span className="reflection-tag">协作</span></div>
