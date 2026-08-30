@@ -206,7 +206,7 @@ export default function Home() {
             <div className="panel-heading"><span className="t-overline">Internship</span><h2 className="t-title-2">实习经历</h2></div>
             <div className="resume-entries internship-entries">
               <article className="featured-entry">
-                <div className="entry-top"><h3 className="t-title-3">腾讯 · AI 产品应用中心</h3><time className="t-caption tnum">2026.05—2026.08</time></div>
+                <div className="entry-top"><h3 className="t-title-3">腾讯 · AI 应用产品中心</h3><time className="t-caption tnum">2026.05—2026.08</time></div>
                 <p className="t-body-sm">产品经理（QQ 宠物业务）</p>
                 <small className="t-caption">负责关系互动、陪伴养成、AI 对讲与裂变增长产品设计</small>
               </article>
