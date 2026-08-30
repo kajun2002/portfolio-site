@@ -417,16 +417,19 @@ function InviteProjectDetail() {
 
       <section className="invite-background" aria-labelledby="invite-background-title">
         <DetailSectionHeading letter="S" english="Background" title="背景" id="invite-background-title" />
-        <p className="t-body invite-bg-copy">灰度放量初期，新增领养主要依靠平台流量驱动。核心流量释放完毕后，<strong>自然新增增速明显回落</strong>，需要寻找可持续的新增来源。</p>
-
-        <div className="invite-strategy-part">
-          <DetailSectionHeading letter="T" english="Strategy" title="策略选择：为什么是活动社交裂变" id="invite-strategy-title" />
-          <p className="t-body-sm invite-section-intro">除平台投放外，目前新增领养路径主要有三条：自然社交裂变、搜索路径与活动社交裂变。</p>
-          <div className="invite-strategy-compare" aria-label="三条增长路径比较">
-            <article><span className="tnum">01</span><h4 className="t-title-3">自然社交裂变</h4><p className="t-body-sm">无激励驱动，节奏不可控。</p></article>
-            <article><span className="tnum">02</span><h4 className="t-title-3">搜索路径</h4><p className="t-body-sm">用户自发行为，主动权有限。</p></article>
-            <article className="invite-strategy-choice"><span className="tnum">03 · 选择</span><h4 className="t-title-3">活动社交裂变</h4><ul className="invite-strategy-points"><li className="t-body-sm"><strong>利用存量用户的关系链</strong>，邀请自带信任背书</li><li className="t-body-sm"><strong>突破产品触达边界</strong>，覆盖常规宣发触达不到的人群</li></ul></article>
-          </div>
+        <div className="invite-bg-list">
+          <article>
+            <div className="invite-subsection-heading"><b className="tnum">01</b><h4 className="t-title-2">补齐端外邀请能力</h4></div>
+            <p className="t-body">现有邀请主要停留在 QQ 端内，触达范围受限，因此需要补齐端外分享能力，进一步扩大社交裂变的关系链覆盖范围。</p>
+          </article>
+          <article>
+            <div className="invite-subsection-heading"><b className="tnum">02</b><h4 className="t-title-2">以社交裂变拓展新增</h4></div>
+            <p className="t-body">通过存量用户自主邀请实现社交裂变，使新用户进入产品时天然携带好友关系，降低社交冷启动门槛，提升后续互动意愿。</p>
+          </article>
+          <article>
+            <div className="invite-subsection-heading"><b className="tnum">03</b><h4 className="t-title-2">强化激励的社交表达</h4></div>
+            <p className="t-body">奖励可累积并兑换宠物装扮，通过社交展示与炫耀进一步放大邀请行为的社交价值。</p>
+          </article>
         </div>
       </section>
 
