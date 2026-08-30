@@ -559,7 +559,7 @@ export function WorkExplorer({ selectedId, onOpen, onClose }: WorkExplorerProps)
         <div className="work-tree" aria-label="实习工作目录">
           <article className="tree-branch">
             <div className="branch-title"><span className="t-overline tnum">01 / Relationship</span><h3 className="t-title-2">人－人</h3><p className="t-body-sm">沉淀关系资产，强化彼此感知</p></div>
-            <div className="branch-content">
+            <div className="branch-content branch-content-row">
               <button className={`project-node project-node-main tone-${fire.tone}`} type="button" onClick={() => onOpen(fire.id)}>
                 <div className="node-title-row"><h4 className="t-title-2">{fire.title}</h4><span className="node-priority t-caption">重点项目</span></div><p className="t-body-sm">{fire.subtitle}</p>
                 <img className="fire-level-art" src="/qqpet-fire-levels.png" alt="不同阶段的火花关系图标" />
