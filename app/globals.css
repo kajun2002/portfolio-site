@@ -177,9 +177,11 @@ img { display:block; max-width:100%; }
 .branch-content { flex:1; display:flex; flex-direction:column; gap:var(--sp-4); padding:var(--sp-4); min-width:0; }
 .branch-content-row { flex-direction:row; align-items:stretch; }
 .branch-content>.project-node-main { flex:1; }
-.project-node { --tone:var(--brand-600); --tone-soft:var(--brand-50); --tone-line:var(--border-brand); width:100%; min-width:0; text-align:left; cursor:pointer; border:1px solid var(--glass-line); border-radius:var(--r-md); color:var(--ink-700); background:var(--glass-3); box-shadow:var(--shadow-sm),inset 0 1px 0 var(--glass-edge); -webkit-backdrop-filter:var(--glass-blur-sm); backdrop-filter:var(--glass-blur-sm); transition:transform .32s var(--ease-out),box-shadow .32s var(--ease-out),border-color .32s var(--ease-out); }
+.project-node { position:relative; --tone:var(--brand-600); --tone-soft:var(--brand-50); --tone-line:var(--border-brand); width:100%; min-width:0; text-align:left; cursor:pointer; border:1px solid var(--glass-line); border-radius:var(--r-md); color:var(--ink-700); background:var(--glass-3); box-shadow:var(--shadow-sm),inset 0 1px 0 var(--glass-edge); -webkit-backdrop-filter:var(--glass-blur-sm); backdrop-filter:var(--glass-blur-sm); transition:transform .32s var(--ease-out),box-shadow .32s var(--ease-out),border-color .32s var(--ease-out); }
 @media (hover:hover) and (pointer:fine) { .project-node:hover { transform:translateY(-4px); border-color:var(--tone-line); box-shadow:var(--shadow-glass-hover); } }
 .project-node:active { transform:scale(.975); }
+.project-node::after { content:"→"; position:absolute; right:14px; top:12px; color:var(--ink-400); opacity:.35; font-size:15px; font-weight:600; transform:translateX(0); transition:opacity .25s var(--ease-in-out),transform .25s var(--ease-out),color .25s var(--ease-in-out); pointer-events:none; }
+@media (hover:hover) and (pointer:fine) { .project-node:hover::after { color:var(--tone); opacity:1; transform:translateX(3px); } }
 .tone-orange { --tone:var(--amber-600); --tone-soft:var(--amber-50); --tone-line:rgba(251,191,36,.32); }
 .tone-green { --tone:#059669; --tone-soft:rgba(236,253,245,.88); --tone-line:rgba(16,185,129,.28); }
 .tone-blue { --tone:var(--brand-600); --tone-soft:var(--brand-50); --tone-line:var(--border-brand); }
