@@ -177,6 +177,11 @@ export default function Home() {
             style={heroBox ? { left: heroBox.x + heroBox.w * 0.87, top: heroBox.y + heroBox.h * 0.66 } : undefined}
             aria-hidden="true"
           >Hi，我是巴乐</span>
+          <span
+            className="hero-hint"
+            style={heroBox ? { left: heroBox.x + heroBox.w * 0.06, top: heroBox.y + heroBox.h * 0.22 } : undefined}
+            aria-hidden="true"
+          >👋 点我打招呼</span>
         </button>
       </section>
 

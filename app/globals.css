@@ -123,6 +123,10 @@ img { display:block; max-width:100%; }
 .speech-bubble-pet { padding:6px 13px; font-size:14px; }
 .speech-bubble-pet::after { right:auto; left:16px; }
 .landing-visual.is-waving .speech-bubble-pet { opacity:1; transform:translateY(0) scale(1); transition-delay:.4s; }
+.hero-hint { position:absolute; z-index:2; padding:5px 12px; border:1px solid var(--border-hairline); border-radius:999px; color:var(--ink-500); background:rgba(255,255,255,.86); box-shadow:var(--shadow-xs); font-size:13px; font-weight:600; white-space:nowrap; opacity:.85; animation:hero-hint-float 2.4s var(--ease-in-out) infinite; pointer-events:none; }
+@keyframes hero-hint-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@media (hover:hover) and (pointer:fine) { .landing-visual:hover .hero-hint { color:var(--ink-800); opacity:1; } }
+.landing-visual.is-waving .hero-hint { opacity:0; animation-play-state:paused; }
 .chip-rose { color:var(--rose-600); background:var(--rose-50); border-color:rgba(251,113,133,.28); }
 
 .experience-deck { display:grid; grid-template-rows:auto minmax(0,1fr); gap:var(--sp-5); padding-block:var(--sp-8) var(--sp-10); scroll-margin-top:var(--nav-h); }
