@@ -299,7 +299,7 @@ export default function Home() {
               <p>后续我希望继续提升业务理解、产品判断与复杂需求推进能力。</p>
             </div>
           </section>
-          <footer className="deck-footer"><span className="t-caption">付嘉俊 · 产品经理转正答辩</span><span className="t-overline">Thank you</span></footer>
+          <footer className="deck-footer"><span className="t-overline">Thank you</span></footer>
         </div>
       </section>
     </main>
