@@ -1,14 +1,41 @@
 # Kaiden 产品作品集｜Agent 交接说明
 
-> 最近更新：2026-10-15。本文档供任何新接手的 AI agent 阅读，接手前请先完整读一遍。
+> 最近更新：2026-10-15。本文档供任何新接手的 AI agent 阅读，**接手前请先完整读一遍**。
 
-## 1. 项目与线上地址
+## 0. 项目唯一真实来源（换电脑 / 新环境必读）
 
-### 项目根目录
+本项目的**唯一真实来源是 GitHub 仓库**，不依赖任何特定电脑或本地路径：
 
 ```text
-/Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
+https://github.com/kajun2002/portfolio-site
 ```
+
+仓库内容是完整的——源码、全部静态资源（图片/视频）、依赖锁文件、自动部署配置都已提交。
+**在任何一台新电脑上克隆下来即可直接开发与发布**，无需额外迁移文件。
+
+### 新环境首次上手（三步）
+
+```bash
+# 1. 克隆仓库（目录名可自定，以下用 portfolio-site）
+git clone https://github.com/kajun2002/portfolio-site.git
+cd portfolio-site
+
+# 2. 安装依赖（项目使用 pnpm，锁文件为 pnpm-lock.yaml）
+pnpm install
+# 若环境没有 pnpm，用 npm 亦可，但建议统一用 pnpm 以匹配 CI
+# npm install
+
+# 3. 启动开发服务器，确认能正常打开
+pnpm dev
+```
+
+> **环境要求**：Node.js `>=22.13.0`
+> **注意**：本文档中出现的任何本地路径（如 `/Users/kaidenfu/...`）都只是历史记录，
+> 新环境中请以「你克隆后的实际目录」为准，不要去找这些路径。
+
+---
+
+## 1. 项目与线上地址
 
 ### 线上地址
 
@@ -20,6 +47,7 @@
 | 项目 | 说明 |
 | --- | --- |
 | 框架 | React 19 + Vite + TypeScript（**不是** Next.js，虽然有 `app/` 目录） |
+| 包管理 | pnpm（锁文件 `pnpm-lock.yaml`，CI 使用 pnpm 9） |
 | 仓库 | <https://github.com/kajun2002/portfolio-site>（分支 `main`） |
 | 部署 | **GitHub Pages + GitHub Actions 自动部署** |
 | 自动化配置 | `.github/workflows/deploy.yml` |
@@ -34,14 +62,13 @@ git push            # 推送后 Actions 自动构建，1-3 分钟线上生效
 
 > ⚠️ 历史遗留：本文档早期版本提到的 Sites 托管（`.openai/hosting.json`）、`sites-building` / `sites-hosting` 技能**均已废弃**，不要再使用。
 
-### 本地开发与验证
+### 常用命令
 
 ```bash
-cd /Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
-
-npm run dev      # 本地开发服务器（热更新）
-npm run build    # 构建验证，改完代码必须跑一次确认无报错
-npm run start    # 预览构建产物（端口 4733）
+pnpm dev        # 本地开发服务器（热更新）
+pnpm build      # 构建验证，改完代码必须跑一次确认无报错
+pnpm start      # 预览构建产物（端口 4733）
+pnpm lint       # 代码检查
 ```
 
 ---
@@ -52,7 +79,7 @@ npm run start    # 预览构建产物（端口 4733）
 2. 运行 `git status` 和 `git log --oneline -5`，确认工作区状态并保留已有修改。
 3. 浏览线上页面与本地实现，理解单页滚动、一级导航、二级项目导航及详情展开逻辑。
 4. 修改文件使用精确的字符串替换（Edit 类工具），不要整文件覆盖。
-5. **每次改完必须做三件事**：① 用 grep 实测确认改动已写入文件；② 跑 `npm run build` 确认构建通过；③ `git log` 确认提交真实存在。
+5. **每次改完必须做三件事**：① 用 grep 实测确认改动已写入文件；② 跑 `pnpm build` 确认构建通过；③ `git log` 确认提交真实存在。
 6. 用户未要求发布时不要擅自 push；若要求"更新线上"，推送后告知需等待 1-3 分钟。
 
 ### 与用户协作的注意事项
@@ -60,6 +87,7 @@ npm run start    # 预览构建产物（端口 4733）
 - 用户**不熟悉 git 术语**，解释时用通俗说法（如"推送到云端"而非"push origin"）。
 - 用户习惯**先看方案再动代码**：较大改动（结构调整、文案重写）先给方案确认，不要直接改。
 - 文案类修改用户会逐条审阅，改完要把最终文案原样复述给用户确认。
+- 用户常用 **GitHub Desktop** 做推送操作；若 agent 环境无法 push，告知用户在 GitHub Desktop 点 Push 即可。
 
 ---
 
@@ -209,15 +237,15 @@ public/
 
 ## 4. 设计规范与参考文件
 
-接手后优先阅读：
+接手后优先阅读（**已随仓库提交，无需外部文件**）：
 
 ```text
-/Users/kaidenfu/WorkBuddy/2026-08-09-23-07-12/portfolio/DESIGN-SPEC.md
-/Users/kaidenfu/WorkBuddy/2026-08-09-23-07-12/portfolio/PROMPT-UI优化.md
-/Users/kaidenfu/WorkBuddy/2026-08-09-23-07-12/portfolio/PROMPT-经验沉淀与思考.md
+docs/DESIGN-SPEC.md        # 网页设计规范 v3.0（设计与前端实现的硬性依据）
+docs/答辩问答准备.md        # 项目内容与业务背景参考
 ```
 
-这些文件是设计和内容参考资料；当前用户提出的具体修改要求优先级更高。
+`DESIGN-SPEC.md` 是自包含的完整规范（约定了设计令牌、字阶、间距、色彩、阴影、动效等），
+标记「必须」「禁止」的条目为硬性约束。当前用户提出的具体修改要求优先级更高。
 
 ### 整体视觉方向
 
@@ -325,32 +353,31 @@ public/
 
 ### 6.4 经验沉淀与思考
 
-- 内容和呈现逻辑以 `PROMPT-经验沉淀与思考.md` 为准。
+- 内容和呈现逻辑以页面现有实现为准（`app/page.tsx` 中 `reflection-*` 相关区块）。
 - 保留现有统一视觉系统。
 
 ---
 
 ## 7. 构建与验证
 
-### 7.1 进入项目
+### 7.1 构建
+
+在项目根目录执行：
 
 ```bash
-cd /Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
+pnpm build
 ```
 
-### 7.2 构建
+如果环境中找不到 Node 或 pnpm，先确认 Node 版本满足 `>=22.13.0`，再用包管理器安装 pnpm：
 
 ```bash
-pnpm run build
+npm install -g pnpm        # 或用 corepack enable
 ```
 
-如果系统找不到 Node 或 pnpm：
+> 实在无法使用 pnpm 时可退而用 `npm install && npm run build`，
+> 但注意 CI 使用的是 pnpm，锁文件为 `pnpm-lock.yaml`，优先保持一致。
 
-```bash
-PATH=/Users/kaidenfu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:/Users/kaidenfu/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:$PATH pnpm run build
-```
-
-### 7.3 验收清单
+### 7.2 验收清单
 
 - [ ] 构建无报错。
 - [ ] 一级导航锚点正常。

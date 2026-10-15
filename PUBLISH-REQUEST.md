@@ -13,9 +13,8 @@
 推送到 GitHub 的 `main` 分支即自动构建上线：
 
 ```bash
-cd /Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
-
-npm run build    # 先验证构建无报错
+# 在项目根目录执行
+pnpm build       # 先验证构建无报错
 git add <改动文件>
 git commit -m "简要说明"
 git push         # 推送后 1-3 分钟线上自动生效
