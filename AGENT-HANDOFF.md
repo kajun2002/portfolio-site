@@ -1,4 +1,6 @@
-# QQ 宠物转正答辩作品集｜Agent 交接说明
+# Kaiden 产品作品集｜Agent 交接说明
+
+> 最近更新：2026-10-15。本文档供任何新接手的 AI agent 阅读，接手前请先完整读一遍。
 
 ## 1. 项目与线上地址
 
@@ -10,26 +12,54 @@
 
 ### 线上地址
 
-- 网站首页：<https://kaiden-product-portfolio.lijueying666.chatgpt.site/>
-- 实习主要工作：<https://kaiden-product-portfolio.lijueying666.chatgpt.site/#work>
+- 网站首页：<https://www.kaidenfu.cn>
+- 实习主要工作：<https://www.kaidenfu.cn/#work>
 
-### 托管配置
+### 技术栈与部署方式（重要）
 
-```text
-/Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site/.openai/hosting.json
+| 项目 | 说明 |
+| --- | --- |
+| 框架 | React 19 + Vite + TypeScript（**不是** Next.js，虽然有 `app/` 目录） |
+| 仓库 | <https://github.com/kajun2002/portfolio-site>（分支 `main`） |
+| 部署 | **GitHub Pages + GitHub Actions 自动部署** |
+| 自动化配置 | `.github/workflows/deploy.yml` |
+
+**发布流程：推送到 GitHub 的 `main` 分支即自动构建上线，无需任何手动发布操作。**
+
+```bash
+git add <改动文件>
+git commit -m "简要说明"
+git push            # 推送后 Actions 自动构建，1-3 分钟线上生效
 ```
 
-这是一个 Sites 托管项目。修改网站时必须先阅读并遵守 `sites-building` 技能；需要发布上线时，再使用 `sites-hosting` 技能。
+> ⚠️ 历史遗留：本文档早期版本提到的 Sites 托管（`.openai/hosting.json`）、`sites-building` / `sites-hosting` 技能**均已废弃**，不要再使用。
+
+### 本地开发与验证
+
+```bash
+cd /Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
+
+npm run dev      # 本地开发服务器（热更新）
+npm run build    # 构建验证，改完代码必须跑一次确认无报错
+npm run start    # 预览构建产物（端口 4733）
+```
 
 ---
 
 ## 2. 接手前检查
 
 1. 阅读项目代码和设计规范，不要直接重构。
-2. 运行 `git status`，确认当前工作区状态并保留已有修改。
+2. 运行 `git status` 和 `git log --oneline -5`，确认工作区状态并保留已有修改。
 3. 浏览线上页面与本地实现，理解单页滚动、一级导航、二级项目导航及详情展开逻辑。
-4. 修改文件优先使用 `apply_patch`，不要覆盖用户已有代码。
-5. 用户未要求发布时不要擅自上线；若要求“更新线上”，完成构建和验证后再发布。
+4. 修改文件使用精确的字符串替换（Edit 类工具），不要整文件覆盖。
+5. **每次改完必须做三件事**：① 用 grep 实测确认改动已写入文件；② 跑 `npm run build` 确认构建通过；③ `git log` 确认提交真实存在。
+6. 用户未要求发布时不要擅自 push；若要求"更新线上"，推送后告知需等待 1-3 分钟。
+
+### 与用户协作的注意事项
+
+- 用户**不熟悉 git 术语**，解释时用通俗说法（如"推送到云端"而非"push origin"）。
+- 用户习惯**先看方案再动代码**：较大改动（结构调整、文案重写）先给方案确认，不要直接改。
+- 文案类修改用户会逐条审阅，改完要把最终文案原样复述给用户确认。
 
 ---
 
@@ -339,11 +369,21 @@ PATH=/Users/kaidenfu/.cache/codex-runtimes/codex-primary-runtime/dependencies/no
 
 仅在用户明确要求发布时执行：
 
-1. 完成本地构建。
+1. 运行 `npm run build` 完成本地构建验证。
 2. 在浏览器中验证核心交互和响应式效果。
-3. 使用 `sites-hosting` 保存版本并发布。
-4. 发布后访问线上地址复查。
-5. 向用户说明发布结果、版本和线上网址。
+3. 提交并推送到 GitHub：
+
+   ```bash
+   git add <改动文件>
+   git commit -m "简要说明"
+   git push
+   ```
+
+4. 推送后 GitHub Actions 自动构建部署，**1-3 分钟后**线上生效。
+5. 访问 <https://www.kaidenfu.cn> 复查（需硬刷新 `Cmd+Shift+R` 破缓存）。
+6. 向用户说明：已推送、预计多久生效、需要硬刷新。
+
+> 构建状态可在仓库 Actions 页查看：<https://github.com/kajun2002/portfolio-site/actions>
 
 ---
 

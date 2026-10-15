@@ -1,28 +1,28 @@
-# 发布请求
-请只负责发布到线上，不做内容检查、不做 UI 核对、不做额外验证。
+# 发布请求（已废弃）
 
-## 发布信息
-- 项目路径：`/Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site`
-- 发布提交：`9d59daf`（当前本地 HEAD，含全部 5 个改动：8cd66ae 标题堆叠 → e77eca7 内容重构 → 461fed9 文案压缩+标签样式 → 709e97f 总结卡字号 → 9d59daf 总结卡改为加粗下划线）
-- 修改状态：已由其他 agent 完成，可直接上线
+> ⚠️ **本文档已于 2026-10-15 废弃，无需再使用。**
 
-## 上次失败说明（SitesConnectorError: e77eca7 is not the current HEAD）
-上次请求误用了旧提交号 e77eca7。请以**当前本地 HEAD `9d59daf`** 为准：把当前源码状态 commit 并 push 到站点仓库后，以 push 后的 branch-head SHA 作为 commit_sha 保存版本并部署。
+## 废弃原因
 
-## 执行要求
-- 直接按站点发布流程保存版本并部署
-- 不需要额外阅读业务文档
-- 不需要本地人工验收
-- 如果发布成功：只回复线上 URL
-- 如果发布失败：只回复 1. 失败报错原文 2. 阻塞原因 3. 我下一步需要补什么
+本文档原本用于旧的发布流程：Sites 托管 + 由另一个 agent（Codex）手动执行发布。
 
-## 遇到以下情况的处理方式
-- 如果源码 HEAD 不一致：停止，不继续排查，只告诉我当前本地 commit 和站点要求的 HEAD 不一致
-- 如果缺少 hosting 配置：停止，只告诉我缺少 `.openai/hosting.json`
-- 如果需要权限或外部仓库同步：停止，只告诉我需要哪一项权限/同步动作
+该项目现已迁移至 **GitHub Pages + GitHub Actions 自动部署**，不再需要任何手动发布请求。
 
-## 备注
-- 无需回滚
-- 无需优化代码
-- 无需改文案
-- 无需重新 build（除非发布流程强制要求）
+## 现在的发布方式
+
+推送到 GitHub 的 `main` 分支即自动构建上线：
+
+```bash
+cd /Users/kaidenfu/Documents/Codex/2026-08-10/https-doc-weixin-qq-com-doc/portfolio-site
+
+npm run build    # 先验证构建无报错
+git add <改动文件>
+git commit -m "简要说明"
+git push         # 推送后 1-3 分钟线上自动生效
+```
+
+- 线上地址：<https://www.kaidenfu.cn>（硬刷新 `Cmd+Shift+R` 破缓存）
+- 构建状态：<https://github.com/kajun2002/portfolio-site/actions>
+- 自动化配置：`.github/workflows/deploy.yml`
+
+详见 `AGENT-HANDOFF.md` 第 8 节。
